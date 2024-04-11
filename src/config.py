@@ -13,6 +13,7 @@ class CONFIG:
         KVEDS_COLLECTION = "kveds"
         KATOTTG_COLLECTION = "katottg"
         DK_COLLECTION = "dk"
+        TENDERS_COLLECTION = "tenders"
 
     class FILES:
         CWD = os.getcwd()
