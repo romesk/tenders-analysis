@@ -7,9 +7,9 @@ logger = get_logger(__name__)
 
 
 def run() -> None:
-    
+
     mongo = MongoService(CONFIG.MONGO.URI, CONFIG.MONGO.DB_NAME)
-    logger.info('Connected to MongoDB')
+    logger.info("Connected to MongoDB")
 
     try:
         pass
@@ -17,5 +17,5 @@ def run() -> None:
         mongo.close()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     run()
