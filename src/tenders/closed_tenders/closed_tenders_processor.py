@@ -1,8 +1,8 @@
 import json
 from datetime import date
+from datetime import timedelta
 
 import requests
-from dateutil.relativedelta import relativedelta
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 
@@ -13,10 +13,7 @@ class ClosedTendersProcessor:
     """
 
     def __init__(self):
-        self._config = json.load(open('config.json'))
-        self._client = MongoClient(self._config['uri'], server_api=ServerApi('1'))
-        self._db = self._client.get_database(self._config['db_name'])
-        self._collection = self._db.get_collection(self._config['coll_name'])
+        pass
 
     def process_historical_data(self, start_date: date = date(2024, 1, 1), end_date: date = date.today()) -> None:
         """
@@ -33,7 +30,7 @@ class ClosedTendersProcessor:
         try:
             while start_date < end_date:
                 page_number = 1
-                period_start_date = end_date - relativedelta(days=7)
+                period_start_date = end_date - timedelta(days=7)
                 while 1:
                     contents = requests.post(
                         f'https://prozorro.gov.ua/api/search/tenders?date%5Btender%5D%5Bstart%5D={period_start_date}'
@@ -42,8 +39,7 @@ class ClosedTendersProcessor:
                     tenders = list(contents['data'])
                     if len(tenders) == 0:
                         break
-                    for tender in tenders:
-                        self._collection.update(tender, tender, upsert=True)
+                    # TODO: Implement the logic for returning the tenders. Probalby, it should be a generator.
                     page_number += 1
                 end_date = period_start_date
         except Exception as e:
@@ -57,8 +53,9 @@ class ClosedTendersProcessor:
         :return:
             None
         """
-        self.process_historical_data(date.today() - relativedelta(days=7), date.today())
+        self.process_historical_data(date.today() - timedelta(days=7), date.today())
 
 
 if __name__ == '__main__':
-    pass
+    processor = ClosedTendersProcessor()
+    processor.process_week_data()
