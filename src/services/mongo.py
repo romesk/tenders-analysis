@@ -8,7 +8,7 @@ class MongoService:
     """
 
     def __init__(self, uri: str, db_name: str):
-        self.client = MongoClient(uri.strip(), server_api=ServerApi('1'))
+        self.client = MongoClient(uri.strip(), server_api=ServerApi("1"))
         self.db = self.client[db_name]
 
     def insert(self, collection: str, data):
@@ -21,7 +21,7 @@ class MongoService:
         return self.db[collection].find_one(query)
 
     def update(self, collection: str, query, data):
-        self.db[collection].update_one(query, {'$set': data})
+        self.db[collection].update_one(query, {"$set": data})
 
     def delete(self, collection: str, query):
         self.db[collection].delete_one(query)
