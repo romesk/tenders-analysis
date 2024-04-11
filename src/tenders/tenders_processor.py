@@ -15,10 +15,7 @@ class TendersProcessor:
     """
 
     def __init__(self):
-        # self._mongo_service = MongoService(CONFIG.MONGO.URI, CONFIG.MONGO.DB_NAME)
-        self._mongo_service = MongoService(
-            "mongodb+srv://kursovaskopet:2CXuIFlwnKZDObRe@kursova-cluster.74rxrdh.mongodb.net/?retryWrites=true&w=majority&appName=kursova-cluster",
-            "kursova")
+        self._mongo_service = MongoService(CONFIG.MONGO.URI, CONFIG.MONGO.DB_NAME)
         self._logger = get_logger(__name__)
 
     def process_historical_data(
