@@ -1,0 +1,6974 @@
+[
+  {
+    "section_code": "A",
+    "name": "Сільське господарство, лісове господарство та рибне господарство",
+    "partition_code": null,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "A",
+    "name": "Сільське господарство, мисливство та надання пов'язаних із ними послуг",
+    "partition_code": 1.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "A",
+    "name": "Вирощування однорічних і дворічних культур",
+    "partition_code": 1.0,
+    "group_code": 1.1,
+    "class_code": null
+  },
+  {
+    "section_code": "A",
+    "name": "Вирощування зернових культур (крім рису), бобових культур і насіння олійних культур",
+    "partition_code": 1.0,
+    "group_code": 1.1,
+    "class_code": 1.11
+  },
+  {
+    "section_code": "A",
+    "name": "Вирощування рису",
+    "partition_code": 1.0,
+    "group_code": 1.1,
+    "class_code": 1.12
+  },
+  {
+    "section_code": "A",
+    "name": "Вирощування овочів і баштанних культур, коренеплодів і бульбоплодів",
+    "partition_code": 1.0,
+    "group_code": 1.1,
+    "class_code": 1.13
+  },
+  {
+    "section_code": "A",
+    "name": "Вирощування цукрової тростини",
+    "partition_code": 1.0,
+    "group_code": 1.1,
+    "class_code": 1.14
+  },
+  {
+    "section_code": "A",
+    "name": "Вирощування тютюну",
+    "partition_code": 1.0,
+    "group_code": 1.1,
+    "class_code": 1.15
+  },
+  {
+    "section_code": "A",
+    "name": "Вирощування прядивних культур",
+    "partition_code": 1.0,
+    "group_code": 1.1,
+    "class_code": 1.16
+  },
+  {
+    "section_code": "A",
+    "name": "Вирощування інших однорічних і дворічних культур",
+    "partition_code": 1.0,
+    "group_code": 1.1,
+    "class_code": 1.19
+  },
+  {
+    "section_code": "A",
+    "name": "Вирощування багаторічних культур",
+    "partition_code": 1.0,
+    "group_code": 1.2,
+    "class_code": null
+  },
+  {
+    "section_code": "A",
+    "name": "Вирощування винограду",
+    "partition_code": 1.0,
+    "group_code": 1.2,
+    "class_code": 1.21
+  },
+  {
+    "section_code": "A",
+    "name": "Вирощування тропічних і субтропічних фруктів",
+    "partition_code": 1.0,
+    "group_code": 1.2,
+    "class_code": 1.22
+  },
+  {
+    "section_code": "A",
+    "name": "Вирощування цитрусових",
+    "partition_code": 1.0,
+    "group_code": 1.2,
+    "class_code": 1.23
+  },
+  {
+    "section_code": "A",
+    "name": "Вирощування зерняткових і кісточкових фруктів",
+    "partition_code": 1.0,
+    "group_code": 1.2,
+    "class_code": 1.24
+  },
+  {
+    "section_code": "A",
+    "name": "Вирощування ягід, горіхів, інших плодових дерев і чагарників",
+    "partition_code": 1.0,
+    "group_code": 1.2,
+    "class_code": 1.25
+  },
+  {
+    "section_code": "A",
+    "name": "Вирощування олійних плодів",
+    "partition_code": 1.0,
+    "group_code": 1.2,
+    "class_code": 1.26
+  },
+  {
+    "section_code": "A",
+    "name": "Вирощування культур для виробництва напоїв",
+    "partition_code": 1.0,
+    "group_code": 1.2,
+    "class_code": 1.27
+  },
+  {
+    "section_code": "A",
+    "name": "Вирощування пряних, ароматичних і лікарських культур",
+    "partition_code": 1.0,
+    "group_code": 1.2,
+    "class_code": 1.28
+  },
+  {
+    "section_code": "A",
+    "name": "Вирощування інших багаторічних культур",
+    "partition_code": 1.0,
+    "group_code": 1.2,
+    "class_code": 1.29
+  },
+  {
+    "section_code": "A",
+    "name": "Відтворення рослин",
+    "partition_code": 1.0,
+    "group_code": 1.3,
+    "class_code": null
+  },
+  {
+    "section_code": "A",
+    "name": "Відтворення рослин",
+    "partition_code": 1.0,
+    "group_code": 1.3,
+    "class_code": 1.3
+  },
+  {
+    "section_code": "A",
+    "name": "Тваринництво",
+    "partition_code": 1.0,
+    "group_code": 1.4,
+    "class_code": null
+  },
+  {
+    "section_code": "A",
+    "name": "Розведення великої рогатої худоби молочних порід",
+    "partition_code": 1.0,
+    "group_code": 1.4,
+    "class_code": 1.41
+  },
+  {
+    "section_code": "A",
+    "name": "Розведення іншої великої рогатої худоби та буйволів",
+    "partition_code": 1.0,
+    "group_code": 1.4,
+    "class_code": 1.42
+  },
+  {
+    "section_code": "A",
+    "name": "Розведення коней та інших тварин родини конячих",
+    "partition_code": 1.0,
+    "group_code": 1.4,
+    "class_code": 1.43
+  },
+  {
+    "section_code": "A",
+    "name": "Розведення верблюдів та інших тварин родини верблюдячих",
+    "partition_code": 1.0,
+    "group_code": 1.4,
+    "class_code": 1.44
+  },
+  {
+    "section_code": "A",
+    "name": "Розведення овець і кіз",
+    "partition_code": 1.0,
+    "group_code": 1.4,
+    "class_code": 1.45
+  },
+  {
+    "section_code": "A",
+    "name": "Розведення свиней",
+    "partition_code": 1.0,
+    "group_code": 1.4,
+    "class_code": 1.46
+  },
+  {
+    "section_code": "A",
+    "name": "Розведення свійської птиці",
+    "partition_code": 1.0,
+    "group_code": 1.4,
+    "class_code": 1.47
+  },
+  {
+    "section_code": "A",
+    "name": "Розведення інших тварин",
+    "partition_code": 1.0,
+    "group_code": 1.4,
+    "class_code": 1.49
+  },
+  {
+    "section_code": "A",
+    "name": "Змішане сільське господарство",
+    "partition_code": 1.0,
+    "group_code": 1.5,
+    "class_code": null
+  },
+  {
+    "section_code": "A",
+    "name": "Змішане сільське господарство",
+    "partition_code": 1.0,
+    "group_code": 1.5,
+    "class_code": 1.5
+  },
+  {
+    "section_code": "A",
+    "name": "Допоміжна діяльність у сільському господарстві та післяурожайна діяльність",
+    "partition_code": 1.0,
+    "group_code": 1.6,
+    "class_code": null
+  },
+  {
+    "section_code": "A",
+    "name": "Допоміжна діяльність у рослинництві",
+    "partition_code": 1.0,
+    "group_code": 1.6,
+    "class_code": 1.61
+  },
+  {
+    "section_code": "A",
+    "name": "Допоміжна діяльність у тваринництві",
+    "partition_code": 1.0,
+    "group_code": 1.6,
+    "class_code": 1.62
+  },
+  {
+    "section_code": "A",
+    "name": "Післяурожайна діяльність",
+    "partition_code": 1.0,
+    "group_code": 1.6,
+    "class_code": 1.63
+  },
+  {
+    "section_code": "A",
+    "name": "Оброблення насіння для відтворення",
+    "partition_code": 1.0,
+    "group_code": 1.6,
+    "class_code": 1.64
+  },
+  {
+    "section_code": "A",
+    "name": "Мисливство, відловлювання тварин і надання пов'язаних із ними послуг",
+    "partition_code": 1.0,
+    "group_code": 1.7,
+    "class_code": null
+  },
+  {
+    "section_code": "A",
+    "name": "Мисливство, відловлювання тварин і надання пов'язаних із ними послуг",
+    "partition_code": 1.0,
+    "group_code": 1.7,
+    "class_code": 1.7
+  },
+  {
+    "section_code": "A",
+    "name": "Лісове господарство та лісозаготівлі",
+    "partition_code": 2.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "A",
+    "name": "Лісівництво та інша діяльність у лісовому господарстві",
+    "partition_code": 2.0,
+    "group_code": 2.1,
+    "class_code": null
+  },
+  {
+    "section_code": "A",
+    "name": "Лісівництво та інша діяльність у лісовому господарстві",
+    "partition_code": 2.0,
+    "group_code": 2.1,
+    "class_code": 2.1
+  },
+  {
+    "section_code": "A",
+    "name": "Лісозаготівлі",
+    "partition_code": 2.0,
+    "group_code": 2.2,
+    "class_code": null
+  },
+  {
+    "section_code": "A",
+    "name": "Лісозаготівлі",
+    "partition_code": 2.0,
+    "group_code": 2.2,
+    "class_code": 2.2
+  },
+  {
+    "section_code": "A",
+    "name": "Збирання дикорослих недеревних продуктів",
+    "partition_code": 2.0,
+    "group_code": 2.3,
+    "class_code": null
+  },
+  {
+    "section_code": "A",
+    "name": "Збирання дикорослих недеревних продуктів",
+    "partition_code": 2.0,
+    "group_code": 2.3,
+    "class_code": 2.3
+  },
+  {
+    "section_code": "A",
+    "name": "Надання допоміжних послуг у лісовому господарстві",
+    "partition_code": 2.0,
+    "group_code": 2.4,
+    "class_code": null
+  },
+  {
+    "section_code": "A",
+    "name": "Надання допоміжних послуг у лісовому господарстві",
+    "partition_code": 2.0,
+    "group_code": 2.4,
+    "class_code": 2.4
+  },
+  {
+    "section_code": "A",
+    "name": "Рибне господарство",
+    "partition_code": 3.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "A",
+    "name": "Рибальство",
+    "partition_code": 3.0,
+    "group_code": 3.1,
+    "class_code": null
+  },
+  {
+    "section_code": "A",
+    "name": "Морське рибальство",
+    "partition_code": 3.0,
+    "group_code": 3.1,
+    "class_code": 3.11
+  },
+  {
+    "section_code": "A",
+    "name": "Прісноводне рибальство",
+    "partition_code": 3.0,
+    "group_code": 3.1,
+    "class_code": 3.12
+  },
+  {
+    "section_code": "A",
+    "name": "Рибництво (аквакультура)",
+    "partition_code": 3.0,
+    "group_code": 3.2,
+    "class_code": null
+  },
+  {
+    "section_code": "A",
+    "name": "Морське рибництво (аквакультура)",
+    "partition_code": 3.0,
+    "group_code": 3.2,
+    "class_code": 3.21
+  },
+  {
+    "section_code": "A",
+    "name": "Прісноводне рибництво (аквакультура)",
+    "partition_code": 3.0,
+    "group_code": 3.2,
+    "class_code": 3.22
+  },
+  {
+    "section_code": "B",
+    "name": "Добувна промисловість і розроблення кар'єрів",
+    "partition_code": null,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "B",
+    "name": "Добування кам'яного та бурого вугілля",
+    "partition_code": 5.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "B",
+    "name": "Добування кам'яного вугілля",
+    "partition_code": 5.0,
+    "group_code": 5.1,
+    "class_code": null
+  },
+  {
+    "section_code": "B",
+    "name": "Добування кам'яного вугілля",
+    "partition_code": 5.0,
+    "group_code": 5.1,
+    "class_code": 5.1
+  },
+  {
+    "section_code": "B",
+    "name": "Добування бурого вугілля",
+    "partition_code": 5.0,
+    "group_code": 5.2,
+    "class_code": null
+  },
+  {
+    "section_code": "B",
+    "name": "Добування бурого вугілля",
+    "partition_code": 5.0,
+    "group_code": 5.2,
+    "class_code": 5.2
+  },
+  {
+    "section_code": "B",
+    "name": "Добування сирої нафти та природного газу",
+    "partition_code": 6.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "B",
+    "name": "Добування сирої нафти",
+    "partition_code": 6.0,
+    "group_code": 6.1,
+    "class_code": null
+  },
+  {
+    "section_code": "B",
+    "name": "Добування сирої нафти",
+    "partition_code": 6.0,
+    "group_code": 6.1,
+    "class_code": 6.1
+  },
+  {
+    "section_code": "B",
+    "name": "Добування природного газу",
+    "partition_code": 6.0,
+    "group_code": 6.2,
+    "class_code": null
+  },
+  {
+    "section_code": "B",
+    "name": "Добування природного газу",
+    "partition_code": 6.0,
+    "group_code": 6.2,
+    "class_code": 6.2
+  },
+  {
+    "section_code": "B",
+    "name": "Добування металевих руд",
+    "partition_code": 7.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "B",
+    "name": "Добування залізних руд",
+    "partition_code": 7.0,
+    "group_code": 7.1,
+    "class_code": null
+  },
+  {
+    "section_code": "B",
+    "name": "Добування залізних руд",
+    "partition_code": 7.0,
+    "group_code": 7.1,
+    "class_code": 7.1
+  },
+  {
+    "section_code": "B",
+    "name": "Добування руд кольорових металів",
+    "partition_code": 7.0,
+    "group_code": 7.2,
+    "class_code": null
+  },
+  {
+    "section_code": "B",
+    "name": "Добування уранових і торієвих руд",
+    "partition_code": 7.0,
+    "group_code": 7.2,
+    "class_code": 7.21
+  },
+  {
+    "section_code": "B",
+    "name": "Добування руд інших кольорових металів",
+    "partition_code": 7.0,
+    "group_code": 7.2,
+    "class_code": 7.29
+  },
+  {
+    "section_code": "B",
+    "name": "Добування інших корисних копалин та розроблення кар'єрів",
+    "partition_code": 8.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "B",
+    "name": "Добування каменю, піску та глини",
+    "partition_code": 8.0,
+    "group_code": 8.1,
+    "class_code": null
+  },
+  {
+    "section_code": "B",
+    "name": "Добування декоративного та будівельного каменю, вапняку, гіпсу, крейди та глинистого сланцю",
+    "partition_code": 8.0,
+    "group_code": 8.1,
+    "class_code": 8.11
+  },
+  {
+    "section_code": "B",
+    "name": "Добування піску, гравію, глин і каоліну",
+    "partition_code": 8.0,
+    "group_code": 8.1,
+    "class_code": 8.12
+  },
+  {
+    "section_code": "B",
+    "name": "Добування корисних копалин та розроблення кар'єрів, н.в.і.у.",
+    "partition_code": 8.0,
+    "group_code": 8.9,
+    "class_code": null
+  },
+  {
+    "section_code": "B",
+    "name": "Добування мінеральної сировини для хімічної промисловості та виробництва мінеральних добрив",
+    "partition_code": 8.0,
+    "group_code": 8.9,
+    "class_code": 8.91
+  },
+  {
+    "section_code": "B",
+    "name": "Добування торфу",
+    "partition_code": 8.0,
+    "group_code": 8.9,
+    "class_code": 8.92
+  },
+  {
+    "section_code": "B",
+    "name": "Добування солі",
+    "partition_code": 8.0,
+    "group_code": 8.9,
+    "class_code": 8.93
+  },
+  {
+    "section_code": "B",
+    "name": "Добування інших корисних копалин та розроблення кар'єрів, н.в.і.у.",
+    "partition_code": 8.0,
+    "group_code": 8.9,
+    "class_code": 8.99
+  },
+  {
+    "section_code": "B",
+    "name": "Надання допоміжних послуг у сфері добувної промисловості та розроблення кар'єрів",
+    "partition_code": 9.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "B",
+    "name": "Надання допоміжних послуг у сфері добування нафти та природного газу",
+    "partition_code": 9.0,
+    "group_code": 9.1,
+    "class_code": null
+  },
+  {
+    "section_code": "B",
+    "name": "Надання допоміжних послуг у сфері добування нафти та природного газу",
+    "partition_code": 9.0,
+    "group_code": 9.1,
+    "class_code": 9.1
+  },
+  {
+    "section_code": "B",
+    "name": "Надання допоміжних послуг у сфері добування інших корисних копалин та розроблення кар'єрів",
+    "partition_code": 9.0,
+    "group_code": 9.9,
+    "class_code": null
+  },
+  {
+    "section_code": "B",
+    "name": "Надання допоміжних послуг у сфері добування інших корисних копалин та розроблення кар'єрів",
+    "partition_code": 9.0,
+    "group_code": 9.9,
+    "class_code": 9.9
+  },
+  {
+    "section_code": "C",
+    "name": "Переробна промисловість",
+    "partition_code": null,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво харчових продуктів",
+    "partition_code": 10.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво м'яса та м'ясних продуктів",
+    "partition_code": 10.0,
+    "group_code": 10.1,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво м'яса",
+    "partition_code": 10.0,
+    "group_code": 10.1,
+    "class_code": 10.11
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво м'яса свійської птиці",
+    "partition_code": 10.0,
+    "group_code": 10.1,
+    "class_code": 10.12
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво м'ясних продуктів",
+    "partition_code": 10.0,
+    "group_code": 10.1,
+    "class_code": 10.13
+  },
+  {
+    "section_code": "C",
+    "name": "Перероблення та консервування риби, ракоподібних і молюсків",
+    "partition_code": 10.0,
+    "group_code": 10.2,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Перероблення та консервування риби, ракоподібних і молюсків",
+    "partition_code": 10.0,
+    "group_code": 10.2,
+    "class_code": 10.2
+  },
+  {
+    "section_code": "C",
+    "name": "Перероблення та консервування фруктів і овочів",
+    "partition_code": 10.0,
+    "group_code": 10.3,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Перероблення та консервування картоплі",
+    "partition_code": 10.0,
+    "group_code": 10.3,
+    "class_code": 10.31
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво фруктових і овочевих соків",
+    "partition_code": 10.0,
+    "group_code": 10.3,
+    "class_code": 10.32
+  },
+  {
+    "section_code": "C",
+    "name": "Інші види перероблення та консервування фруктів і овочів",
+    "partition_code": 10.0,
+    "group_code": 10.3,
+    "class_code": 10.39
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво олії та тваринних жирів",
+    "partition_code": 10.0,
+    "group_code": 10.4,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво олії та тваринних жирів",
+    "partition_code": 10.0,
+    "group_code": 10.4,
+    "class_code": 10.41
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво маргарину і подібних харчових жирів",
+    "partition_code": 10.0,
+    "group_code": 10.4,
+    "class_code": 10.42
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво молочних продуктів",
+    "partition_code": 10.0,
+    "group_code": 10.5,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Перероблення молока, виробництво масла та сиру",
+    "partition_code": 10.0,
+    "group_code": 10.5,
+    "class_code": 10.51
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво морозива",
+    "partition_code": 10.0,
+    "group_code": 10.5,
+    "class_code": 10.52
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво продуктів борошномельно-круп'яної промисловості, крохмалів та крохмальних продуктів",
+    "partition_code": 10.0,
+    "group_code": 10.6,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво продуктів борошномельно-круп'яної промисловості",
+    "partition_code": 10.0,
+    "group_code": 10.6,
+    "class_code": 10.61
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво крохмалів і крохмальних продуктів",
+    "partition_code": 10.0,
+    "group_code": 10.6,
+    "class_code": 10.62
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво хліба, хлібобулочних і борошняних виробів",
+    "partition_code": 10.0,
+    "group_code": 10.7,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво хліба та хлібобулочних виробів; виробництво борошняних кондитерських виробів, тортів і тістечок нетривалого зберігання",
+    "partition_code": 10.0,
+    "group_code": 10.7,
+    "class_code": 10.71
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво сухарів і сухого печива; виробництво борошняних кондитерських виробів, тортів і тістечок тривалого зберігання",
+    "partition_code": 10.0,
+    "group_code": 10.7,
+    "class_code": 10.72
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво макаронних виробів і подібних борошняних виробів",
+    "partition_code": 10.0,
+    "group_code": 10.7,
+    "class_code": 10.73
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво інших харчових продуктів",
+    "partition_code": 10.0,
+    "group_code": 10.8,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво цукру",
+    "partition_code": 10.0,
+    "group_code": 10.8,
+    "class_code": 10.81
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво какао, шоколаду та цукрових кондитерських виробів",
+    "partition_code": 10.0,
+    "group_code": 10.8,
+    "class_code": 10.82
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво чаю та кави",
+    "partition_code": 10.0,
+    "group_code": 10.8,
+    "class_code": 10.83
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво прянощів і приправ",
+    "partition_code": 10.0,
+    "group_code": 10.8,
+    "class_code": 10.84
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво готової їжі та страв",
+    "partition_code": 10.0,
+    "group_code": 10.8,
+    "class_code": 10.85
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво дитячого харчування та дієтичних харчових продуктів",
+    "partition_code": 10.0,
+    "group_code": 10.8,
+    "class_code": 10.86
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво інших харчових продуктів, н.в.і.у.",
+    "partition_code": 10.0,
+    "group_code": 10.8,
+    "class_code": 10.89
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво готових кормів для тварин",
+    "partition_code": 10.0,
+    "group_code": 10.9,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво готових кормів для тварин, що утримуються на фермах",
+    "partition_code": 10.0,
+    "group_code": 10.9,
+    "class_code": 10.91
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво готових кормів для домашніх тварин",
+    "partition_code": 10.0,
+    "group_code": 10.9,
+    "class_code": 10.92
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво напоїв",
+    "partition_code": 11.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво напоїв",
+    "partition_code": 11.0,
+    "group_code": 11.0,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Дистиляція, ректифікація та змішування спиртних напоїв",
+    "partition_code": 11.0,
+    "group_code": 11.0,
+    "class_code": 11.01
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво виноградних вин",
+    "partition_code": 11.0,
+    "group_code": 11.0,
+    "class_code": 11.02
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво сидру та інших плодово-ягідних вин",
+    "partition_code": 11.0,
+    "group_code": 11.0,
+    "class_code": 11.03
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво інших недистильованих напоїв із зброджуваних продуктів",
+    "partition_code": 11.0,
+    "group_code": 11.0,
+    "class_code": 11.04
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво пива",
+    "partition_code": 11.0,
+    "group_code": 11.0,
+    "class_code": 11.05
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво солоду",
+    "partition_code": 11.0,
+    "group_code": 11.0,
+    "class_code": 11.06
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво безалкогольних напоїв; виробництво мінеральних вод та інших вод, розлитих у пляшки",
+    "partition_code": 11.0,
+    "group_code": 11.0,
+    "class_code": 11.07
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво тютюнових виробів",
+    "partition_code": 12.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво тютюнових виробів",
+    "partition_code": 12.0,
+    "group_code": 12.0,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво тютюнових виробів",
+    "partition_code": 12.0,
+    "group_code": 12.0,
+    "class_code": 12.0
+  },
+  {
+    "section_code": "C",
+    "name": "Текстильне виробництво",
+    "partition_code": 13.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Підготування та прядіння текстильних волокон",
+    "partition_code": 13.0,
+    "group_code": 13.1,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Підготування та прядіння текстильних волокон",
+    "partition_code": 13.0,
+    "group_code": 13.1,
+    "class_code": 13.1
+  },
+  {
+    "section_code": "C",
+    "name": "Ткацьке виробництво",
+    "partition_code": 13.0,
+    "group_code": 13.2,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Ткацьке виробництво",
+    "partition_code": 13.0,
+    "group_code": 13.2,
+    "class_code": 13.2
+  },
+  {
+    "section_code": "C",
+    "name": "Оздоблення текстильних виробів",
+    "partition_code": 13.0,
+    "group_code": 13.3,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Оздоблення текстильних виробів",
+    "partition_code": 13.0,
+    "group_code": 13.3,
+    "class_code": 13.3
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво інших текстильних виробів",
+    "partition_code": 13.0,
+    "group_code": 13.9,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво трикотажного полотна",
+    "partition_code": 13.0,
+    "group_code": 13.9,
+    "class_code": 13.91
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво готових текстильних виробів, крім одягу",
+    "partition_code": 13.0,
+    "group_code": 13.9,
+    "class_code": 13.92
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво килимів і килимових виробів",
+    "partition_code": 13.0,
+    "group_code": 13.9,
+    "class_code": 13.93
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво канатів, мотузок, шпагату та сіток",
+    "partition_code": 13.0,
+    "group_code": 13.9,
+    "class_code": 13.94
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво нетканих текстильних матеріалів і виробів із них, крім одягу",
+    "partition_code": 13.0,
+    "group_code": 13.9,
+    "class_code": 13.95
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво інших текстильних виробів технічного та промислового призначення",
+    "partition_code": 13.0,
+    "group_code": 13.9,
+    "class_code": 13.96
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво інших текстильних виробів, н.в.і.у.",
+    "partition_code": 13.0,
+    "group_code": 13.9,
+    "class_code": 13.99
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво одягу",
+    "partition_code": 14.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво одягу, крім хутряного",
+    "partition_code": 14.0,
+    "group_code": 14.1,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво одягу зі шкіри",
+    "partition_code": 14.0,
+    "group_code": 14.1,
+    "class_code": 14.11
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво робочого одягу",
+    "partition_code": 14.0,
+    "group_code": 14.1,
+    "class_code": 14.12
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво іншого верхнього одягу",
+    "partition_code": 14.0,
+    "group_code": 14.1,
+    "class_code": 14.13
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво спіднього одягу",
+    "partition_code": 14.0,
+    "group_code": 14.1,
+    "class_code": 14.14
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво іншого одягу й аксесуарів",
+    "partition_code": 14.0,
+    "group_code": 14.1,
+    "class_code": 14.19
+  },
+  {
+    "section_code": "C",
+    "name": "Виготовлення виробів із хутра",
+    "partition_code": 14.0,
+    "group_code": 14.2,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виготовлення виробів із хутра",
+    "partition_code": 14.0,
+    "group_code": 14.2,
+    "class_code": 14.2
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво трикотажного та в'язаного одягу",
+    "partition_code": 14.0,
+    "group_code": 14.3,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво панчішно-шкарпеткових виробів",
+    "partition_code": 14.0,
+    "group_code": 14.3,
+    "class_code": 14.31
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво іншого трикотажного та в'язаного одягу",
+    "partition_code": 14.0,
+    "group_code": 14.3,
+    "class_code": 14.39
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво шкіри, виробів зі шкіри та інших матеріалів",
+    "partition_code": 15.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Дублення шкур і оздоблення шкіри; виробництво дорожніх виробів, сумок, лимарно-сідельних виробів; вичинка та фарбування хутра",
+    "partition_code": 15.0,
+    "group_code": 15.1,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Дублення шкур і оздоблення шкіри; вичинка та фарбування хутра",
+    "partition_code": 15.0,
+    "group_code": 15.1,
+    "class_code": 15.11
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво дорожніх виробів, сумок, лимарно-сідельних виробів зі шкіри та інших матеріалів",
+    "partition_code": 15.0,
+    "group_code": 15.1,
+    "class_code": 15.12
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво взуття",
+    "partition_code": 15.0,
+    "group_code": 15.2,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво взуття",
+    "partition_code": 15.0,
+    "group_code": 15.2,
+    "class_code": 15.2
+  },
+  {
+    "section_code": "C",
+    "name": "Оброблення деревини та виготовлення виробів з деревини та корка, крім меблів; виготовлення виробів із соломки та рослинних матеріалів для плетіння",
+    "partition_code": 16.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Лісопильне та стругальне виробництво",
+    "partition_code": 16.0,
+    "group_code": 16.1,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Лісопильне та стругальне виробництво",
+    "partition_code": 16.0,
+    "group_code": 16.1,
+    "class_code": 16.1
+  },
+  {
+    "section_code": "C",
+    "name": "Виготовлення виробів з деревини, корка, соломки та рослинних матеріалів для плетіння",
+    "partition_code": 16.0,
+    "group_code": 16.2,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво фанери, дерев'яних плит і панелей, шпону",
+    "partition_code": 16.0,
+    "group_code": 16.2,
+    "class_code": 16.21
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво щитового паркету",
+    "partition_code": 16.0,
+    "group_code": 16.2,
+    "class_code": 16.22
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво інших дерев'яних будівельних конструкцій і столярних виробів",
+    "partition_code": 16.0,
+    "group_code": 16.2,
+    "class_code": 16.23
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво дерев'яної тари",
+    "partition_code": 16.0,
+    "group_code": 16.2,
+    "class_code": 16.24
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво інших виробів з деревини; виготовлення виробів з корка, соломки та рослинних матеріалів для плетіння",
+    "partition_code": 16.0,
+    "group_code": 16.2,
+    "class_code": 16.29
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво паперу та паперових виробів",
+    "partition_code": 17.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво паперової маси, паперу та картону",
+    "partition_code": 17.0,
+    "group_code": 17.1,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво паперової маси",
+    "partition_code": 17.0,
+    "group_code": 17.1,
+    "class_code": 17.11
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво паперу та картону",
+    "partition_code": 17.0,
+    "group_code": 17.1,
+    "class_code": 17.12
+  },
+  {
+    "section_code": "C",
+    "name": "Виготовлення виробів з паперу та картону",
+    "partition_code": 17.0,
+    "group_code": 17.2,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво гофрованого паперу та картону, паперової та картонної тари",
+    "partition_code": 17.0,
+    "group_code": 17.2,
+    "class_code": 17.21
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво паперових виробів господарсько-побутового та санітарно-гігієнічного призначення",
+    "partition_code": 17.0,
+    "group_code": 17.2,
+    "class_code": 17.22
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво паперових канцелярських виробів",
+    "partition_code": 17.0,
+    "group_code": 17.2,
+    "class_code": 17.23
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво шпалер",
+    "partition_code": 17.0,
+    "group_code": 17.2,
+    "class_code": 17.24
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво інших виробів з паперу та картону",
+    "partition_code": 17.0,
+    "group_code": 17.2,
+    "class_code": 17.29
+  },
+  {
+    "section_code": "C",
+    "name": "Поліграфічна діяльність, тиражування записаної інформації",
+    "partition_code": 18.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Поліграфічна діяльність і надання пов'язаних із нею послуг",
+    "partition_code": 18.0,
+    "group_code": 18.1,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Друкування газет",
+    "partition_code": 18.0,
+    "group_code": 18.1,
+    "class_code": 18.11
+  },
+  {
+    "section_code": "C",
+    "name": "Друкування іншої продукції",
+    "partition_code": 18.0,
+    "group_code": 18.1,
+    "class_code": 18.12
+  },
+  {
+    "section_code": "C",
+    "name": "Виготовлення друкарських форм і надання інших поліграфічних послуг",
+    "partition_code": 18.0,
+    "group_code": 18.1,
+    "class_code": 18.13
+  },
+  {
+    "section_code": "C",
+    "name": "Брошурувально-палітурна діяльність і надання пов'язаних із нею послуг",
+    "partition_code": 18.0,
+    "group_code": 18.1,
+    "class_code": 18.14
+  },
+  {
+    "section_code": "C",
+    "name": "Тиражування звуко-, відеозаписів і програмного забезпечення",
+    "partition_code": 18.0,
+    "group_code": 18.2,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Тиражування звуко-, відеозаписів і програмного забезпечення",
+    "partition_code": 18.0,
+    "group_code": 18.2,
+    "class_code": 18.2
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво коксу та продуктів нафтоперероблення",
+    "partition_code": 19.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво коксу та коксопродуктів",
+    "partition_code": 19.0,
+    "group_code": 19.1,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво коксу та коксопродуктів",
+    "partition_code": 19.0,
+    "group_code": 19.1,
+    "class_code": 19.1
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво продуктів нафтоперероблення",
+    "partition_code": 19.0,
+    "group_code": 19.2,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво продуктів нафтоперероблення",
+    "partition_code": 19.0,
+    "group_code": 19.2,
+    "class_code": 19.2
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво хімічних речовин і хімічної продукції",
+    "partition_code": 20.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво основної хімічної продукції, добрив і азотних сполук, пластмас і синтетичного каучуку в первинних формах",
+    "partition_code": 20.0,
+    "group_code": 20.1,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво промислових газів",
+    "partition_code": 20.0,
+    "group_code": 20.1,
+    "class_code": 20.11
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво барвників і пігментів",
+    "partition_code": 20.0,
+    "group_code": 20.1,
+    "class_code": 20.12
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво інших основних неорганічних хімічних речовин",
+    "partition_code": 20.0,
+    "group_code": 20.1,
+    "class_code": 20.13
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво інших основних органічних хімічних речовин",
+    "partition_code": 20.0,
+    "group_code": 20.1,
+    "class_code": 20.14
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво добрив і азотних сполук",
+    "partition_code": 20.0,
+    "group_code": 20.1,
+    "class_code": 20.15
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво пластмас у первинних формах",
+    "partition_code": 20.0,
+    "group_code": 20.1,
+    "class_code": 20.16
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво синтетичного каучуку в первинних формах",
+    "partition_code": 20.0,
+    "group_code": 20.1,
+    "class_code": 20.17
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво пестицидів та іншої агрохімічної продукції",
+    "partition_code": 20.0,
+    "group_code": 20.2,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво пестицидів та іншої агрохімічної продукції",
+    "partition_code": 20.0,
+    "group_code": 20.2,
+    "class_code": 20.2
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво фарб, лаків і подібної продукції, друкарської фарби та мастик",
+    "partition_code": 20.0,
+    "group_code": 20.3,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво фарб, лаків і подібної продукції, друкарської фарби та мастик",
+    "partition_code": 20.0,
+    "group_code": 20.3,
+    "class_code": 20.3
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво мила та мийних засобів, засобів для чищення та полірування, парфумних і косметичних засобів",
+    "partition_code": 20.0,
+    "group_code": 20.4,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво мила та мийних засобів, засобів для чищення та полірування",
+    "partition_code": 20.0,
+    "group_code": 20.4,
+    "class_code": 20.41
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво парфумних і косметичних засобів",
+    "partition_code": 20.0,
+    "group_code": 20.4,
+    "class_code": 20.42
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво іншої хімічної продукції",
+    "partition_code": 20.0,
+    "group_code": 20.5,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво вибухових речовин",
+    "partition_code": 20.0,
+    "group_code": 20.5,
+    "class_code": 20.51
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво клеїв",
+    "partition_code": 20.0,
+    "group_code": 20.5,
+    "class_code": 20.52
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво ефірних олій",
+    "partition_code": 20.0,
+    "group_code": 20.5,
+    "class_code": 20.53
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво іншої хімічної продукції, н.в.і.у.",
+    "partition_code": 20.0,
+    "group_code": 20.5,
+    "class_code": 20.59
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво штучних і синтетичних волокон",
+    "partition_code": 20.0,
+    "group_code": 20.6,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво штучних і синтетичних волокон",
+    "partition_code": 20.0,
+    "group_code": 20.6,
+    "class_code": 20.6
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво основних фармацевтичних продуктів і фармацевтичних препаратів",
+    "partition_code": 21.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво основних фармацевтичних продуктів",
+    "partition_code": 21.0,
+    "group_code": 21.1,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво основних фармацевтичних продуктів",
+    "partition_code": 21.0,
+    "group_code": 21.1,
+    "class_code": 21.1
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво фармацевтичних препаратів і матеріалів",
+    "partition_code": 21.0,
+    "group_code": 21.2,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво фармацевтичних препаратів і матеріалів",
+    "partition_code": 21.0,
+    "group_code": 21.2,
+    "class_code": 21.2
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво гумових і пластмасових виробів",
+    "partition_code": 22.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво гумових виробів",
+    "partition_code": 22.0,
+    "group_code": 22.1,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво гумових шин, покришок і камер; відновлення протектора гумових шин і покришок",
+    "partition_code": 22.0,
+    "group_code": 22.1,
+    "class_code": 22.11
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво інших гумових виробів",
+    "partition_code": 22.0,
+    "group_code": 22.1,
+    "class_code": 22.19
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво пластмасових виробів",
+    "partition_code": 22.0,
+    "group_code": 22.2,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво плит, листів, труб і профілів із пластмас",
+    "partition_code": 22.0,
+    "group_code": 22.2,
+    "class_code": 22.21
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво тари з пластмас",
+    "partition_code": 22.0,
+    "group_code": 22.2,
+    "class_code": 22.22
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво будівельних виробів із пластмас",
+    "partition_code": 22.0,
+    "group_code": 22.2,
+    "class_code": 22.23
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво інших виробів із пластмас",
+    "partition_code": 22.0,
+    "group_code": 22.2,
+    "class_code": 22.29
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво іншої неметалевої мінеральної продукції",
+    "partition_code": 23.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво скла та виробів зі скла",
+    "partition_code": 23.0,
+    "group_code": 23.1,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво листового скла",
+    "partition_code": 23.0,
+    "group_code": 23.1,
+    "class_code": 23.11
+  },
+  {
+    "section_code": "C",
+    "name": "Формування й оброблення листового скла",
+    "partition_code": 23.0,
+    "group_code": 23.1,
+    "class_code": 23.12
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво порожнистого скла",
+    "partition_code": 23.0,
+    "group_code": 23.1,
+    "class_code": 23.13
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво скловолокна",
+    "partition_code": 23.0,
+    "group_code": 23.1,
+    "class_code": 23.14
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво й оброблення інших скляних виробів, у тому числі технічних",
+    "partition_code": 23.0,
+    "group_code": 23.1,
+    "class_code": 23.19
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво вогнетривких виробів",
+    "partition_code": 23.0,
+    "group_code": 23.2,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво вогнетривких виробів",
+    "partition_code": 23.0,
+    "group_code": 23.2,
+    "class_code": 23.2
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво будівельних матеріалів із глини",
+    "partition_code": 23.0,
+    "group_code": 23.3,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво керамічних плиток і плит",
+    "partition_code": 23.0,
+    "group_code": 23.3,
+    "class_code": 23.31
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво цегли, черепиці та інших будівельних виробів із випаленої глини",
+    "partition_code": 23.0,
+    "group_code": 23.3,
+    "class_code": 23.32
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво іншої продукції з фарфору та кераміки",
+    "partition_code": 23.0,
+    "group_code": 23.4,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво господарських і декоративних керамічних виробів",
+    "partition_code": 23.0,
+    "group_code": 23.4,
+    "class_code": 23.41
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво керамічних санітарно-технічних виробів",
+    "partition_code": 23.0,
+    "group_code": 23.4,
+    "class_code": 23.42
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво керамічних електроізоляторів та ізоляційної арматури",
+    "partition_code": 23.0,
+    "group_code": 23.4,
+    "class_code": 23.43
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво інших керамічних виробів технічного призначення",
+    "partition_code": 23.0,
+    "group_code": 23.4,
+    "class_code": 23.44
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво інших керамічних виробів",
+    "partition_code": 23.0,
+    "group_code": 23.4,
+    "class_code": 23.49
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво цементу, вапна та гіпсових сумішей",
+    "partition_code": 23.0,
+    "group_code": 23.5,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво цементу",
+    "partition_code": 23.0,
+    "group_code": 23.5,
+    "class_code": 23.51
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво вапна та гіпсових сумішей",
+    "partition_code": 23.0,
+    "group_code": 23.5,
+    "class_code": 23.52
+  },
+  {
+    "section_code": "C",
+    "name": "Виготовлення виробів із бетону, гіпсу та цементу",
+    "partition_code": 23.0,
+    "group_code": 23.6,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виготовлення виробів із бетону для будівництва",
+    "partition_code": 23.0,
+    "group_code": 23.6,
+    "class_code": 23.61
+  },
+  {
+    "section_code": "C",
+    "name": "Виготовлення виробів із гіпсу для будівництва",
+    "partition_code": 23.0,
+    "group_code": 23.6,
+    "class_code": 23.62
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво бетонних розчинів, готових для використання",
+    "partition_code": 23.0,
+    "group_code": 23.6,
+    "class_code": 23.63
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво сухих будівельних сумішей",
+    "partition_code": 23.0,
+    "group_code": 23.6,
+    "class_code": 23.64
+  },
+  {
+    "section_code": "C",
+    "name": "Виготовлення виробів із волокнистого цементу",
+    "partition_code": 23.0,
+    "group_code": 23.6,
+    "class_code": 23.65
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво інших виробів із бетону, гіпсу та цементу",
+    "partition_code": 23.0,
+    "group_code": 23.6,
+    "class_code": 23.69
+  },
+  {
+    "section_code": "C",
+    "name": "Різання, оброблення та оздоблення декоративного та будівельного каменю",
+    "partition_code": 23.0,
+    "group_code": 23.7,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Різання, оброблення та оздоблення декоративного та будівельного каменю",
+    "partition_code": 23.0,
+    "group_code": 23.7,
+    "class_code": 23.7
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво абразивних виробів і неметалевих мінеральних виробів, н.в.і.у.",
+    "partition_code": 23.0,
+    "group_code": 23.9,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво абразивних виробів",
+    "partition_code": 23.0,
+    "group_code": 23.9,
+    "class_code": 23.91
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво неметалевих мінеральних виробів, н.в.і.у.",
+    "partition_code": 23.0,
+    "group_code": 23.9,
+    "class_code": 23.99
+  },
+  {
+    "section_code": "C",
+    "name": "Металургійне виробництво",
+    "partition_code": 24.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво чавуну, сталі та феросплавів",
+    "partition_code": 24.0,
+    "group_code": 24.1,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво чавуну, сталі та феросплавів",
+    "partition_code": 24.0,
+    "group_code": 24.1,
+    "class_code": 24.1
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво труб, порожнистих профілів і фітингів зі сталі",
+    "partition_code": 24.0,
+    "group_code": 24.2,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво труб, порожнистих профілів і фітингів зі сталі",
+    "partition_code": 24.0,
+    "group_code": 24.2,
+    "class_code": 24.2
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво іншої продукції первинного оброблення сталі",
+    "partition_code": 24.0,
+    "group_code": 24.3,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Холодне волочіння прутків і профілів",
+    "partition_code": 24.0,
+    "group_code": 24.3,
+    "class_code": 24.31
+  },
+  {
+    "section_code": "C",
+    "name": "Холодний прокат вузької штаби",
+    "partition_code": 24.0,
+    "group_code": 24.3,
+    "class_code": 24.32
+  },
+  {
+    "section_code": "C",
+    "name": "Холодне штампування та гнуття",
+    "partition_code": 24.0,
+    "group_code": 24.3,
+    "class_code": 24.33
+  },
+  {
+    "section_code": "C",
+    "name": "Холодне волочіння дроту",
+    "partition_code": 24.0,
+    "group_code": 24.3,
+    "class_code": 24.34
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво дорогоцінних та інших кольорових металів",
+    "partition_code": 24.0,
+    "group_code": 24.4,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво дорогоцінних металів",
+    "partition_code": 24.0,
+    "group_code": 24.4,
+    "class_code": 24.41
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво алюмінію",
+    "partition_code": 24.0,
+    "group_code": 24.4,
+    "class_code": 24.42
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво свинцю, цинку й олова",
+    "partition_code": 24.0,
+    "group_code": 24.4,
+    "class_code": 24.43
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво міді",
+    "partition_code": 24.0,
+    "group_code": 24.4,
+    "class_code": 24.44
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво інших кольорових металів",
+    "partition_code": 24.0,
+    "group_code": 24.4,
+    "class_code": 24.45
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво ядерних матеріалів",
+    "partition_code": 24.0,
+    "group_code": 24.4,
+    "class_code": 24.46
+  },
+  {
+    "section_code": "C",
+    "name": "Лиття металів",
+    "partition_code": 24.0,
+    "group_code": 24.5,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Лиття чавуну",
+    "partition_code": 24.0,
+    "group_code": 24.5,
+    "class_code": 24.51
+  },
+  {
+    "section_code": "C",
+    "name": "Лиття сталі",
+    "partition_code": 24.0,
+    "group_code": 24.5,
+    "class_code": 24.52
+  },
+  {
+    "section_code": "C",
+    "name": "Лиття легких кольорових металів",
+    "partition_code": 24.0,
+    "group_code": 24.5,
+    "class_code": 24.53
+  },
+  {
+    "section_code": "C",
+    "name": "Лиття інших кольорових металів",
+    "partition_code": 24.0,
+    "group_code": 24.5,
+    "class_code": 24.54
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво готових металевих виробів, крім машин і устатковання",
+    "partition_code": 25.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво будівельних металевих конструкцій і виробів",
+    "partition_code": 25.0,
+    "group_code": 25.1,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво будівельних металевих конструкцій і частин конструкцій",
+    "partition_code": 25.0,
+    "group_code": 25.1,
+    "class_code": 25.11
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво металевих дверей і вікон",
+    "partition_code": 25.0,
+    "group_code": 25.1,
+    "class_code": 25.12
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво металевих баків, резервуарів і контейнерів",
+    "partition_code": 25.0,
+    "group_code": 25.2,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво радіаторів і котлів центрального опалення",
+    "partition_code": 25.0,
+    "group_code": 25.2,
+    "class_code": 25.21
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво інших металевих баків, резервуарів і контейнерів",
+    "partition_code": 25.0,
+    "group_code": 25.2,
+    "class_code": 25.29
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво парових котлів, крім котлів центрального опалення",
+    "partition_code": 25.0,
+    "group_code": 25.3,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво парових котлів, крім котлів центрального опалення",
+    "partition_code": 25.0,
+    "group_code": 25.3,
+    "class_code": 25.3
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво зброї та боєприпасів",
+    "partition_code": 25.0,
+    "group_code": 25.4,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво зброї та боєприпасів",
+    "partition_code": 25.0,
+    "group_code": 25.4,
+    "class_code": 25.4
+  },
+  {
+    "section_code": "C",
+    "name": "Кування, пресування, штампування, профілювання; порошкова металургія",
+    "partition_code": 25.0,
+    "group_code": 25.5,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Кування, пресування, штампування, профілювання; порошкова металургія",
+    "partition_code": 25.0,
+    "group_code": 25.5,
+    "class_code": 25.5
+  },
+  {
+    "section_code": "C",
+    "name": "Оброблення металів та нанесення покриття на метали; механічне оброблення металевих виробів",
+    "partition_code": 25.0,
+    "group_code": 25.6,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Оброблення металів та нанесення покриття на метали",
+    "partition_code": 25.0,
+    "group_code": 25.6,
+    "class_code": 25.61
+  },
+  {
+    "section_code": "C",
+    "name": "Механічне оброблення металевих виробів",
+    "partition_code": 25.0,
+    "group_code": 25.6,
+    "class_code": 25.62
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво столових приборів, інструментів і металевих виробів загального призначення",
+    "partition_code": 25.0,
+    "group_code": 25.7,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво столових приборів",
+    "partition_code": 25.0,
+    "group_code": 25.7,
+    "class_code": 25.71
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво замків і дверних петель",
+    "partition_code": 25.0,
+    "group_code": 25.7,
+    "class_code": 25.72
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво інструментів",
+    "partition_code": 25.0,
+    "group_code": 25.7,
+    "class_code": 25.73
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво інших готових металевих виробів",
+    "partition_code": 25.0,
+    "group_code": 25.9,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво сталевих бочок і подібних контейнерів",
+    "partition_code": 25.0,
+    "group_code": 25.9,
+    "class_code": 25.91
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво легких металевих паковань",
+    "partition_code": 25.0,
+    "group_code": 25.9,
+    "class_code": 25.92
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво виробів із дроту, ланцюгів і пружин",
+    "partition_code": 25.0,
+    "group_code": 25.9,
+    "class_code": 25.93
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво кріпильних і ґвинтонарізних виробів",
+    "partition_code": 25.0,
+    "group_code": 25.9,
+    "class_code": 25.94
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво інших готових металевих виробів, н.в.і.у.",
+    "partition_code": 25.0,
+    "group_code": 25.9,
+    "class_code": 25.99
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво комп'ютерів, електронної та оптичної продукції",
+    "partition_code": 26.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво електронних компонентів і плат",
+    "partition_code": 26.0,
+    "group_code": 26.1,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво електронних компонентів",
+    "partition_code": 26.0,
+    "group_code": 26.1,
+    "class_code": 26.11
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво змонтованих електронних плат",
+    "partition_code": 26.0,
+    "group_code": 26.1,
+    "class_code": 26.12
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво комп'ютерів і периферійного устатковання",
+    "partition_code": 26.0,
+    "group_code": 26.2,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво комп'ютерів і периферійного устатковання",
+    "partition_code": 26.0,
+    "group_code": 26.2,
+    "class_code": 26.2
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво обладнання зв'язку",
+    "partition_code": 26.0,
+    "group_code": 26.3,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво обладнання зв'язку",
+    "partition_code": 26.0,
+    "group_code": 26.3,
+    "class_code": 26.3
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво електронної апаратури побутового призначення для приймання, записування та відтворювання звуку й зображення",
+    "partition_code": 26.0,
+    "group_code": 26.4,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво електронної апаратури побутового призначення для приймання, записування та відтворювання звуку й зображення",
+    "partition_code": 26.0,
+    "group_code": 26.4,
+    "class_code": 26.4
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво інструментів і обладнання для вимірювання, дослідження та навігації; виробництво годинників",
+    "partition_code": 26.0,
+    "group_code": 26.5,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво інструментів і обладнання для вимірювання, дослідження та навігації",
+    "partition_code": 26.0,
+    "group_code": 26.5,
+    "class_code": 26.51
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво годинників",
+    "partition_code": 26.0,
+    "group_code": 26.5,
+    "class_code": 26.52
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво радіологічного, електромедичного й електротерапевтичного устатковання",
+    "partition_code": 26.0,
+    "group_code": 26.6,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво радіологічного, електромедичного й електротерапевтичного устатковання",
+    "partition_code": 26.0,
+    "group_code": 26.6,
+    "class_code": 26.6
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво оптичних приладів і фотографічного устатковання",
+    "partition_code": 26.0,
+    "group_code": 26.7,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво оптичних приладів і фотографічного устатковання",
+    "partition_code": 26.0,
+    "group_code": 26.7,
+    "class_code": 26.7
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво магнітних і оптичних носіїв даних",
+    "partition_code": 26.0,
+    "group_code": 26.8,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво магнітних і оптичних носіїв даних",
+    "partition_code": 26.0,
+    "group_code": 26.8,
+    "class_code": 26.8
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво електричного устатковання",
+    "partition_code": 27.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво електродвигунів, генераторів, трансформаторів, електророзподільчої та контрольної апаратури",
+    "partition_code": 27.0,
+    "group_code": 27.1,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво електродвигунів, генераторів і трансформаторів",
+    "partition_code": 27.0,
+    "group_code": 27.1,
+    "class_code": 27.11
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво електророзподільчої та контрольної апаратури",
+    "partition_code": 27.0,
+    "group_code": 27.1,
+    "class_code": 27.12
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво батарей і акумуляторів",
+    "partition_code": 27.0,
+    "group_code": 27.2,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво батарей і акумуляторів",
+    "partition_code": 27.0,
+    "group_code": 27.2,
+    "class_code": 27.2
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво проводів, кабелів і електромонтажних пристроїв",
+    "partition_code": 27.0,
+    "group_code": 27.3,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво волоконно-оптичних кабелів",
+    "partition_code": 27.0,
+    "group_code": 27.3,
+    "class_code": 27.31
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво інших видів електронних і електричних проводів і кабелів",
+    "partition_code": 27.0,
+    "group_code": 27.3,
+    "class_code": 27.32
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво електромонтажних пристроїв",
+    "partition_code": 27.0,
+    "group_code": 27.3,
+    "class_code": 27.33
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво електричного освітлювального устатковання",
+    "partition_code": 27.0,
+    "group_code": 27.4,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво електричного освітлювального устатковання",
+    "partition_code": 27.0,
+    "group_code": 27.4,
+    "class_code": 27.4
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво побутових приладів",
+    "partition_code": 27.0,
+    "group_code": 27.5,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво електричних побутових приладів",
+    "partition_code": 27.0,
+    "group_code": 27.5,
+    "class_code": 27.51
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво неелектричних побутових приладів",
+    "partition_code": 27.0,
+    "group_code": 27.5,
+    "class_code": 27.52
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво іншого електричного устатковання",
+    "partition_code": 27.0,
+    "group_code": 27.9,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво іншого електричного устатковання",
+    "partition_code": 27.0,
+    "group_code": 27.9,
+    "class_code": 27.9
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво машин і устатковання, н.в.і.у.",
+    "partition_code": 28.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво машин і устатковання загального призначення",
+    "partition_code": 28.0,
+    "group_code": 28.1,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво двигунів і турбін, крім авіаційних, автотранспортних і мотоциклетних двигунів",
+    "partition_code": 28.0,
+    "group_code": 28.1,
+    "class_code": 28.11
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво гідравлічного та пневматичного устатковання",
+    "partition_code": 28.0,
+    "group_code": 28.1,
+    "class_code": 28.12
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво інших помп і компресорів",
+    "partition_code": 28.0,
+    "group_code": 28.1,
+    "class_code": 28.13
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво інших кранів і клапанів",
+    "partition_code": 28.0,
+    "group_code": 28.1,
+    "class_code": 28.14
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво підшипників, зубчастих передач, елементів механічних передач і приводів",
+    "partition_code": 28.0,
+    "group_code": 28.1,
+    "class_code": 28.15
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво інших машин і устатковання загального призначення",
+    "partition_code": 28.0,
+    "group_code": 28.2,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво духових шаф, печей і пічних пальників",
+    "partition_code": 28.0,
+    "group_code": 28.2,
+    "class_code": 28.21
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво підіймального та вантажно-розвантажувального устатковання",
+    "partition_code": 28.0,
+    "group_code": 28.2,
+    "class_code": 28.22
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво офісних машин і устатковання, крім комп'ютерів і периферійного устатковання",
+    "partition_code": 28.0,
+    "group_code": 28.2,
+    "class_code": 28.23
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво ручних електромеханічних і пневматичних інструментів",
+    "partition_code": 28.0,
+    "group_code": 28.2,
+    "class_code": 28.24
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво промислового холодильного та вентиляційного устатковання",
+    "partition_code": 28.0,
+    "group_code": 28.2,
+    "class_code": 28.25
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво інших машин і устатковання загального призначення, н.в.і.у.",
+    "partition_code": 28.0,
+    "group_code": 28.2,
+    "class_code": 28.29
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво машин і устатковання для сільського та лісового господарства",
+    "partition_code": 28.0,
+    "group_code": 28.3,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво машин і устатковання для сільського та лісового господарства",
+    "partition_code": 28.0,
+    "group_code": 28.3,
+    "class_code": 28.3
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво металообробних машин і верстатів",
+    "partition_code": 28.0,
+    "group_code": 28.4,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво металообробних машин",
+    "partition_code": 28.0,
+    "group_code": 28.4,
+    "class_code": 28.41
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво інших верстатів",
+    "partition_code": 28.0,
+    "group_code": 28.4,
+    "class_code": 28.49
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво інших машин і устатковання спеціального призначення",
+    "partition_code": 28.0,
+    "group_code": 28.9,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво машин і устатковання для металургії",
+    "partition_code": 28.0,
+    "group_code": 28.9,
+    "class_code": 28.91
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво машин і устатковання для добувної промисловості та будівництва",
+    "partition_code": 28.0,
+    "group_code": 28.9,
+    "class_code": 28.92
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво машин і устатковання для виготовлення харчових продуктів і напоїв, перероблення тютюну",
+    "partition_code": 28.0,
+    "group_code": 28.9,
+    "class_code": 28.93
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво машин і устатковання для виготовлення текстильних, швейних, хутряних і шкіряних виробів",
+    "partition_code": 28.0,
+    "group_code": 28.9,
+    "class_code": 28.94
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво машин і устатковання для виготовлення паперу та картону",
+    "partition_code": 28.0,
+    "group_code": 28.9,
+    "class_code": 28.95
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво машин і устатковання для виготовлення пластмас і гуми",
+    "partition_code": 28.0,
+    "group_code": 28.9,
+    "class_code": 28.96
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво інших машин і устатковання спеціального призначення, н.в.і.у.",
+    "partition_code": 28.0,
+    "group_code": 28.9,
+    "class_code": 28.99
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво автотранспортних засобів, причепів і напівпричепів",
+    "partition_code": 29.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво автотранспортних засобів",
+    "partition_code": 29.0,
+    "group_code": 29.1,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво автотранспортних засобів",
+    "partition_code": 29.0,
+    "group_code": 29.1,
+    "class_code": 29.1
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво кузовів для автотранспортних засобів, причепів і напівпричепів",
+    "partition_code": 29.0,
+    "group_code": 29.2,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво кузовів для автотранспортних засобів, причепів і напівпричепів",
+    "partition_code": 29.0,
+    "group_code": 29.2,
+    "class_code": 29.2
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво вузлів, деталей і приладдя для автотранспортних засобів",
+    "partition_code": 29.0,
+    "group_code": 29.3,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво електричного й електронного устатковання для автотранспортних засобів",
+    "partition_code": 29.0,
+    "group_code": 29.3,
+    "class_code": 29.31
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво інших вузлів, деталей і приладдя для автотранспортних засобів",
+    "partition_code": 29.0,
+    "group_code": 29.3,
+    "class_code": 29.32
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво інших транспортних засобів",
+    "partition_code": 30.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Будування суден і човнів",
+    "partition_code": 30.0,
+    "group_code": 30.1,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Будування суден і плавучих конструкцій",
+    "partition_code": 30.0,
+    "group_code": 30.1,
+    "class_code": 30.11
+  },
+  {
+    "section_code": "C",
+    "name": "Будування прогулянкових і спортивних човнів",
+    "partition_code": 30.0,
+    "group_code": 30.1,
+    "class_code": 30.12
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво залізничних локомотивів і рухомого складу",
+    "partition_code": 30.0,
+    "group_code": 30.2,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво залізничних локомотивів і рухомого складу",
+    "partition_code": 30.0,
+    "group_code": 30.2,
+    "class_code": 30.2
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво повітряних і космічних літальних апаратів, супутнього устатковання",
+    "partition_code": 30.0,
+    "group_code": 30.3,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво повітряних і космічних літальних апаратів, супутнього устатковання",
+    "partition_code": 30.0,
+    "group_code": 30.3,
+    "class_code": 30.3
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво військових транспортних засобів",
+    "partition_code": 30.0,
+    "group_code": 30.4,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво військових транспортних засобів",
+    "partition_code": 30.0,
+    "group_code": 30.4,
+    "class_code": 30.4
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво транспортних засобів, н.в.і.у.",
+    "partition_code": 30.0,
+    "group_code": 30.9,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво мотоциклів",
+    "partition_code": 30.0,
+    "group_code": 30.9,
+    "class_code": 30.91
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво велосипедів, дитячих та інвалідних колясок",
+    "partition_code": 30.0,
+    "group_code": 30.9,
+    "class_code": 30.92
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво інших транспортних засобів і обладнання, н.в.і.у.",
+    "partition_code": 30.0,
+    "group_code": 30.9,
+    "class_code": 30.99
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво меблів",
+    "partition_code": 31.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво меблів",
+    "partition_code": 31.0,
+    "group_code": 31.0,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво меблів для офісів і підприємств торгівлі",
+    "partition_code": 31.0,
+    "group_code": 31.0,
+    "class_code": 31.01
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво кухонних меблів",
+    "partition_code": 31.0,
+    "group_code": 31.0,
+    "class_code": 31.02
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво матраців",
+    "partition_code": 31.0,
+    "group_code": 31.0,
+    "class_code": 31.03
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво інших меблів",
+    "partition_code": 31.0,
+    "group_code": 31.0,
+    "class_code": 31.09
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво іншої продукції",
+    "partition_code": 32.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво ювелірних виробів, біжутерії та подібних виробів",
+    "partition_code": 32.0,
+    "group_code": 32.1,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Карбування монет",
+    "partition_code": 32.0,
+    "group_code": 32.1,
+    "class_code": 32.11
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво ювелірних і подібних виробів",
+    "partition_code": 32.0,
+    "group_code": 32.1,
+    "class_code": 32.12
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво біжутерії та подібних виробів",
+    "partition_code": 32.0,
+    "group_code": 32.1,
+    "class_code": 32.13
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво музичних інструментів",
+    "partition_code": 32.0,
+    "group_code": 32.2,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво музичних інструментів",
+    "partition_code": 32.0,
+    "group_code": 32.2,
+    "class_code": 32.2
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво спортивних товарів",
+    "partition_code": 32.0,
+    "group_code": 32.3,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво спортивних товарів",
+    "partition_code": 32.0,
+    "group_code": 32.3,
+    "class_code": 32.3
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво ігор та іграшок",
+    "partition_code": 32.0,
+    "group_code": 32.4,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво ігор та іграшок",
+    "partition_code": 32.0,
+    "group_code": 32.4,
+    "class_code": 32.4
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво медичних і стоматологічних інструментів і матеріалів",
+    "partition_code": 32.0,
+    "group_code": 32.5,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво медичних і стоматологічних інструментів і матеріалів",
+    "partition_code": 32.0,
+    "group_code": 32.5,
+    "class_code": 32.5
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво продукції, н.в.і.у.",
+    "partition_code": 32.0,
+    "group_code": 32.9,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво мітел і щіток",
+    "partition_code": 32.0,
+    "group_code": 32.9,
+    "class_code": 32.91
+  },
+  {
+    "section_code": "C",
+    "name": "Виробництво іншої продукції, н.в.і.у.",
+    "partition_code": 32.0,
+    "group_code": 32.9,
+    "class_code": 32.99
+  },
+  {
+    "section_code": "C",
+    "name": "Ремонт і монтаж машин і устатковання",
+    "partition_code": 33.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Ремонт і технічне обслуговування готових металевих виробів, машин і устатковання",
+    "partition_code": 33.0,
+    "group_code": 33.1,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Ремонт і технічне обслуговування готових металевих виробів",
+    "partition_code": 33.0,
+    "group_code": 33.1,
+    "class_code": 33.11
+  },
+  {
+    "section_code": "C",
+    "name": "Ремонт і технічне обслуговування машин і устатковання промислового призначення",
+    "partition_code": 33.0,
+    "group_code": 33.1,
+    "class_code": 33.12
+  },
+  {
+    "section_code": "C",
+    "name": "Ремонт і технічне обслуговування електронного й оптичного устатковання",
+    "partition_code": 33.0,
+    "group_code": 33.1,
+    "class_code": 33.13
+  },
+  {
+    "section_code": "C",
+    "name": "Ремонт і технічне обслуговування електричного устатковання",
+    "partition_code": 33.0,
+    "group_code": 33.1,
+    "class_code": 33.14
+  },
+  {
+    "section_code": "C",
+    "name": "Ремонт і технічне обслуговування суден і човнів",
+    "partition_code": 33.0,
+    "group_code": 33.1,
+    "class_code": 33.15
+  },
+  {
+    "section_code": "C",
+    "name": "Ремонт і технічне обслуговування повітряних і космічних літальних апаратів",
+    "partition_code": 33.0,
+    "group_code": 33.1,
+    "class_code": 33.16
+  },
+  {
+    "section_code": "C",
+    "name": "Ремонт і технічне обслуговування інших транспортних засобів",
+    "partition_code": 33.0,
+    "group_code": 33.1,
+    "class_code": 33.17
+  },
+  {
+    "section_code": "C",
+    "name": "Ремонт і технічне обслуговування інших машин і устатковання",
+    "partition_code": 33.0,
+    "group_code": 33.1,
+    "class_code": 33.19
+  },
+  {
+    "section_code": "C",
+    "name": "Установлення та монтаж машин і устатковання",
+    "partition_code": 33.0,
+    "group_code": 33.2,
+    "class_code": null
+  },
+  {
+    "section_code": "C",
+    "name": "Установлення та монтаж машин і устатковання",
+    "partition_code": 33.0,
+    "group_code": 33.2,
+    "class_code": 33.2
+  },
+  {
+    "section_code": "D",
+    "name": "Постачання електроенергії, газу, пари та кондиційованого повітря",
+    "partition_code": null,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "D",
+    "name": "Постачання електроенергії, газу, пари та кондиційованого повітря",
+    "partition_code": 35.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "D",
+    "name": "Виробництво, передача та розподілення електроенергії",
+    "partition_code": 35.0,
+    "group_code": 35.1,
+    "class_code": null
+  },
+  {
+    "section_code": "D",
+    "name": "Виробництво електроенергії",
+    "partition_code": 35.0,
+    "group_code": 35.1,
+    "class_code": 35.11
+  },
+  {
+    "section_code": "D",
+    "name": "Передача електроенергії",
+    "partition_code": 35.0,
+    "group_code": 35.1,
+    "class_code": 35.12
+  },
+  {
+    "section_code": "D",
+    "name": "Розподілення електроенергії",
+    "partition_code": 35.0,
+    "group_code": 35.1,
+    "class_code": 35.13
+  },
+  {
+    "section_code": "D",
+    "name": "Торгівля електроенергією",
+    "partition_code": 35.0,
+    "group_code": 35.1,
+    "class_code": 35.14
+  },
+  {
+    "section_code": "D",
+    "name": "Виробництво газу; розподілення газоподібного палива через місцеві (локальні) трубопроводи",
+    "partition_code": 35.0,
+    "group_code": 35.2,
+    "class_code": null
+  },
+  {
+    "section_code": "D",
+    "name": "Виробництво газу",
+    "partition_code": 35.0,
+    "group_code": 35.2,
+    "class_code": 35.21
+  },
+  {
+    "section_code": "D",
+    "name": "Розподілення газоподібного палива через місцеві (локальні) трубопроводи",
+    "partition_code": 35.0,
+    "group_code": 35.2,
+    "class_code": 35.22
+  },
+  {
+    "section_code": "D",
+    "name": "Торгівля газом через місцеві (локальні) трубопроводи",
+    "partition_code": 35.0,
+    "group_code": 35.2,
+    "class_code": 35.23
+  },
+  {
+    "section_code": "D",
+    "name": "Постачання пари, гарячої води та кондиційованого повітря",
+    "partition_code": 35.0,
+    "group_code": 35.3,
+    "class_code": null
+  },
+  {
+    "section_code": "D",
+    "name": "Постачання пари, гарячої води та кондиційованого повітря",
+    "partition_code": 35.0,
+    "group_code": 35.3,
+    "class_code": 35.3
+  },
+  {
+    "section_code": "E",
+    "name": "Водопостачання; каналізація, поводження з відходами",
+    "partition_code": null,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "E",
+    "name": "Забір, очищення та постачання води",
+    "partition_code": 36.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "E",
+    "name": "Забір, очищення та постачання води",
+    "partition_code": 36.0,
+    "group_code": 36.0,
+    "class_code": null
+  },
+  {
+    "section_code": "E",
+    "name": "Забір, очищення та постачання води",
+    "partition_code": 36.0,
+    "group_code": 36.0,
+    "class_code": 36.0
+  },
+  {
+    "section_code": "E",
+    "name": "Каналізація, відведення й очищення стічних вод",
+    "partition_code": 37.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "E",
+    "name": "Каналізація, відведення й очищення стічних вод",
+    "partition_code": 37.0,
+    "group_code": 37.0,
+    "class_code": null
+  },
+  {
+    "section_code": "E",
+    "name": "Каналізація, відведення й очищення стічних вод",
+    "partition_code": 37.0,
+    "group_code": 37.0,
+    "class_code": 37.0
+  },
+  {
+    "section_code": "E",
+    "name": "Збирання, оброблення й видалення відходів; відновлення матеріалів",
+    "partition_code": 38.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "E",
+    "name": "Збирання відходів",
+    "partition_code": 38.0,
+    "group_code": 38.1,
+    "class_code": null
+  },
+  {
+    "section_code": "E",
+    "name": "Збирання безпечних відходів",
+    "partition_code": 38.0,
+    "group_code": 38.1,
+    "class_code": 38.11
+  },
+  {
+    "section_code": "E",
+    "name": "Збирання небезпечних відходів",
+    "partition_code": 38.0,
+    "group_code": 38.1,
+    "class_code": 38.12
+  },
+  {
+    "section_code": "E",
+    "name": "Оброблення та видалення відходів",
+    "partition_code": 38.0,
+    "group_code": 38.2,
+    "class_code": null
+  },
+  {
+    "section_code": "E",
+    "name": "Оброблення та видалення безпечних відходів",
+    "partition_code": 38.0,
+    "group_code": 38.2,
+    "class_code": 38.21
+  },
+  {
+    "section_code": "E",
+    "name": "Оброблення та видалення небезпечних відходів",
+    "partition_code": 38.0,
+    "group_code": 38.2,
+    "class_code": 38.22
+  },
+  {
+    "section_code": "E",
+    "name": "Відновлення матеріалів",
+    "partition_code": 38.0,
+    "group_code": 38.3,
+    "class_code": null
+  },
+  {
+    "section_code": "E",
+    "name": "Демонтаж (розбирання) машин і устатковання",
+    "partition_code": 38.0,
+    "group_code": 38.3,
+    "class_code": 38.31
+  },
+  {
+    "section_code": "E",
+    "name": "Відновлення відсортованих відходів",
+    "partition_code": 38.0,
+    "group_code": 38.3,
+    "class_code": 38.32
+  },
+  {
+    "section_code": "E",
+    "name": "Інша діяльність щодо поводження з відходами",
+    "partition_code": 39.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "E",
+    "name": "Інша діяльність щодо поводження з відходами",
+    "partition_code": 39.0,
+    "group_code": 39.0,
+    "class_code": null
+  },
+  {
+    "section_code": "E",
+    "name": "Інша діяльність щодо поводження з відходами",
+    "partition_code": 39.0,
+    "group_code": 39.0,
+    "class_code": 39.0
+  },
+  {
+    "section_code": "F",
+    "name": "Будівництво",
+    "partition_code": null,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "F",
+    "name": "Будівництво будівель",
+    "partition_code": 41.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "F",
+    "name": "Організація будівництва будівель",
+    "partition_code": 41.0,
+    "group_code": 41.1,
+    "class_code": null
+  },
+  {
+    "section_code": "F",
+    "name": "Організація будівництва будівель",
+    "partition_code": 41.0,
+    "group_code": 41.1,
+    "class_code": 41.1
+  },
+  {
+    "section_code": "F",
+    "name": "Будівництво житлових і нежитлових будівель",
+    "partition_code": 41.0,
+    "group_code": 41.2,
+    "class_code": null
+  },
+  {
+    "section_code": "F",
+    "name": "Будівництво житлових і нежитлових будівель",
+    "partition_code": 41.0,
+    "group_code": 41.2,
+    "class_code": 41.2
+  },
+  {
+    "section_code": "F",
+    "name": "Будівництво споруд",
+    "partition_code": 42.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "F",
+    "name": "Будівництво доріг і залізниць",
+    "partition_code": 42.0,
+    "group_code": 42.1,
+    "class_code": null
+  },
+  {
+    "section_code": "F",
+    "name": "Будівництво доріг і автострад",
+    "partition_code": 42.0,
+    "group_code": 42.1,
+    "class_code": 42.11
+  },
+  {
+    "section_code": "F",
+    "name": "Будівництво залізниць і метрополітену",
+    "partition_code": 42.0,
+    "group_code": 42.1,
+    "class_code": 42.12
+  },
+  {
+    "section_code": "F",
+    "name": "Будівництво мостів і тунелів",
+    "partition_code": 42.0,
+    "group_code": 42.1,
+    "class_code": 42.13
+  },
+  {
+    "section_code": "F",
+    "name": "Будівництво комунікацій",
+    "partition_code": 42.0,
+    "group_code": 42.2,
+    "class_code": null
+  },
+  {
+    "section_code": "F",
+    "name": "Будівництво трубопроводів",
+    "partition_code": 42.0,
+    "group_code": 42.2,
+    "class_code": 42.21
+  },
+  {
+    "section_code": "F",
+    "name": "Будівництво споруд електропостачання та телекомунікацій",
+    "partition_code": 42.0,
+    "group_code": 42.2,
+    "class_code": 42.22
+  },
+  {
+    "section_code": "F",
+    "name": "Будівництво інших споруд",
+    "partition_code": 42.0,
+    "group_code": 42.9,
+    "class_code": null
+  },
+  {
+    "section_code": "F",
+    "name": "Будівництво водних споруд",
+    "partition_code": 42.0,
+    "group_code": 42.9,
+    "class_code": 42.91
+  },
+  {
+    "section_code": "F",
+    "name": "Будівництво інших споруд, н.в.і.у.",
+    "partition_code": 42.0,
+    "group_code": 42.9,
+    "class_code": 42.99
+  },
+  {
+    "section_code": "F",
+    "name": "Спеціалізовані будівельні роботи",
+    "partition_code": 43.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "F",
+    "name": "Знесення та підготовчі роботи на будівельному майданчику",
+    "partition_code": 43.0,
+    "group_code": 43.1,
+    "class_code": null
+  },
+  {
+    "section_code": "F",
+    "name": "Знесення",
+    "partition_code": 43.0,
+    "group_code": 43.1,
+    "class_code": 43.11
+  },
+  {
+    "section_code": "F",
+    "name": "Підготовчі роботи на будівельному майданчику",
+    "partition_code": 43.0,
+    "group_code": 43.1,
+    "class_code": 43.12
+  },
+  {
+    "section_code": "F",
+    "name": "Розвідувальне буріння",
+    "partition_code": 43.0,
+    "group_code": 43.1,
+    "class_code": 43.13
+  },
+  {
+    "section_code": "F",
+    "name": "Електромонтажні, водопровідні та інші будівельно-монтажні роботи",
+    "partition_code": 43.0,
+    "group_code": 43.2,
+    "class_code": null
+  },
+  {
+    "section_code": "F",
+    "name": "Електромонтажні роботи",
+    "partition_code": 43.0,
+    "group_code": 43.2,
+    "class_code": 43.21
+  },
+  {
+    "section_code": "F",
+    "name": "Монтаж водопровідних мереж, систем опалення та кондиціонування",
+    "partition_code": 43.0,
+    "group_code": 43.2,
+    "class_code": 43.22
+  },
+  {
+    "section_code": "F",
+    "name": "Інші будівельно-монтажні роботи",
+    "partition_code": 43.0,
+    "group_code": 43.2,
+    "class_code": 43.29
+  },
+  {
+    "section_code": "F",
+    "name": "Роботи із завершення будівництва",
+    "partition_code": 43.0,
+    "group_code": 43.3,
+    "class_code": null
+  },
+  {
+    "section_code": "F",
+    "name": "Штукатурні роботи",
+    "partition_code": 43.0,
+    "group_code": 43.3,
+    "class_code": 43.31
+  },
+  {
+    "section_code": "F",
+    "name": "Установлення столярних виробів",
+    "partition_code": 43.0,
+    "group_code": 43.3,
+    "class_code": 43.32
+  },
+  {
+    "section_code": "F",
+    "name": "Покриття підлоги й облицювання стін",
+    "partition_code": 43.0,
+    "group_code": 43.3,
+    "class_code": 43.33
+  },
+  {
+    "section_code": "F",
+    "name": "Малярні роботи та скління",
+    "partition_code": 43.0,
+    "group_code": 43.3,
+    "class_code": 43.34
+  },
+  {
+    "section_code": "F",
+    "name": "Інші роботи із завершення будівництва",
+    "partition_code": 43.0,
+    "group_code": 43.3,
+    "class_code": 43.39
+  },
+  {
+    "section_code": "F",
+    "name": "Інші спеціалізовані будівельні роботи",
+    "partition_code": 43.0,
+    "group_code": 43.9,
+    "class_code": null
+  },
+  {
+    "section_code": "F",
+    "name": "Покрівельні роботи",
+    "partition_code": 43.0,
+    "group_code": 43.9,
+    "class_code": 43.91
+  },
+  {
+    "section_code": "F",
+    "name": "Інші спеціалізовані будівельні роботи, н.в.і.у.",
+    "partition_code": 43.0,
+    "group_code": 43.9,
+    "class_code": 43.99
+  },
+  {
+    "section_code": "G",
+    "name": "Оптова та роздрібна торгівля; ремонт автотранспортних засобів і мотоциклів",
+    "partition_code": null,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "G",
+    "name": "Оптова та роздрібна торгівля автотранспортними засобами та мотоциклами, їх ремонт",
+    "partition_code": 45.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "G",
+    "name": "Торгівля автотранспортними засобами",
+    "partition_code": 45.0,
+    "group_code": 45.1,
+    "class_code": null
+  },
+  {
+    "section_code": "G",
+    "name": "Торгівля автомобілями та легковими автотранспортними засобами",
+    "partition_code": 45.0,
+    "group_code": 45.1,
+    "class_code": 45.11
+  },
+  {
+    "section_code": "G",
+    "name": "Торгівля іншими автотранспортними засобами",
+    "partition_code": 45.0,
+    "group_code": 45.1,
+    "class_code": 45.19
+  },
+  {
+    "section_code": "G",
+    "name": "Технічне обслуговування та ремонт автотранспортних засобів",
+    "partition_code": 45.0,
+    "group_code": 45.2,
+    "class_code": null
+  },
+  {
+    "section_code": "G",
+    "name": "Технічне обслуговування та ремонт автотранспортних засобів",
+    "partition_code": 45.0,
+    "group_code": 45.2,
+    "class_code": 45.2
+  },
+  {
+    "section_code": "G",
+    "name": "Торгівля деталями та приладдям для автотранспортних засобів",
+    "partition_code": 45.0,
+    "group_code": 45.3,
+    "class_code": null
+  },
+  {
+    "section_code": "G",
+    "name": "Оптова торгівля деталями та приладдям для автотранспортних засобів",
+    "partition_code": 45.0,
+    "group_code": 45.3,
+    "class_code": 45.31
+  },
+  {
+    "section_code": "G",
+    "name": "Роздрібна торгівля деталями та приладдям для автотранспортних засобів",
+    "partition_code": 45.0,
+    "group_code": 45.3,
+    "class_code": 45.32
+  },
+  {
+    "section_code": "G",
+    "name": "Торгівля мотоциклами, деталями та приладдям до них, технічне обслуговування і ремонт мотоциклів",
+    "partition_code": 45.0,
+    "group_code": 45.4,
+    "class_code": null
+  },
+  {
+    "section_code": "G",
+    "name": "Торгівля мотоциклами, деталями та приладдям до них, технічне обслуговування і ремонт мотоциклів",
+    "partition_code": 45.0,
+    "group_code": 45.4,
+    "class_code": 45.4
+  },
+  {
+    "section_code": "G",
+    "name": "Оптова торгівля, крім торгівлі автотранспортними засобами та мотоциклами",
+    "partition_code": 46.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "G",
+    "name": "Оптова торгівля за винагороду чи на основі контракту",
+    "partition_code": 46.0,
+    "group_code": 46.1,
+    "class_code": null
+  },
+  {
+    "section_code": "G",
+    "name": "Діяльність посередників у торгівлі сільськогосподарською сировиною, живими тваринами, текстильною сировиною та напівфабрикатами",
+    "partition_code": 46.0,
+    "group_code": 46.1,
+    "class_code": 46.11
+  },
+  {
+    "section_code": "G",
+    "name": "Діяльність посередників у торгівлі паливом, рудами, металами та промисловими хімічними речовинами",
+    "partition_code": 46.0,
+    "group_code": 46.1,
+    "class_code": 46.12
+  },
+  {
+    "section_code": "G",
+    "name": "Діяльність посередників у торгівлі деревиною, будівельними матеріалами та санітарно-технічними виробами",
+    "partition_code": 46.0,
+    "group_code": 46.1,
+    "class_code": 46.13
+  },
+  {
+    "section_code": "G",
+    "name": "Діяльність посередників у торгівлі машинами, промисловим устаткованням, суднами та літаками",
+    "partition_code": 46.0,
+    "group_code": 46.1,
+    "class_code": 46.14
+  },
+  {
+    "section_code": "G",
+    "name": "Діяльність посередників у торгівлі меблями, господарськими товарами, залізними та іншими металевими виробами",
+    "partition_code": 46.0,
+    "group_code": 46.1,
+    "class_code": 46.15
+  },
+  {
+    "section_code": "G",
+    "name": "Діяльність посередників у торгівлі текстильними виробами, одягом, хутром, взуттям і шкіряними виробами",
+    "partition_code": 46.0,
+    "group_code": 46.1,
+    "class_code": 46.16
+  },
+  {
+    "section_code": "G",
+    "name": "Діяльність посередників у торгівлі продуктами харчування, напоями та тютюновими виробами",
+    "partition_code": 46.0,
+    "group_code": 46.1,
+    "class_code": 46.17
+  },
+  {
+    "section_code": "G",
+    "name": "Діяльність посередників, що спеціалізуються в торгівлі іншими товарами",
+    "partition_code": 46.0,
+    "group_code": 46.1,
+    "class_code": 46.18
+  },
+  {
+    "section_code": "G",
+    "name": "Діяльність посередників у торгівлі товарами широкого асортименту",
+    "partition_code": 46.0,
+    "group_code": 46.1,
+    "class_code": 46.19
+  },
+  {
+    "section_code": "G",
+    "name": "Оптова торгівля сільськогосподарською сировиною та живими тваринами",
+    "partition_code": 46.0,
+    "group_code": 46.2,
+    "class_code": null
+  },
+  {
+    "section_code": "G",
+    "name": "Оптова торгівля зерном, необробленим тютюном, насінням і кормами для тварин",
+    "partition_code": 46.0,
+    "group_code": 46.2,
+    "class_code": 46.21
+  },
+  {
+    "section_code": "G",
+    "name": "Оптова торгівля квітами та рослинами",
+    "partition_code": 46.0,
+    "group_code": 46.2,
+    "class_code": 46.22
+  },
+  {
+    "section_code": "G",
+    "name": "Оптова торгівля живими тваринами",
+    "partition_code": 46.0,
+    "group_code": 46.2,
+    "class_code": 46.23
+  },
+  {
+    "section_code": "G",
+    "name": "Оптова торгівля шкірсировиною, шкурами та шкірою",
+    "partition_code": 46.0,
+    "group_code": 46.2,
+    "class_code": 46.24
+  },
+  {
+    "section_code": "G",
+    "name": "Оптова торгівля продуктами харчування, напоями та тютюновими виробами",
+    "partition_code": 46.0,
+    "group_code": 46.3,
+    "class_code": null
+  },
+  {
+    "section_code": "G",
+    "name": "Оптова торгівля фруктами й овочами",
+    "partition_code": 46.0,
+    "group_code": 46.3,
+    "class_code": 46.31
+  },
+  {
+    "section_code": "G",
+    "name": "Оптова торгівля м'ясом і м'ясними продуктами",
+    "partition_code": 46.0,
+    "group_code": 46.3,
+    "class_code": 46.32
+  },
+  {
+    "section_code": "G",
+    "name": "Оптова торгівля молочними продуктами, яйцями, харчовими оліями та жирами",
+    "partition_code": 46.0,
+    "group_code": 46.3,
+    "class_code": 46.33
+  },
+  {
+    "section_code": "G",
+    "name": "Оптова торгівля напоями",
+    "partition_code": 46.0,
+    "group_code": 46.3,
+    "class_code": 46.34
+  },
+  {
+    "section_code": "G",
+    "name": "Оптова торгівля тютюновими виробами",
+    "partition_code": 46.0,
+    "group_code": 46.3,
+    "class_code": 46.35
+  },
+  {
+    "section_code": "G",
+    "name": "Оптова торгівля цукром, шоколадом і кондитерськими виробами",
+    "partition_code": 46.0,
+    "group_code": 46.3,
+    "class_code": 46.36
+  },
+  {
+    "section_code": "G",
+    "name": "Оптова торгівля кавою, чаєм, какао та прянощами",
+    "partition_code": 46.0,
+    "group_code": 46.3,
+    "class_code": 46.37
+  },
+  {
+    "section_code": "G",
+    "name": "Оптова торгівля іншими продуктами харчування, у тому числі рибою, ракоподібними та молюсками",
+    "partition_code": 46.0,
+    "group_code": 46.3,
+    "class_code": 46.38
+  },
+  {
+    "section_code": "G",
+    "name": "Неспеціалізована оптова торгівля продуктами харчування, напоями та тютюновими виробами",
+    "partition_code": 46.0,
+    "group_code": 46.3,
+    "class_code": 46.39
+  },
+  {
+    "section_code": "G",
+    "name": "Оптова торгівля товарами господарського призначення",
+    "partition_code": 46.0,
+    "group_code": 46.4,
+    "class_code": null
+  },
+  {
+    "section_code": "G",
+    "name": "Оптова торгівля текстильними товарами",
+    "partition_code": 46.0,
+    "group_code": 46.4,
+    "class_code": 46.41
+  },
+  {
+    "section_code": "G",
+    "name": "Оптова торгівля одягом і взуттям",
+    "partition_code": 46.0,
+    "group_code": 46.4,
+    "class_code": 46.42
+  },
+  {
+    "section_code": "G",
+    "name": "Оптова торгівля побутовими електротоварами й електронною апаратурою побутового призначення для приймання, записування, відтворювання звуку й зображення",
+    "partition_code": 46.0,
+    "group_code": 46.4,
+    "class_code": 46.43
+  },
+  {
+    "section_code": "G",
+    "name": "Оптова торгівля фарфором, скляним посудом і засобами для чищення",
+    "partition_code": 46.0,
+    "group_code": 46.4,
+    "class_code": 46.44
+  },
+  {
+    "section_code": "G",
+    "name": "Оптова торгівля парфумними та косметичними товарами",
+    "partition_code": 46.0,
+    "group_code": 46.4,
+    "class_code": 46.45
+  },
+  {
+    "section_code": "G",
+    "name": "Оптова торгівля фармацевтичними товарами",
+    "partition_code": 46.0,
+    "group_code": 46.4,
+    "class_code": 46.46
+  },
+  {
+    "section_code": "G",
+    "name": "Оптова торгівля меблями, килимами й освітлювальним приладдям",
+    "partition_code": 46.0,
+    "group_code": 46.4,
+    "class_code": 46.47
+  },
+  {
+    "section_code": "G",
+    "name": "Оптова торгівля годинниками та ювелірними виробами",
+    "partition_code": 46.0,
+    "group_code": 46.4,
+    "class_code": 46.48
+  },
+  {
+    "section_code": "G",
+    "name": "Оптова торгівля іншими товарами господарського призначення",
+    "partition_code": 46.0,
+    "group_code": 46.4,
+    "class_code": 46.49
+  },
+  {
+    "section_code": "G",
+    "name": "Оптова торгівля інформаційним і комунікаційним устаткованням",
+    "partition_code": 46.0,
+    "group_code": 46.5,
+    "class_code": null
+  },
+  {
+    "section_code": "G",
+    "name": "Оптова торгівля комп'ютерами, периферійним устаткованням і програмним забезпеченням",
+    "partition_code": 46.0,
+    "group_code": 46.5,
+    "class_code": 46.51
+  },
+  {
+    "section_code": "G",
+    "name": "Оптова торгівля електронним і телекомунікаційним устаткованням, деталями до нього",
+    "partition_code": 46.0,
+    "group_code": 46.5,
+    "class_code": 46.52
+  },
+  {
+    "section_code": "G",
+    "name": "Оптова торгівля іншими машинами й устаткованням",
+    "partition_code": 46.0,
+    "group_code": 46.6,
+    "class_code": null
+  },
+  {
+    "section_code": "G",
+    "name": "Оптова торгівля сільськогосподарськими машинами й устаткованням",
+    "partition_code": 46.0,
+    "group_code": 46.6,
+    "class_code": 46.61
+  },
+  {
+    "section_code": "G",
+    "name": "Оптова торгівля верстатами",
+    "partition_code": 46.0,
+    "group_code": 46.6,
+    "class_code": 46.62
+  },
+  {
+    "section_code": "G",
+    "name": "Оптова торгівля машинами й устаткованням для добувної промисловості та будівництва",
+    "partition_code": 46.0,
+    "group_code": 46.6,
+    "class_code": 46.63
+  },
+  {
+    "section_code": "G",
+    "name": "Оптова торгівля машинами й устаткованням для текстильного, швейного та трикотажного виробництва",
+    "partition_code": 46.0,
+    "group_code": 46.6,
+    "class_code": 46.64
+  },
+  {
+    "section_code": "G",
+    "name": "Оптова торгівля офісними меблями",
+    "partition_code": 46.0,
+    "group_code": 46.6,
+    "class_code": 46.65
+  },
+  {
+    "section_code": "G",
+    "name": "Оптова торгівля іншими офісними машинами й устаткованням",
+    "partition_code": 46.0,
+    "group_code": 46.6,
+    "class_code": 46.66
+  },
+  {
+    "section_code": "G",
+    "name": "Оптова торгівля іншими машинами й устаткованням",
+    "partition_code": 46.0,
+    "group_code": 46.6,
+    "class_code": 46.69
+  },
+  {
+    "section_code": "G",
+    "name": " Інші види спеціалізованої оптової торгівлі",
+    "partition_code": 46.0,
+    "group_code": 46.7,
+    "class_code": null
+  },
+  {
+    "section_code": "G",
+    "name": "Оптова торгівля твердим, рідким, газоподібним паливом і подібними продуктами",
+    "partition_code": 46.0,
+    "group_code": 46.7,
+    "class_code": 46.71
+  },
+  {
+    "section_code": "G",
+    "name": "Оптова торгівля металами та металевими рудами",
+    "partition_code": 46.0,
+    "group_code": 46.7,
+    "class_code": 46.72
+  },
+  {
+    "section_code": "G",
+    "name": "Оптова торгівля деревиною, будівельними матеріалами та санітарно-технічним обладнанням",
+    "partition_code": 46.0,
+    "group_code": 46.7,
+    "class_code": 46.73
+  },
+  {
+    "section_code": "G",
+    "name": "Оптова торгівля залізними виробами, водопровідним і опалювальним устаткованням і приладдям до нього",
+    "partition_code": 46.0,
+    "group_code": 46.7,
+    "class_code": 46.74
+  },
+  {
+    "section_code": "G",
+    "name": "Оптова торгівля хімічними продуктами",
+    "partition_code": 46.0,
+    "group_code": 46.7,
+    "class_code": 46.75
+  },
+  {
+    "section_code": "G",
+    "name": "Оптова торгівля іншими проміжними продуктами",
+    "partition_code": 46.0,
+    "group_code": 46.7,
+    "class_code": 46.76
+  },
+  {
+    "section_code": "G",
+    "name": "Оптова торгівля відходами та брухтом",
+    "partition_code": 46.0,
+    "group_code": 46.7,
+    "class_code": 46.77
+  },
+  {
+    "section_code": "G",
+    "name": "Неспеціалізована оптова торгівля",
+    "partition_code": 46.0,
+    "group_code": 46.9,
+    "class_code": null
+  },
+  {
+    "section_code": "G",
+    "name": "Неспеціалізована оптова торгівля",
+    "partition_code": 46.0,
+    "group_code": 46.9,
+    "class_code": 46.9
+  },
+  {
+    "section_code": "G",
+    "name": "Роздрібна торгівля, крім торгівлі автотранспортними засобами та мотоциклами",
+    "partition_code": 47.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "G",
+    "name": "Роздрібна торгівля в неспеціалізованих магазинах",
+    "partition_code": 47.0,
+    "group_code": 47.1,
+    "class_code": null
+  },
+  {
+    "section_code": "G",
+    "name": "Роздрібна торгівля в неспеціалізованих магазинах переважно продуктами харчування, напоями та тютюновими виробами",
+    "partition_code": 47.0,
+    "group_code": 47.1,
+    "class_code": 47.11
+  },
+  {
+    "section_code": "G",
+    "name": "Інші види роздрібної торгівлі в неспеціалізованих магазинах",
+    "partition_code": 47.0,
+    "group_code": 47.1,
+    "class_code": 47.19
+  },
+  {
+    "section_code": "G",
+    "name": "Роздрібна торгівля продуктами харчування, напоями та тютюновими виробами в спеціалізованих магазинах",
+    "partition_code": 47.0,
+    "group_code": 47.2,
+    "class_code": null
+  },
+  {
+    "section_code": "G",
+    "name": "Роздрібна торгівля фруктами й овочами в спеціалізованих магазинах",
+    "partition_code": 47.0,
+    "group_code": 47.2,
+    "class_code": 47.21
+  },
+  {
+    "section_code": "G",
+    "name": "Роздрібна торгівля м'ясом і м'ясними продуктами в спеціалізованих магазинах",
+    "partition_code": 47.0,
+    "group_code": 47.2,
+    "class_code": 47.22
+  },
+  {
+    "section_code": "G",
+    "name": "Роздрібна торгівля рибою, ракоподібними та молюсками в спеціалізованих магазинах",
+    "partition_code": 47.0,
+    "group_code": 47.2,
+    "class_code": 47.23
+  },
+  {
+    "section_code": "G",
+    "name": "Роздрібна торгівля хлібобулочними виробами, борошняними та цукровими кондитерськими виробами в спеціалізованих магазинах",
+    "partition_code": 47.0,
+    "group_code": 47.2,
+    "class_code": 47.24
+  },
+  {
+    "section_code": "G",
+    "name": "Роздрібна торгівля напоями в спеціалізованих магазинах",
+    "partition_code": 47.0,
+    "group_code": 47.2,
+    "class_code": 47.25
+  },
+  {
+    "section_code": "G",
+    "name": "Роздрібна торгівля тютюновими виробами в спеціалізованих магазинах",
+    "partition_code": 47.0,
+    "group_code": 47.2,
+    "class_code": 47.26
+  },
+  {
+    "section_code": "G",
+    "name": "Роздрібна торгівля іншими продуктами харчування в спеціалізованих магазинах",
+    "partition_code": 47.0,
+    "group_code": 47.2,
+    "class_code": 47.29
+  },
+  {
+    "section_code": "G",
+    "name": "Роздрібна торгівля пальним",
+    "partition_code": 47.0,
+    "group_code": 47.3,
+    "class_code": null
+  },
+  {
+    "section_code": "G",
+    "name": "Роздрібна торгівля пальним",
+    "partition_code": 47.0,
+    "group_code": 47.3,
+    "class_code": 47.3
+  },
+  {
+    "section_code": "G",
+    "name": "Роздрібна торгівля інформаційним і комунікаційним устаткованням у спеціалізованих магазинах",
+    "partition_code": 47.0,
+    "group_code": 47.4,
+    "class_code": null
+  },
+  {
+    "section_code": "G",
+    "name": "Роздрібна торгівля комп'ютерами, периферійним устаткованням і програмним забезпеченням у спеціалізованих магазинах",
+    "partition_code": 47.0,
+    "group_code": 47.4,
+    "class_code": 47.41
+  },
+  {
+    "section_code": "G",
+    "name": "Роздрібна торгівля телекомунікаційним устаткованням у спеціалізованих магазинах",
+    "partition_code": 47.0,
+    "group_code": 47.4,
+    "class_code": 47.42
+  },
+  {
+    "section_code": "G",
+    "name": "Роздрібна торгівля в спеціалізованих магазинах електронною апаратурою побутового призначення для приймання, записування, відтворювання звуку й зображення",
+    "partition_code": 47.0,
+    "group_code": 47.4,
+    "class_code": 47.43
+  },
+  {
+    "section_code": "G",
+    "name": "Роздрібна торгівля іншими товарами господарського призначення в спеціалізованих магазинах",
+    "partition_code": 47.0,
+    "group_code": 47.5,
+    "class_code": null
+  },
+  {
+    "section_code": "G",
+    "name": "Роздрібна торгівля текстильними товарами в спеціалізованих магазинах",
+    "partition_code": 47.0,
+    "group_code": 47.5,
+    "class_code": 47.51
+  },
+  {
+    "section_code": "G",
+    "name": "Роздрібна торгівля залізними виробами, будівельними матеріалами та санітарно-технічними виробами в спеціалізованих магазинах",
+    "partition_code": 47.0,
+    "group_code": 47.5,
+    "class_code": 47.52
+  },
+  {
+    "section_code": "G",
+    "name": "Роздрібна торгівля килимами, килимовими виробами, покриттям для стін і підлоги в спеціалізованих магазинах",
+    "partition_code": 47.0,
+    "group_code": 47.5,
+    "class_code": 47.53
+  },
+  {
+    "section_code": "G",
+    "name": "Роздрібна торгівля побутовими електротоварами в спеціалізованих магазинах",
+    "partition_code": 47.0,
+    "group_code": 47.5,
+    "class_code": 47.54
+  },
+  {
+    "section_code": "G",
+    "name": "Роздрібна торгівля меблями, освітлювальним приладдям та іншими товарами для дому в спеціалізованих магазинах",
+    "partition_code": 47.0,
+    "group_code": 47.5,
+    "class_code": 47.59
+  },
+  {
+    "section_code": "G",
+    "name": "Роздрібна торгівля товарами культурного призначення та товарами для відпочинку в спеціалізованих магазинах",
+    "partition_code": 47.0,
+    "group_code": 47.6,
+    "class_code": null
+  },
+  {
+    "section_code": "G",
+    "name": "Роздрібна торгівля книгами в спеціалізованих магазинах",
+    "partition_code": 47.0,
+    "group_code": 47.6,
+    "class_code": 47.61
+  },
+  {
+    "section_code": "G",
+    "name": "Роздрібна торгівля газетами та канцелярськими товарами в спеціалізованих магазинах",
+    "partition_code": 47.0,
+    "group_code": 47.6,
+    "class_code": 47.62
+  },
+  {
+    "section_code": "G",
+    "name": "Роздрібна торгівля аудіо- та відеозаписами в спеціалізованих магазинах",
+    "partition_code": 47.0,
+    "group_code": 47.6,
+    "class_code": 47.63
+  },
+  {
+    "section_code": "G",
+    "name": "Роздрібна торгівля спортивним інвентарем у спеціалізованих магазинах",
+    "partition_code": 47.0,
+    "group_code": 47.6,
+    "class_code": 47.64
+  },
+  {
+    "section_code": "G",
+    "name": "Роздрібна торгівля іграми та іграшками в спеціалізованих магазинах",
+    "partition_code": 47.0,
+    "group_code": 47.6,
+    "class_code": 47.65
+  },
+  {
+    "section_code": "G",
+    "name": "Роздрібна торгівля іншими товарами в спеціалізованих магазинах",
+    "partition_code": 47.0,
+    "group_code": 47.7,
+    "class_code": null
+  },
+  {
+    "section_code": "G",
+    "name": "Роздрібна торгівля одягом у спеціалізованих магазинах",
+    "partition_code": 47.0,
+    "group_code": 47.7,
+    "class_code": 47.71
+  },
+  {
+    "section_code": "G",
+    "name": "Роздрібна торгівля взуттям і шкіряними виробами в спеціалізованих магазинах",
+    "partition_code": 47.0,
+    "group_code": 47.7,
+    "class_code": 47.72
+  },
+  {
+    "section_code": "G",
+    "name": "Роздрібна торгівля фармацевтичними товарами в спеціалізованих магазинах",
+    "partition_code": 47.0,
+    "group_code": 47.7,
+    "class_code": 47.73
+  },
+  {
+    "section_code": "G",
+    "name": "Роздрібна торгівля медичними й ортопедичними товарами в спеціалізованих магазинах",
+    "partition_code": 47.0,
+    "group_code": 47.7,
+    "class_code": 47.74
+  },
+  {
+    "section_code": "G",
+    "name": "Роздрібна торгівля косметичними товарами та туалетними приналежностями в спеціалізованих магазинах",
+    "partition_code": 47.0,
+    "group_code": 47.7,
+    "class_code": 47.75
+  },
+  {
+    "section_code": "G",
+    "name": "Роздрібна торгівля квітами, рослинами, насінням, добривами, домашніми тваринами та кормами для них у спеціалізованих магазинах",
+    "partition_code": 47.0,
+    "group_code": 47.7,
+    "class_code": 47.76
+  },
+  {
+    "section_code": "G",
+    "name": "Роздрібна торгівля годинниками та ювелірними виробами в спеціалізованих магазинах",
+    "partition_code": 47.0,
+    "group_code": 47.7,
+    "class_code": 47.77
+  },
+  {
+    "section_code": "G",
+    "name": "Роздрібна торгівля іншими невживаними товарами в спеціалізованих магазинах",
+    "partition_code": 47.0,
+    "group_code": 47.7,
+    "class_code": 47.78
+  },
+  {
+    "section_code": "G",
+    "name": "Роздрібна торгівля уживаними товарами в магазинах",
+    "partition_code": 47.0,
+    "group_code": 47.7,
+    "class_code": 47.79
+  },
+  {
+    "section_code": "G",
+    "name": "Роздрібна торгівля з лотків і на ринках",
+    "partition_code": 47.0,
+    "group_code": 47.8,
+    "class_code": null
+  },
+  {
+    "section_code": "G",
+    "name": "Роздрібна торгівля з лотків і на ринках харчовими продуктами, напоями та тютюновими виробами",
+    "partition_code": 47.0,
+    "group_code": 47.8,
+    "class_code": 47.81
+  },
+  {
+    "section_code": "G",
+    "name": "Роздрібна торгівля з лотків і на ринках текстильними виробами, одягом і взуттям",
+    "partition_code": 47.0,
+    "group_code": 47.8,
+    "class_code": 47.82
+  },
+  {
+    "section_code": "G",
+    "name": "Роздрібна торгівля з лотків і на ринках іншими товарами",
+    "partition_code": 47.0,
+    "group_code": 47.8,
+    "class_code": 47.89
+  },
+  {
+    "section_code": "G",
+    "name": "Роздрібна торгівля поза магазинами",
+    "partition_code": 47.0,
+    "group_code": 47.9,
+    "class_code": null
+  },
+  {
+    "section_code": "G",
+    "name": "Роздрібна торгівля, що здійснюється фірмами поштового замовлення або через мережу Інтернет",
+    "partition_code": 47.0,
+    "group_code": 47.9,
+    "class_code": 47.91
+  },
+  {
+    "section_code": "G",
+    "name": "Інші види роздрібної торгівлі поза магазинами",
+    "partition_code": 47.0,
+    "group_code": 47.9,
+    "class_code": 47.99
+  },
+  {
+    "section_code": "H",
+    "name": "Транспорт, складське господарство, поштова та кур'єрська діяльність",
+    "partition_code": null,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "H",
+    "name": "Наземний і трубопровідний транспорт",
+    "partition_code": 49.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "H",
+    "name": "Пасажирський залізничний транспорт міжміського сполучення",
+    "partition_code": 49.0,
+    "group_code": 49.1,
+    "class_code": null
+  },
+  {
+    "section_code": "H",
+    "name": "Пасажирський залізничний транспорт міжміського сполучення",
+    "partition_code": 49.0,
+    "group_code": 49.1,
+    "class_code": 49.1
+  },
+  {
+    "section_code": "H",
+    "name": "Вантажний залізничний транспорт",
+    "partition_code": 49.0,
+    "group_code": 49.2,
+    "class_code": null
+  },
+  {
+    "section_code": "H",
+    "name": "Вантажний залізничний транспорт",
+    "partition_code": 49.0,
+    "group_code": 49.2,
+    "class_code": 49.2
+  },
+  {
+    "section_code": "H",
+    "name": "Інший пасажирський наземний транспорт",
+    "partition_code": 49.0,
+    "group_code": 49.3,
+    "class_code": null
+  },
+  {
+    "section_code": "H",
+    "name": "Пасажирський наземний транспорт міського та приміського сполучення",
+    "partition_code": 49.0,
+    "group_code": 49.3,
+    "class_code": 49.31
+  },
+  {
+    "section_code": "H",
+    "name": "Надання послуг таксі",
+    "partition_code": 49.0,
+    "group_code": 49.3,
+    "class_code": 49.32
+  },
+  {
+    "section_code": "H",
+    "name": "Інший пасажирський наземний транспорт, н.в.і.у.",
+    "partition_code": 49.0,
+    "group_code": 49.3,
+    "class_code": 49.39
+  },
+  {
+    "section_code": "H",
+    "name": "Вантажний автомобільний транспорт, надання послуг перевезення речей",
+    "partition_code": 49.0,
+    "group_code": 49.4,
+    "class_code": null
+  },
+  {
+    "section_code": "H",
+    "name": "Вантажний автомобільний транспорт",
+    "partition_code": 49.0,
+    "group_code": 49.4,
+    "class_code": 49.41
+  },
+  {
+    "section_code": "H",
+    "name": "Надання послуг перевезення речей (переїзду)",
+    "partition_code": 49.0,
+    "group_code": 49.4,
+    "class_code": 49.42
+  },
+  {
+    "section_code": "H",
+    "name": "Трубопровідний транспорт",
+    "partition_code": 49.0,
+    "group_code": 49.5,
+    "class_code": null
+  },
+  {
+    "section_code": "H",
+    "name": "Трубопровідний транспорт",
+    "partition_code": 49.0,
+    "group_code": 49.5,
+    "class_code": 49.5
+  },
+  {
+    "section_code": "H",
+    "name": "Водний транспорт",
+    "partition_code": 50.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "H",
+    "name": "Пасажирський морський транспорт",
+    "partition_code": 50.0,
+    "group_code": 50.1,
+    "class_code": null
+  },
+  {
+    "section_code": "H",
+    "name": "Пасажирський морський транспорт",
+    "partition_code": 50.0,
+    "group_code": 50.1,
+    "class_code": 50.1
+  },
+  {
+    "section_code": "H",
+    "name": "Вантажний морський транспорт",
+    "partition_code": 50.0,
+    "group_code": 50.2,
+    "class_code": null
+  },
+  {
+    "section_code": "H",
+    "name": "Вантажний морський транспорт",
+    "partition_code": 50.0,
+    "group_code": 50.2,
+    "class_code": 50.2
+  },
+  {
+    "section_code": "H",
+    "name": "Пасажирський річковий транспорт",
+    "partition_code": 50.0,
+    "group_code": 50.3,
+    "class_code": null
+  },
+  {
+    "section_code": "H",
+    "name": "Пасажирський річковий транспорт",
+    "partition_code": 50.0,
+    "group_code": 50.3,
+    "class_code": 50.3
+  },
+  {
+    "section_code": "H",
+    "name": "Вантажний річковий транспорт",
+    "partition_code": 50.0,
+    "group_code": 50.4,
+    "class_code": null
+  },
+  {
+    "section_code": "H",
+    "name": "Вантажний річковий транспорт",
+    "partition_code": 50.0,
+    "group_code": 50.4,
+    "class_code": 50.4
+  },
+  {
+    "section_code": "H",
+    "name": "Авіаційний транспорт",
+    "partition_code": 51.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "H",
+    "name": "Пасажирський авіаційний транспорт",
+    "partition_code": 51.0,
+    "group_code": 51.1,
+    "class_code": null
+  },
+  {
+    "section_code": "H",
+    "name": "Пасажирський авіаційний транспорт",
+    "partition_code": 51.0,
+    "group_code": 51.1,
+    "class_code": 51.1
+  },
+  {
+    "section_code": "H",
+    "name": "Вантажний авіаційний транспорт та космічний транспорт",
+    "partition_code": 51.0,
+    "group_code": 51.2,
+    "class_code": null
+  },
+  {
+    "section_code": "H",
+    "name": "Вантажний авіаційний транспорт",
+    "partition_code": 51.0,
+    "group_code": 51.2,
+    "class_code": 51.21
+  },
+  {
+    "section_code": "H",
+    "name": "Космічний транспорт",
+    "partition_code": 51.0,
+    "group_code": 51.2,
+    "class_code": 51.22
+  },
+  {
+    "section_code": "H",
+    "name": "Складське господарство та допоміжна діяльність у сфері транспорту",
+    "partition_code": 52.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "H",
+    "name": "Складське господарство",
+    "partition_code": 52.0,
+    "group_code": 52.1,
+    "class_code": null
+  },
+  {
+    "section_code": "H",
+    "name": "Складське господарство",
+    "partition_code": 52.0,
+    "group_code": 52.1,
+    "class_code": 52.1
+  },
+  {
+    "section_code": "H",
+    "name": "Допоміжна діяльність у сфері транспорту",
+    "partition_code": 52.0,
+    "group_code": 52.2,
+    "class_code": null
+  },
+  {
+    "section_code": "H",
+    "name": "Допоміжне обслуговування наземного транспорту",
+    "partition_code": 52.0,
+    "group_code": 52.2,
+    "class_code": 52.21
+  },
+  {
+    "section_code": "H",
+    "name": "Допоміжне обслуговування водного транспорту",
+    "partition_code": 52.0,
+    "group_code": 52.2,
+    "class_code": 52.22
+  },
+  {
+    "section_code": "H",
+    "name": "Допоміжне обслуговування авіаційного транспорту",
+    "partition_code": 52.0,
+    "group_code": 52.2,
+    "class_code": 52.23
+  },
+  {
+    "section_code": "H",
+    "name": "Транспортне оброблення вантажів",
+    "partition_code": 52.0,
+    "group_code": 52.2,
+    "class_code": 52.24
+  },
+  {
+    "section_code": "H",
+    "name": "Інша допоміжна діяльність у сфері транспорту",
+    "partition_code": 52.0,
+    "group_code": 52.2,
+    "class_code": 52.29
+  },
+  {
+    "section_code": "H",
+    "name": "Поштова та кур'єрська діяльність",
+    "partition_code": 53.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "H",
+    "name": "Діяльність національної пошти",
+    "partition_code": 53.0,
+    "group_code": 53.1,
+    "class_code": null
+  },
+  {
+    "section_code": "H",
+    "name": "Діяльність національної пошти",
+    "partition_code": 53.0,
+    "group_code": 53.1,
+    "class_code": 53.1
+  },
+  {
+    "section_code": "H",
+    "name": "Інша поштова та кур'єрська діяльність",
+    "partition_code": 53.0,
+    "group_code": 53.2,
+    "class_code": null
+  },
+  {
+    "section_code": "H",
+    "name": "Інша поштова та кур'єрська діяльність",
+    "partition_code": 53.0,
+    "group_code": 53.2,
+    "class_code": 53.2
+  },
+  {
+    "section_code": "I",
+    "name": "Тимчасове розміщування й організація харчування",
+    "partition_code": null,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "I",
+    "name": "Тимчасове розміщування",
+    "partition_code": 55.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "I",
+    "name": "Діяльність готелів і подібних засобів тимчасового розміщування",
+    "partition_code": 55.0,
+    "group_code": 55.1,
+    "class_code": null
+  },
+  {
+    "section_code": "I",
+    "name": "Діяльність готелів і подібних засобів тимчасового розміщування",
+    "partition_code": 55.0,
+    "group_code": 55.1,
+    "class_code": 55.1
+  },
+  {
+    "section_code": "I",
+    "name": "Діяльність засобів розміщування на період відпустки та іншого тимчасового проживання",
+    "partition_code": 55.0,
+    "group_code": 55.2,
+    "class_code": null
+  },
+  {
+    "section_code": "I",
+    "name": "Діяльність засобів розміщування на період відпустки та іншого тимчасового проживання",
+    "partition_code": 55.0,
+    "group_code": 55.2,
+    "class_code": 55.2
+  },
+  {
+    "section_code": "I",
+    "name": "Надання місць кемпінгами та стоянками для житлових автофургонів і причепів",
+    "partition_code": 55.0,
+    "group_code": 55.3,
+    "class_code": null
+  },
+  {
+    "section_code": "I",
+    "name": "Надання місць кемпінгами та стоянками для житлових автофургонів і причепів",
+    "partition_code": 55.0,
+    "group_code": 55.3,
+    "class_code": 55.3
+  },
+  {
+    "section_code": "I",
+    "name": "Діяльність інших засобів тимчасового розміщування",
+    "partition_code": 55.0,
+    "group_code": 55.9,
+    "class_code": null
+  },
+  {
+    "section_code": "I",
+    "name": "Діяльність інших засобів тимчасового розміщування",
+    "partition_code": 55.0,
+    "group_code": 55.9,
+    "class_code": 55.9
+  },
+  {
+    "section_code": "I",
+    "name": "Діяльність із забезпечення стравами та напоями",
+    "partition_code": 56.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "I",
+    "name": "Діяльність ресторанів, надання послуг мобільного харчування",
+    "partition_code": 56.0,
+    "group_code": 56.1,
+    "class_code": null
+  },
+  {
+    "section_code": "I",
+    "name": "Діяльність ресторанів, надання послуг мобільного харчування",
+    "partition_code": 56.0,
+    "group_code": 56.1,
+    "class_code": 56.1
+  },
+  {
+    "section_code": "I",
+    "name": "Постачання готових страв",
+    "partition_code": 56.0,
+    "group_code": 56.2,
+    "class_code": null
+  },
+  {
+    "section_code": "I",
+    "name": "Постачання готових страв для подій",
+    "partition_code": 56.0,
+    "group_code": 56.2,
+    "class_code": 56.21
+  },
+  {
+    "section_code": "I",
+    "name": "Постачання інших готових страв",
+    "partition_code": 56.0,
+    "group_code": 56.2,
+    "class_code": 56.29
+  },
+  {
+    "section_code": "I",
+    "name": "Обслуговування напоями",
+    "partition_code": 56.0,
+    "group_code": 56.3,
+    "class_code": null
+  },
+  {
+    "section_code": "I",
+    "name": "Обслуговування напоями",
+    "partition_code": 56.0,
+    "group_code": 56.3,
+    "class_code": 56.3
+  },
+  {
+    "section_code": "J",
+    "name": "Інформація та телекомунікації",
+    "partition_code": null,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "J",
+    "name": "Видавнича діяльність",
+    "partition_code": 58.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "J",
+    "name": "Видання книг, періодичних видань та інша видавнича діяльність",
+    "partition_code": 58.0,
+    "group_code": 58.1,
+    "class_code": null
+  },
+  {
+    "section_code": "J",
+    "name": "Видання книг",
+    "partition_code": 58.0,
+    "group_code": 58.1,
+    "class_code": 58.11
+  },
+  {
+    "section_code": "J",
+    "name": "Видання довідників і каталогів",
+    "partition_code": 58.0,
+    "group_code": 58.1,
+    "class_code": 58.12
+  },
+  {
+    "section_code": "J",
+    "name": "Видання газет",
+    "partition_code": 58.0,
+    "group_code": 58.1,
+    "class_code": 58.13
+  },
+  {
+    "section_code": "J",
+    "name": "Видання журналів і періодичних видань",
+    "partition_code": 58.0,
+    "group_code": 58.1,
+    "class_code": 58.14
+  },
+  {
+    "section_code": "J",
+    "name": "Інші види видавничої діяльності",
+    "partition_code": 58.0,
+    "group_code": 58.1,
+    "class_code": 58.19
+  },
+  {
+    "section_code": "J",
+    "name": "Видання програмного забезпечення",
+    "partition_code": 58.0,
+    "group_code": 58.2,
+    "class_code": null
+  },
+  {
+    "section_code": "J",
+    "name": "Видання комп'ютерних ігор",
+    "partition_code": 58.0,
+    "group_code": 58.2,
+    "class_code": 58.21
+  },
+  {
+    "section_code": "J",
+    "name": "Видання іншого програмного забезпечення",
+    "partition_code": 58.0,
+    "group_code": 58.2,
+    "class_code": 58.29
+  },
+  {
+    "section_code": "J",
+    "name": "Виробництво кіно- та відеофільмів, телевізійних програм, видання звукозаписів",
+    "partition_code": 59.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "J",
+    "name": "Виробництво кіно- та відеофільмів, телевізійних програм",
+    "partition_code": 59.0,
+    "group_code": 59.1,
+    "class_code": null
+  },
+  {
+    "section_code": "J",
+    "name": "Виробництво кіно- та відеофільмів, телевізійних програм",
+    "partition_code": 59.0,
+    "group_code": 59.1,
+    "class_code": 59.11
+  },
+  {
+    "section_code": "J",
+    "name": "Компонування кіно- та відеофільмів, телевізійних програм",
+    "partition_code": 59.0,
+    "group_code": 59.1,
+    "class_code": 59.12
+  },
+  {
+    "section_code": "J",
+    "name": "Розповсюдження кіно- та відеофільмів, телевізійних програм",
+    "partition_code": 59.0,
+    "group_code": 59.1,
+    "class_code": 59.13
+  },
+  {
+    "section_code": "J",
+    "name": "Демонстрація кінофільмів",
+    "partition_code": 59.0,
+    "group_code": 59.1,
+    "class_code": 59.14
+  },
+  {
+    "section_code": "J",
+    "name": "Видання звукозаписів",
+    "partition_code": 59.0,
+    "group_code": 59.2,
+    "class_code": null
+  },
+  {
+    "section_code": "J",
+    "name": "Видання звукозаписів",
+    "partition_code": 59.0,
+    "group_code": 59.2,
+    "class_code": 59.2
+  },
+  {
+    "section_code": "J",
+    "name": "Діяльність у сфері радіомовлення та телевізійного мовлення",
+    "partition_code": 60.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "J",
+    "name": "Діяльність у сфері радіомовлення",
+    "partition_code": 60.0,
+    "group_code": 60.1,
+    "class_code": null
+  },
+  {
+    "section_code": "J",
+    "name": "Діяльність у сфері радіомовлення",
+    "partition_code": 60.0,
+    "group_code": 60.1,
+    "class_code": 60.1
+  },
+  {
+    "section_code": "J",
+    "name": "Діяльність у сфері телевізійного мовлення",
+    "partition_code": 60.0,
+    "group_code": 60.2,
+    "class_code": null
+  },
+  {
+    "section_code": "J",
+    "name": "Діяльність у сфері телевізійного мовлення",
+    "partition_code": 60.0,
+    "group_code": 60.2,
+    "class_code": 60.2
+  },
+  {
+    "section_code": "J",
+    "name": "Телекомунікації (електрозв'язок)",
+    "partition_code": 61.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "J",
+    "name": "Діяльність у сфері проводового електрозв'язку",
+    "partition_code": 61.0,
+    "group_code": 61.1,
+    "class_code": null
+  },
+  {
+    "section_code": "J",
+    "name": "Діяльність у сфері проводового електрозв'язку",
+    "partition_code": 61.0,
+    "group_code": 61.1,
+    "class_code": 61.1
+  },
+  {
+    "section_code": "J",
+    "name": "Діяльність у сфері безпроводового електрозв'язку",
+    "partition_code": 61.0,
+    "group_code": 61.2,
+    "class_code": null
+  },
+  {
+    "section_code": "J",
+    "name": "Діяльність у сфері безпроводового електрозв'язку",
+    "partition_code": 61.0,
+    "group_code": 61.2,
+    "class_code": 61.2
+  },
+  {
+    "section_code": "J",
+    "name": "Діяльність у сфері супутникового електрозв'язку",
+    "partition_code": 61.0,
+    "group_code": 61.3,
+    "class_code": null
+  },
+  {
+    "section_code": "J",
+    "name": "Діяльність у сфері супутникового електрозв'язку",
+    "partition_code": 61.0,
+    "group_code": 61.3,
+    "class_code": 61.3
+  },
+  {
+    "section_code": "J",
+    "name": "Інша діяльність у сфері електрозв'язку",
+    "partition_code": 61.0,
+    "group_code": 61.9,
+    "class_code": null
+  },
+  {
+    "section_code": "J",
+    "name": "Інша діяльність у сфері електрозв'язку",
+    "partition_code": 61.0,
+    "group_code": 61.9,
+    "class_code": 61.9
+  },
+  {
+    "section_code": "J",
+    "name": "Комп'ютерне програмування, консультування та пов'язана з ними діяльність",
+    "partition_code": 62.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "J",
+    "name": "Комп'ютерне програмування, консультування та пов'язана з ними діяльність",
+    "partition_code": 62.0,
+    "group_code": 62.0,
+    "class_code": null
+  },
+  {
+    "section_code": "J",
+    "name": "Комп'ютерне програмування",
+    "partition_code": 62.0,
+    "group_code": 62.0,
+    "class_code": 62.01
+  },
+  {
+    "section_code": "J",
+    "name": "Консультування з питань інформатизації",
+    "partition_code": 62.0,
+    "group_code": 62.0,
+    "class_code": 62.02
+  },
+  {
+    "section_code": "J",
+    "name": "Діяльність із керування комп'ютерним устаткованням",
+    "partition_code": 62.0,
+    "group_code": 62.0,
+    "class_code": 62.03
+  },
+  {
+    "section_code": "J",
+    "name": "Інша діяльність у сфері інформаційних технологій і комп'ютерних систем",
+    "partition_code": 62.0,
+    "group_code": 62.0,
+    "class_code": 62.09
+  },
+  {
+    "section_code": "J",
+    "name": "Надання інформаційних послуг",
+    "partition_code": 63.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "J",
+    "name": "Оброблення даних, розміщення інформації на веб-вузлах і пов'язана з ними діяльність; веб-портали",
+    "partition_code": 63.0,
+    "group_code": 63.1,
+    "class_code": null
+  },
+  {
+    "section_code": "J",
+    "name": "Оброблення даних, розміщення інформації на веб-вузлах і пов'язана з ними діяльність",
+    "partition_code": 63.0,
+    "group_code": 63.1,
+    "class_code": 63.11
+  },
+  {
+    "section_code": "J",
+    "name": "Веб-портали",
+    "partition_code": 63.0,
+    "group_code": 63.1,
+    "class_code": 63.12
+  },
+  {
+    "section_code": "J",
+    "name": "Надання інших інформаційних послуг",
+    "partition_code": 63.0,
+    "group_code": 63.9,
+    "class_code": null
+  },
+  {
+    "section_code": "J",
+    "name": "Діяльність інформаційних агентств",
+    "partition_code": 63.0,
+    "group_code": 63.9,
+    "class_code": 63.91
+  },
+  {
+    "section_code": "J",
+    "name": "Надання інших інформаційних послуг, н.в.і.у.",
+    "partition_code": 63.0,
+    "group_code": 63.9,
+    "class_code": 63.99
+  },
+  {
+    "section_code": "K",
+    "name": "Фінансова та страхова діяльність",
+    "partition_code": null,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "K",
+    "name": "Надання фінансових послуг, крім страхування та пенсійного забезпечення",
+    "partition_code": 64.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "K",
+    "name": "Грошове посередництво",
+    "partition_code": 64.0,
+    "group_code": 64.1,
+    "class_code": null
+  },
+  {
+    "section_code": "K",
+    "name": "Діяльність центрального банку",
+    "partition_code": 64.0,
+    "group_code": 64.1,
+    "class_code": 64.11
+  },
+  {
+    "section_code": "K",
+    "name": "Інші види грошового посередництва",
+    "partition_code": 64.0,
+    "group_code": 64.1,
+    "class_code": 64.19
+  },
+  {
+    "section_code": "K",
+    "name": "Діяльність холдингових компаній",
+    "partition_code": 64.0,
+    "group_code": 64.2,
+    "class_code": null
+  },
+  {
+    "section_code": "K",
+    "name": "Діяльність холдингових компаній",
+    "partition_code": 64.0,
+    "group_code": 64.2,
+    "class_code": 64.2
+  },
+  {
+    "section_code": "K",
+    "name": "Трасти, фонди та подібні фінансові суб'єкти",
+    "partition_code": 64.0,
+    "group_code": 64.3,
+    "class_code": null
+  },
+  {
+    "section_code": "K",
+    "name": "Трасти, фонди та подібні фінансові суб'єкти",
+    "partition_code": 64.0,
+    "group_code": 64.3,
+    "class_code": 64.3
+  },
+  {
+    "section_code": "K",
+    "name": "Надання інших фінансових послуг, крім страхування та пенсійного забезпечення",
+    "partition_code": 64.0,
+    "group_code": 64.9,
+    "class_code": null
+  },
+  {
+    "section_code": "K",
+    "name": "Фінансовий лізинг",
+    "partition_code": 64.0,
+    "group_code": 64.9,
+    "class_code": 64.91
+  },
+  {
+    "section_code": "K",
+    "name": "Інші види кредитування",
+    "partition_code": 64.0,
+    "group_code": 64.9,
+    "class_code": 64.92
+  },
+  {
+    "section_code": "K",
+    "name": "Надання інших фінансових послуг (крім страхування та пенсійного забезпечення), н.в.і.у.",
+    "partition_code": 64.0,
+    "group_code": 64.9,
+    "class_code": 64.99
+  },
+  {
+    "section_code": "K",
+    "name": "Страхування, перестрахування та недержавне пенсійне забезпечення, крім обов'язкового соціального страхування",
+    "partition_code": 65.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "K",
+    "name": "Страхування",
+    "partition_code": 65.0,
+    "group_code": 65.1,
+    "class_code": null
+  },
+  {
+    "section_code": "K",
+    "name": "Страхування життя",
+    "partition_code": 65.0,
+    "group_code": 65.1,
+    "class_code": 65.11
+  },
+  {
+    "section_code": "K",
+    "name": "Інші види страхування, крім страхування життя",
+    "partition_code": 65.0,
+    "group_code": 65.1,
+    "class_code": 65.12
+  },
+  {
+    "section_code": "K",
+    "name": "Перестрахування",
+    "partition_code": 65.0,
+    "group_code": 65.2,
+    "class_code": null
+  },
+  {
+    "section_code": "K",
+    "name": "Перестрахування",
+    "partition_code": 65.0,
+    "group_code": 65.2,
+    "class_code": 65.2
+  },
+  {
+    "section_code": "K",
+    "name": "Недержавне пенсійне забезпечення",
+    "partition_code": 65.0,
+    "group_code": 65.3,
+    "class_code": null
+  },
+  {
+    "section_code": "K",
+    "name": "Недержавне пенсійне забезпечення",
+    "partition_code": 65.0,
+    "group_code": 65.3,
+    "class_code": 65.3
+  },
+  {
+    "section_code": "K",
+    "name": "Допоміжна діяльність у сферах фінансових послуг і страхування",
+    "partition_code": 66.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "K",
+    "name": "Допоміжна діяльність у сфері фінансових послуг, крім страхування та пенсійного забезпечення",
+    "partition_code": 66.0,
+    "group_code": 66.1,
+    "class_code": null
+  },
+  {
+    "section_code": "K",
+    "name": "Управління фінансовими ринками",
+    "partition_code": 66.0,
+    "group_code": 66.1,
+    "class_code": 66.11
+  },
+  {
+    "section_code": "K",
+    "name": "Посередництво за договорами по цінних паперах або товарах",
+    "partition_code": 66.0,
+    "group_code": 66.1,
+    "class_code": 66.12
+  },
+  {
+    "section_code": "K",
+    "name": "Інша допоміжна діяльність у сфері фінансових послуг, крім страхування та пенсійного забезпечення",
+    "partition_code": 66.0,
+    "group_code": 66.1,
+    "class_code": 66.19
+  },
+  {
+    "section_code": "K",
+    "name": "Допоміжна діяльність у сфері страхування та пенсійного забезпечення",
+    "partition_code": 66.0,
+    "group_code": 66.2,
+    "class_code": null
+  },
+  {
+    "section_code": "K",
+    "name": "Оцінювання ризиків та завданої шкоди",
+    "partition_code": 66.0,
+    "group_code": 66.2,
+    "class_code": 66.21
+  },
+  {
+    "section_code": "K",
+    "name": "Діяльність страхових агентів і брокерів",
+    "partition_code": 66.0,
+    "group_code": 66.2,
+    "class_code": 66.22
+  },
+  {
+    "section_code": "K",
+    "name": "Інша допоміжна діяльність у сфері страхування та пенсійного забезпечення",
+    "partition_code": 66.0,
+    "group_code": 66.2,
+    "class_code": 66.29
+  },
+  {
+    "section_code": "K",
+    "name": "Управління фондами",
+    "partition_code": 66.0,
+    "group_code": 66.3,
+    "class_code": null
+  },
+  {
+    "section_code": "K",
+    "name": "Управління фондами",
+    "partition_code": 66.0,
+    "group_code": 66.3,
+    "class_code": 66.3
+  },
+  {
+    "section_code": "L",
+    "name": "Операції з нерухомим майном",
+    "partition_code": null,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "L",
+    "name": "Операції з нерухомим майном",
+    "partition_code": 68.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "L",
+    "name": "Купівля та продаж власного нерухомого майна",
+    "partition_code": 68.0,
+    "group_code": 68.1,
+    "class_code": null
+  },
+  {
+    "section_code": "L",
+    "name": "Купівля та продаж власного нерухомого майна",
+    "partition_code": 68.0,
+    "group_code": 68.1,
+    "class_code": 68.1
+  },
+  {
+    "section_code": "L",
+    "name": "Надання в оренду й експлуатацію власного чи орендованого нерухомого майна",
+    "partition_code": 68.0,
+    "group_code": 68.2,
+    "class_code": null
+  },
+  {
+    "section_code": "L",
+    "name": "Надання в оренду й експлуатацію власного чи орендованого нерухомого майна",
+    "partition_code": 68.0,
+    "group_code": 68.2,
+    "class_code": 68.2
+  },
+  {
+    "section_code": "L",
+    "name": "Операції з нерухомим майном за винагороду або на основі контракту",
+    "partition_code": 68.0,
+    "group_code": 68.3,
+    "class_code": null
+  },
+  {
+    "section_code": "L",
+    "name": "Агентства нерухомості",
+    "partition_code": 68.0,
+    "group_code": 68.3,
+    "class_code": 68.31
+  },
+  {
+    "section_code": "L",
+    "name": "Управління нерухомим майном за винагороду або на основі контракту",
+    "partition_code": 68.0,
+    "group_code": 68.3,
+    "class_code": 68.32
+  },
+  {
+    "section_code": "M",
+    "name": "Професійна, наукова та технічна діяльність",
+    "partition_code": null,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "M",
+    "name": "Діяльність у сферах права та бухгалтерського обліку",
+    "partition_code": 69.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "M",
+    "name": "Діяльність у сфері права",
+    "partition_code": 69.0,
+    "group_code": 69.1,
+    "class_code": null
+  },
+  {
+    "section_code": "M",
+    "name": "Діяльність у сфері права",
+    "partition_code": 69.0,
+    "group_code": 69.1,
+    "class_code": 69.1
+  },
+  {
+    "section_code": "M",
+    "name": "Діяльність у сфері бухгалтерського обліку й аудиту; консультування з питань оподаткування",
+    "partition_code": 69.0,
+    "group_code": 69.2,
+    "class_code": null
+  },
+  {
+    "section_code": "M",
+    "name": "Діяльність у сфері бухгалтерського обліку й аудиту; консультування з питань оподаткування",
+    "partition_code": 69.0,
+    "group_code": 69.2,
+    "class_code": 69.2
+  },
+  {
+    "section_code": "M",
+    "name": "Діяльність головних управлінь (хед-офісів); консультування з питань керування",
+    "partition_code": 70.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "M",
+    "name": "Діяльність головних управлінь (хед-офісів)",
+    "partition_code": 70.0,
+    "group_code": 70.1,
+    "class_code": null
+  },
+  {
+    "section_code": "M",
+    "name": "Діяльність головних управлінь (хед-офісів)",
+    "partition_code": 70.0,
+    "group_code": 70.1,
+    "class_code": 70.1
+  },
+  {
+    "section_code": "M",
+    "name": "Консультування з питань керування",
+    "partition_code": 70.0,
+    "group_code": 70.2,
+    "class_code": null
+  },
+  {
+    "section_code": "M",
+    "name": "Діяльність у сфері зв'язків із громадськістю",
+    "partition_code": 70.0,
+    "group_code": 70.2,
+    "class_code": 70.21
+  },
+  {
+    "section_code": "M",
+    "name": "Консультування з питань комерційної діяльності й керування",
+    "partition_code": 70.0,
+    "group_code": 70.2,
+    "class_code": 70.22
+  },
+  {
+    "section_code": "M",
+    "name": "Діяльність у сферах архітектури та інжинірингу; технічні випробування та дослідження",
+    "partition_code": 71.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "M",
+    "name": "Діяльність у сферах архітектури та інжинірингу, надання послуг технічного консультування",
+    "partition_code": 71.0,
+    "group_code": 71.1,
+    "class_code": null
+  },
+  {
+    "section_code": "M",
+    "name": "Діяльність у сфері архітектури",
+    "partition_code": 71.0,
+    "group_code": 71.1,
+    "class_code": 71.11
+  },
+  {
+    "section_code": "M",
+    "name": "Діяльність у сфері інжинірингу, геології та геодезії, надання послуг технічного консультування в цих сферах",
+    "partition_code": 71.0,
+    "group_code": 71.1,
+    "class_code": 71.12
+  },
+  {
+    "section_code": "M",
+    "name": "Технічні випробування та дослідження",
+    "partition_code": 71.0,
+    "group_code": 71.2,
+    "class_code": null
+  },
+  {
+    "section_code": "M",
+    "name": "Технічні випробування та дослідження",
+    "partition_code": 71.0,
+    "group_code": 71.2,
+    "class_code": 71.2
+  },
+  {
+    "section_code": "M",
+    "name": "Наукові дослідження та розробки",
+    "partition_code": 72.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "M",
+    "name": "Дослідження й експериментальні розробки у сфері природничих і технічних наук",
+    "partition_code": 72.0,
+    "group_code": 72.1,
+    "class_code": null
+  },
+  {
+    "section_code": "M",
+    "name": "Дослідження й експериментальні розробки у сфері біотехнологій",
+    "partition_code": 72.0,
+    "group_code": 72.1,
+    "class_code": 72.11
+  },
+  {
+    "section_code": "M",
+    "name": "Дослідження й експериментальні розробки у сфері інших природничих і технічних наук",
+    "partition_code": 72.0,
+    "group_code": 72.1,
+    "class_code": 72.19
+  },
+  {
+    "section_code": "M",
+    "name": "Дослідження й експериментальні розробки у сфері суспільних і гуманітарних наук",
+    "partition_code": 72.0,
+    "group_code": 72.2,
+    "class_code": null
+  },
+  {
+    "section_code": "M",
+    "name": "Дослідження й експериментальні розробки у сфері суспільних і гуманітарних наук",
+    "partition_code": 72.0,
+    "group_code": 72.2,
+    "class_code": 72.2
+  },
+  {
+    "section_code": "M",
+    "name": "Рекламна діяльність і дослідження кон'юнктури ринку",
+    "partition_code": 73.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "M",
+    "name": "Рекламна діяльність",
+    "partition_code": 73.0,
+    "group_code": 73.1,
+    "class_code": null
+  },
+  {
+    "section_code": "M",
+    "name": "Рекламні агентства",
+    "partition_code": 73.0,
+    "group_code": 73.1,
+    "class_code": 73.11
+  },
+  {
+    "section_code": "M",
+    "name": "Посередництво в розміщенні реклами в засобах масової інформації",
+    "partition_code": 73.0,
+    "group_code": 73.1,
+    "class_code": 73.12
+  },
+  {
+    "section_code": "M",
+    "name": "Дослідження кон'юнктури ринку та виявлення громадської думки",
+    "partition_code": 73.0,
+    "group_code": 73.2,
+    "class_code": null
+  },
+  {
+    "section_code": "M",
+    "name": "Дослідження кон'юнктури ринку та виявлення громадської думки",
+    "partition_code": 73.0,
+    "group_code": 73.2,
+    "class_code": 73.2
+  },
+  {
+    "section_code": "M",
+    "name": "Інша професійна, наукова та технічна діяльність",
+    "partition_code": 74.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "M",
+    "name": "Спеціалізована діяльність із дизайну",
+    "partition_code": 74.0,
+    "group_code": 74.1,
+    "class_code": null
+  },
+  {
+    "section_code": "M",
+    "name": "Спеціалізована діяльність із дизайну",
+    "partition_code": 74.0,
+    "group_code": 74.1,
+    "class_code": 74.1
+  },
+  {
+    "section_code": "M",
+    "name": "Діяльність у сфері фотографії",
+    "partition_code": 74.0,
+    "group_code": 74.2,
+    "class_code": null
+  },
+  {
+    "section_code": "M",
+    "name": "Діяльність у сфері фотографії",
+    "partition_code": 74.0,
+    "group_code": 74.2,
+    "class_code": 74.2
+  },
+  {
+    "section_code": "M",
+    "name": "Надання послуг перекладу",
+    "partition_code": 74.0,
+    "group_code": 74.3,
+    "class_code": null
+  },
+  {
+    "section_code": "M",
+    "name": "Надання послуг перекладу",
+    "partition_code": 74.0,
+    "group_code": 74.3,
+    "class_code": 74.3
+  },
+  {
+    "section_code": "M",
+    "name": "Інша професійна, наукова та технічна діяльність, н.в.і.у.",
+    "partition_code": 74.0,
+    "group_code": 74.9,
+    "class_code": null
+  },
+  {
+    "section_code": "M",
+    "name": "Інша професійна, наукова та технічна діяльність, н.в.і.у.",
+    "partition_code": 74.0,
+    "group_code": 74.9,
+    "class_code": 74.9
+  },
+  {
+    "section_code": "M",
+    "name": "Ветеринарна діяльність",
+    "partition_code": 75.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "M",
+    "name": "Ветеринарна діяльність",
+    "partition_code": 75.0,
+    "group_code": 75.0,
+    "class_code": null
+  },
+  {
+    "section_code": "M",
+    "name": "Ветеринарна діяльність",
+    "partition_code": 75.0,
+    "group_code": 75.0,
+    "class_code": 75.0
+  },
+  {
+    "section_code": "N",
+    "name": "Діяльність у сфері адміністративного та допоміжного обслуговування",
+    "partition_code": null,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "N",
+    "name": "Оренда, прокат і лізинг",
+    "partition_code": 77.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "N",
+    "name": "Надання в оренду автотранспортних засобів",
+    "partition_code": 77.0,
+    "group_code": 77.1,
+    "class_code": null
+  },
+  {
+    "section_code": "N",
+    "name": "Надання в оренду автомобілів і легкових автотранспортних засобів",
+    "partition_code": 77.0,
+    "group_code": 77.1,
+    "class_code": 77.11
+  },
+  {
+    "section_code": "N",
+    "name": "Надання в оренду вантажних автомобілів",
+    "partition_code": 77.0,
+    "group_code": 77.1,
+    "class_code": 77.12
+  },
+  {
+    "section_code": "N",
+    "name": "Прокат побутових виробів і предметів особистого вжитку",
+    "partition_code": 77.0,
+    "group_code": 77.2,
+    "class_code": null
+  },
+  {
+    "section_code": "N",
+    "name": "Прокат товарів для спорту та відпочинку",
+    "partition_code": 77.0,
+    "group_code": 77.2,
+    "class_code": 77.21
+  },
+  {
+    "section_code": "N",
+    "name": "Прокат відеозаписів і дисків",
+    "partition_code": 77.0,
+    "group_code": 77.2,
+    "class_code": 77.22
+  },
+  {
+    "section_code": "N",
+    "name": "Прокат інших побутових виробів і предметів особистого вжитку",
+    "partition_code": 77.0,
+    "group_code": 77.2,
+    "class_code": 77.29
+  },
+  {
+    "section_code": "N",
+    "name": "Надання в оренду інших машин, устатковання та товарів",
+    "partition_code": 77.0,
+    "group_code": 77.3,
+    "class_code": null
+  },
+  {
+    "section_code": "N",
+    "name": "Надання в оренду сільськогосподарських машин і устатковання",
+    "partition_code": 77.0,
+    "group_code": 77.3,
+    "class_code": 77.31
+  },
+  {
+    "section_code": "N",
+    "name": "Надання в оренду будівельних машин і устатковання",
+    "partition_code": 77.0,
+    "group_code": 77.3,
+    "class_code": 77.32
+  },
+  {
+    "section_code": "N",
+    "name": "Надання в оренду офісних машин і устатковання, у тому числі комп'ютерів",
+    "partition_code": 77.0,
+    "group_code": 77.3,
+    "class_code": 77.33
+  },
+  {
+    "section_code": "N",
+    "name": "Надання в оренду водних транспортних засобів",
+    "partition_code": 77.0,
+    "group_code": 77.3,
+    "class_code": 77.34
+  },
+  {
+    "section_code": "N",
+    "name": "Надання в оренду повітряних транспортних засобів",
+    "partition_code": 77.0,
+    "group_code": 77.3,
+    "class_code": 77.35
+  },
+  {
+    "section_code": "N",
+    "name": "Надання в оренду інших машин, устатковання та товарів, н.в.і.у.",
+    "partition_code": 77.0,
+    "group_code": 77.3,
+    "class_code": 77.39
+  },
+  {
+    "section_code": "N",
+    "name": "Лізинг інтелектуальної власності та подібних продуктів, крім творів, захищених авторськими правами",
+    "partition_code": 77.0,
+    "group_code": 77.4,
+    "class_code": null
+  },
+  {
+    "section_code": "N",
+    "name": "Лізинг інтелектуальної власності та подібних продуктів, крім творів, захищених авторськими правами",
+    "partition_code": 77.0,
+    "group_code": 77.4,
+    "class_code": 77.4
+  },
+  {
+    "section_code": "N",
+    "name": "Діяльність із працевлаштування",
+    "partition_code": 78.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "N",
+    "name": "Діяльність агентств працевлаштування",
+    "partition_code": 78.0,
+    "group_code": 78.1,
+    "class_code": null
+  },
+  {
+    "section_code": "N",
+    "name": "Діяльність агентств працевлаштування",
+    "partition_code": 78.0,
+    "group_code": 78.1,
+    "class_code": 78.1
+  },
+  {
+    "section_code": "N",
+    "name": "Діяльність агентств тимчасового працевлаштування",
+    "partition_code": 78.0,
+    "group_code": 78.2,
+    "class_code": null
+  },
+  {
+    "section_code": "N",
+    "name": "Діяльність агентств тимчасового працевлаштування",
+    "partition_code": 78.0,
+    "group_code": 78.2,
+    "class_code": 78.2
+  },
+  {
+    "section_code": "N",
+    "name": "Інша діяльність із забезпечення  трудовими ресурсами",
+    "partition_code": 78.0,
+    "group_code": 78.3,
+    "class_code": null
+  },
+  {
+    "section_code": "N",
+    "name": "Інша діяльність із забезпечення трудовими ресурсами",
+    "partition_code": 78.0,
+    "group_code": 78.3,
+    "class_code": 78.3
+  },
+  {
+    "section_code": "N",
+    "name": "Діяльність туристичних агентств, туристичних операторів, надання інших послуг із бронювання та пов'язана з цим діяльність",
+    "partition_code": 79.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "N",
+    "name": "Діяльність туристичних агентств і туристичних операторів",
+    "partition_code": 79.0,
+    "group_code": 79.1,
+    "class_code": null
+  },
+  {
+    "section_code": "N",
+    "name": "Діяльність туристичних агентств",
+    "partition_code": 79.0,
+    "group_code": 79.1,
+    "class_code": 79.11
+  },
+  {
+    "section_code": "N",
+    "name": "Діяльність туристичних операторів",
+    "partition_code": 79.0,
+    "group_code": 79.1,
+    "class_code": 79.12
+  },
+  {
+    "section_code": "N",
+    "name": "Надання інших послуг бронювання та пов'язана з цим діяльність",
+    "partition_code": 79.0,
+    "group_code": 79.9,
+    "class_code": null
+  },
+  {
+    "section_code": "N",
+    "name": "Надання інших послуг бронювання та пов'язана з цим діяльність",
+    "partition_code": 79.0,
+    "group_code": 79.9,
+    "class_code": 79.9
+  },
+  {
+    "section_code": "N",
+    "name": "Діяльність охоронних служб та проведення розслідувань",
+    "partition_code": 80.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "N",
+    "name": "Діяльність приватних охоронних служб",
+    "partition_code": 80.0,
+    "group_code": 80.1,
+    "class_code": null
+  },
+  {
+    "section_code": "N",
+    "name": "Діяльність приватних охоронних служб",
+    "partition_code": 80.0,
+    "group_code": 80.1,
+    "class_code": 80.1
+  },
+  {
+    "section_code": "N",
+    "name": "Обслуговування систем безпеки",
+    "partition_code": 80.0,
+    "group_code": 80.2,
+    "class_code": null
+  },
+  {
+    "section_code": "N",
+    "name": "Обслуговування систем безпеки",
+    "partition_code": 80.0,
+    "group_code": 80.2,
+    "class_code": 80.2
+  },
+  {
+    "section_code": "N",
+    "name": "Проведення розслідувань",
+    "partition_code": 80.0,
+    "group_code": 80.3,
+    "class_code": null
+  },
+  {
+    "section_code": "N",
+    "name": "Проведення розслідувань",
+    "partition_code": 80.0,
+    "group_code": 80.3,
+    "class_code": 80.3
+  },
+  {
+    "section_code": "N",
+    "name": "Обслуговування будинків і територій",
+    "partition_code": 81.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "N",
+    "name": "Комплексне обслуговування об'єктів",
+    "partition_code": 81.0,
+    "group_code": 81.1,
+    "class_code": null
+  },
+  {
+    "section_code": "N",
+    "name": "Комплексне обслуговування об'єктів",
+    "partition_code": 81.0,
+    "group_code": 81.1,
+    "class_code": 81.1
+  },
+  {
+    "section_code": "N",
+    "name": "Діяльність із прибирання",
+    "partition_code": 81.0,
+    "group_code": 81.2,
+    "class_code": null
+  },
+  {
+    "section_code": "N",
+    "name": "Загальне прибирання будинків",
+    "partition_code": 81.0,
+    "group_code": 81.2,
+    "class_code": 81.21
+  },
+  {
+    "section_code": "N",
+    "name": "Інша діяльність із прибирання будинків і промислових об'єктів",
+    "partition_code": 81.0,
+    "group_code": 81.2,
+    "class_code": 81.22
+  },
+  {
+    "section_code": "N",
+    "name": "Інші види діяльності із прибирання",
+    "partition_code": 81.0,
+    "group_code": 81.2,
+    "class_code": 81.29
+  },
+  {
+    "section_code": "N",
+    "name": "Надання ландшафтних послуг",
+    "partition_code": 81.0,
+    "group_code": 81.3,
+    "class_code": null
+  },
+  {
+    "section_code": "N",
+    "name": "Надання ландшафтних послуг",
+    "partition_code": 81.0,
+    "group_code": 81.3,
+    "class_code": 81.3
+  },
+  {
+    "section_code": "N",
+    "name": "Адміністративна та допоміжна офісна діяльність, інші допоміжні комерційні послуги",
+    "partition_code": 82.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "N",
+    "name": "Адміністративна та допоміжна офісна діяльність",
+    "partition_code": 82.0,
+    "group_code": 82.1,
+    "class_code": null
+  },
+  {
+    "section_code": "N",
+    "name": "Надання комбінованих офісних адміністративних послуг",
+    "partition_code": 82.0,
+    "group_code": 82.1,
+    "class_code": 82.11
+  },
+  {
+    "section_code": "N",
+    "name": "Фотокопіювання, підготування документів та інша спеціалізована допоміжна офісна діяльність",
+    "partition_code": 82.0,
+    "group_code": 82.1,
+    "class_code": 82.19
+  },
+  {
+    "section_code": "N",
+    "name": "Діяльність телефонних центрів",
+    "partition_code": 82.0,
+    "group_code": 82.2,
+    "class_code": null
+  },
+  {
+    "section_code": "N",
+    "name": "Діяльність телефонних центрів",
+    "partition_code": 82.0,
+    "group_code": 82.2,
+    "class_code": 82.2
+  },
+  {
+    "section_code": "N",
+    "name": "Організування конгресів і торговельних виставок",
+    "partition_code": 82.0,
+    "group_code": 82.3,
+    "class_code": null
+  },
+  {
+    "section_code": "N",
+    "name": "Організування конгресів і торговельних виставок",
+    "partition_code": 82.0,
+    "group_code": 82.3,
+    "class_code": 82.3
+  },
+  {
+    "section_code": "N",
+    "name": "Надання допоміжних комерційних послуг, н.в.і.у.",
+    "partition_code": 82.0,
+    "group_code": 82.9,
+    "class_code": null
+  },
+  {
+    "section_code": "N",
+    "name": "Діяльність агентств зі стягування платежів і бюро кредитних історій",
+    "partition_code": 82.0,
+    "group_code": 82.9,
+    "class_code": 82.91
+  },
+  {
+    "section_code": "N",
+    "name": "Пакування",
+    "partition_code": 82.0,
+    "group_code": 82.9,
+    "class_code": 82.92
+  },
+  {
+    "section_code": "N",
+    "name": "Надання інших допоміжних комерційних послуг, н.в.і.у.",
+    "partition_code": 82.0,
+    "group_code": 82.9,
+    "class_code": 82.99
+  },
+  {
+    "section_code": "O",
+    "name": "Державне управління й оборона; обов'язкове соціальне страхування",
+    "partition_code": null,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "O",
+    "name": "Державне управління й оборона; обов'язкове соціальне страхування",
+    "partition_code": 84.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "O",
+    "name": "Державне управління загального характеру; соціально-економічне управління",
+    "partition_code": 84.0,
+    "group_code": 84.1,
+    "class_code": null
+  },
+  {
+    "section_code": "O",
+    "name": "Державне управління загального характеру",
+    "partition_code": 84.0,
+    "group_code": 84.1,
+    "class_code": 84.11
+  },
+  {
+    "section_code": "O",
+    "name": "Регулювання у сферах охорони здоров'я, освіти, культури та інших соціальних сферах, крім обов'язкового соціального страхування",
+    "partition_code": 84.0,
+    "group_code": 84.1,
+    "class_code": 84.12
+  },
+  {
+    "section_code": "O",
+    "name": "Регулювання та сприяння ефективному веденню економічної діяльності",
+    "partition_code": 84.0,
+    "group_code": 84.1,
+    "class_code": 84.13
+  },
+  {
+    "section_code": "O",
+    "name": "Надання державних послуг суспільству в цілому",
+    "partition_code": 84.0,
+    "group_code": 84.2,
+    "class_code": null
+  },
+  {
+    "section_code": "O",
+    "name": "Міжнародна діяльність",
+    "partition_code": 84.0,
+    "group_code": 84.2,
+    "class_code": 84.21
+  },
+  {
+    "section_code": "O",
+    "name": "Діяльність у сфері оборони",
+    "partition_code": 84.0,
+    "group_code": 84.2,
+    "class_code": 84.22
+  },
+  {
+    "section_code": "O",
+    "name": "Діяльність у сфері юстиції та правосуддя",
+    "partition_code": 84.0,
+    "group_code": 84.2,
+    "class_code": 84.23
+  },
+  {
+    "section_code": "O",
+    "name": "Діяльність у сфері охорони громадського порядку та безпеки",
+    "partition_code": 84.0,
+    "group_code": 84.2,
+    "class_code": 84.24
+  },
+  {
+    "section_code": "O",
+    "name": "Діяльність пожежних служб",
+    "partition_code": 84.0,
+    "group_code": 84.2,
+    "class_code": 84.25
+  },
+  {
+    "section_code": "O",
+    "name": "Діяльність у сфері обов'язкового  соціального страхування",
+    "partition_code": 84.0,
+    "group_code": 84.3,
+    "class_code": null
+  },
+  {
+    "section_code": "O",
+    "name": "Діяльність у сфері обов'язкового соціального страхування",
+    "partition_code": 84.0,
+    "group_code": 84.3,
+    "class_code": 84.3
+  },
+  {
+    "section_code": "P",
+    "name": "Освіта",
+    "partition_code": null,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "P",
+    "name": "Освіта",
+    "partition_code": 85.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "P",
+    "name": "Дошкільна освіта",
+    "partition_code": 85.0,
+    "group_code": 85.1,
+    "class_code": null
+  },
+  {
+    "section_code": "P",
+    "name": "Дошкільна освіта",
+    "partition_code": 85.0,
+    "group_code": 85.1,
+    "class_code": 85.1
+  },
+  {
+    "section_code": "P",
+    "name": "Початкова освіта",
+    "partition_code": 85.0,
+    "group_code": 85.2,
+    "class_code": null
+  },
+  {
+    "section_code": "P",
+    "name": "Початкова освіта",
+    "partition_code": 85.0,
+    "group_code": 85.2,
+    "class_code": 85.2
+  },
+  {
+    "section_code": "P",
+    "name": "Середня освіта",
+    "partition_code": 85.0,
+    "group_code": 85.3,
+    "class_code": null
+  },
+  {
+    "section_code": "P",
+    "name": "Загальна середня освіта",
+    "partition_code": 85.0,
+    "group_code": 85.3,
+    "class_code": 85.31
+  },
+  {
+    "section_code": "P",
+    "name": "Професійно-технічна освіта",
+    "partition_code": 85.0,
+    "group_code": 85.3,
+    "class_code": 85.32
+  },
+  {
+    "section_code": "P",
+    "name": "Вища освіта",
+    "partition_code": 85.0,
+    "group_code": 85.4,
+    "class_code": null
+  },
+  {
+    "section_code": "P",
+    "name": "Фахова передвища освіта",
+    "partition_code": 85.0,
+    "group_code": 85.4,
+    "class_code": 85.41
+  },
+  {
+    "section_code": "P",
+    "name": "Вища освіта",
+    "partition_code": 85.0,
+    "group_code": 85.4,
+    "class_code": 85.42
+  },
+  {
+    "section_code": "P",
+    "name": "Інші види освіти",
+    "partition_code": 85.0,
+    "group_code": 85.5,
+    "class_code": null
+  },
+  {
+    "section_code": "P",
+    "name": "Освіта у сфері спорту та відпочинку",
+    "partition_code": 85.0,
+    "group_code": 85.5,
+    "class_code": 85.51
+  },
+  {
+    "section_code": "P",
+    "name": "Освіта у сфері культури",
+    "partition_code": 85.0,
+    "group_code": 85.5,
+    "class_code": 85.52
+  },
+  {
+    "section_code": "P",
+    "name": "Діяльність шкіл підготовки водіїв транспортних засобів",
+    "partition_code": 85.0,
+    "group_code": 85.5,
+    "class_code": 85.53
+  },
+  {
+    "section_code": "P",
+    "name": "Інші види освіти, н.в.і.у.",
+    "partition_code": 85.0,
+    "group_code": 85.5,
+    "class_code": 85.59
+  },
+  {
+    "section_code": "P",
+    "name": "Допоміжна діяльність у сфері освіти",
+    "partition_code": 85.0,
+    "group_code": 85.6,
+    "class_code": null
+  },
+  {
+    "section_code": "P",
+    "name": "Допоміжна діяльність у сфері освіти",
+    "partition_code": 85.0,
+    "group_code": 85.6,
+    "class_code": 85.6
+  },
+  {
+    "section_code": "Q",
+    "name": "Охорона здоров'я та надання соціальної допомоги",
+    "partition_code": null,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "Q",
+    "name": "Охорона здоров'я",
+    "partition_code": 86.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "Q",
+    "name": "Діяльність лікарняних закладів",
+    "partition_code": 86.0,
+    "group_code": 86.1,
+    "class_code": null
+  },
+  {
+    "section_code": "Q",
+    "name": "Діяльність лікарняних закладів",
+    "partition_code": 86.0,
+    "group_code": 86.1,
+    "class_code": 86.1
+  },
+  {
+    "section_code": "Q",
+    "name": "Медична та стоматологічна практика",
+    "partition_code": 86.0,
+    "group_code": 86.2,
+    "class_code": null
+  },
+  {
+    "section_code": "Q",
+    "name": "Загальна медична практика",
+    "partition_code": 86.0,
+    "group_code": 86.2,
+    "class_code": 86.21
+  },
+  {
+    "section_code": "Q",
+    "name": "Спеціалізована медична практика",
+    "partition_code": 86.0,
+    "group_code": 86.2,
+    "class_code": 86.22
+  },
+  {
+    "section_code": "Q",
+    "name": "Стоматологічна практика",
+    "partition_code": 86.0,
+    "group_code": 86.2,
+    "class_code": 86.23
+  },
+  {
+    "section_code": "Q",
+    "name": "Інша діяльність у сфері охорони здоров'я",
+    "partition_code": 86.0,
+    "group_code": 86.9,
+    "class_code": null
+  },
+  {
+    "section_code": "Q",
+    "name": "Інша діяльність у сфері охорони здоров'я",
+    "partition_code": 86.0,
+    "group_code": 86.9,
+    "class_code": 86.9
+  },
+  {
+    "section_code": "Q",
+    "name": "Надання послуг догляду із забезпеченням проживання",
+    "partition_code": 87.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "Q",
+    "name": "Діяльність із догляду за хворими із забезпеченням проживання",
+    "partition_code": 87.0,
+    "group_code": 87.1,
+    "class_code": null
+  },
+  {
+    "section_code": "Q",
+    "name": "Діяльність із догляду за хворими із забезпеченням проживання",
+    "partition_code": 87.0,
+    "group_code": 87.1,
+    "class_code": 87.1
+  },
+  {
+    "section_code": "Q",
+    "name": "Надання послуг догляду із забезпеченням проживання для осіб з розумовими вадами та хворих на наркоманію",
+    "partition_code": 87.0,
+    "group_code": 87.2,
+    "class_code": null
+  },
+  {
+    "section_code": "Q",
+    "name": "Надання послуг догляду із забезпеченням проживання для осіб з розумовими вадами та хворих на наркоманію",
+    "partition_code": 87.0,
+    "group_code": 87.2,
+    "class_code": 87.2
+  },
+  {
+    "section_code": "Q",
+    "name": "Надання послуг догляду із забезпеченням проживання для осіб похилого віку та інвалідів",
+    "partition_code": 87.0,
+    "group_code": 87.3,
+    "class_code": null
+  },
+  {
+    "section_code": "Q",
+    "name": "Надання послуг догляду із забезпеченням проживання для осіб похилого віку та інвалідів",
+    "partition_code": 87.0,
+    "group_code": 87.3,
+    "class_code": 87.3
+  },
+  {
+    "section_code": "Q",
+    "name": "Надання інших послуг догляду із забезпеченням проживання",
+    "partition_code": 87.0,
+    "group_code": 87.9,
+    "class_code": null
+  },
+  {
+    "section_code": "Q",
+    "name": "Надання інших послуг догляду із забезпеченням проживання",
+    "partition_code": 87.0,
+    "group_code": 87.9,
+    "class_code": 87.9
+  },
+  {
+    "section_code": "Q",
+    "name": "Надання соціальної допомоги без забезпечення проживання",
+    "partition_code": 88.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "Q",
+    "name": "Надання соціальної допомоги без забезпечення проживання для осіб похилого віку та інвалідів",
+    "partition_code": 88.0,
+    "group_code": 88.1,
+    "class_code": null
+  },
+  {
+    "section_code": "Q",
+    "name": "Надання соціальної допомоги без забезпечення проживання для осіб похилого віку та інвалідів",
+    "partition_code": 88.0,
+    "group_code": 88.1,
+    "class_code": 88.1
+  },
+  {
+    "section_code": "Q",
+    "name": "Надання іншої соціальної допомоги без забезпечення проживання",
+    "partition_code": 88.0,
+    "group_code": 88.9,
+    "class_code": null
+  },
+  {
+    "section_code": "Q",
+    "name": "Денний догляд за дітьми",
+    "partition_code": 88.0,
+    "group_code": 88.9,
+    "class_code": 88.91
+  },
+  {
+    "section_code": "Q",
+    "name": "Надання іншої соціальної допомоги без забезпечення проживання, н.в.і.у.",
+    "partition_code": 88.0,
+    "group_code": 88.9,
+    "class_code": 88.99
+  },
+  {
+    "section_code": "R",
+    "name": "Мистецтво, спорт, розваги та відпочинок",
+    "partition_code": null,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "R",
+    "name": "Діяльність у сфері творчості, мистецтва та розваг",
+    "partition_code": 90.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "R",
+    "name": "Діяльність у сфері творчості, мистецтва та розваг",
+    "partition_code": 90.0,
+    "group_code": 90.0,
+    "class_code": null
+  },
+  {
+    "section_code": "R",
+    "name": "Театральна та концертна діяльність",
+    "partition_code": 90.0,
+    "group_code": 90.0,
+    "class_code": 90.01
+  },
+  {
+    "section_code": "R",
+    "name": "Діяльність із підтримки театральних і концертних заходів",
+    "partition_code": 90.0,
+    "group_code": 90.0,
+    "class_code": 90.02
+  },
+  {
+    "section_code": "R",
+    "name": "Індивідуальна мистецька діяльність",
+    "partition_code": 90.0,
+    "group_code": 90.0,
+    "class_code": 90.03
+  },
+  {
+    "section_code": "R",
+    "name": "Функціювання театральних і концертних залів",
+    "partition_code": 90.0,
+    "group_code": 90.0,
+    "class_code": 90.04
+  },
+  {
+    "section_code": "R",
+    "name": "Функціювання бібліотек, архівів, музеїв та інших закладів культури",
+    "partition_code": 91.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "R",
+    "name": "Функціювання бібліотек, архівів, музеїв та інших закладів культури",
+    "partition_code": 91.0,
+    "group_code": 91.0,
+    "class_code": null
+  },
+  {
+    "section_code": "R",
+    "name": "Функціювання бібліотек і архівів",
+    "partition_code": 91.0,
+    "group_code": 91.0,
+    "class_code": 91.01
+  },
+  {
+    "section_code": "R",
+    "name": "Функціювання музеїв",
+    "partition_code": 91.0,
+    "group_code": 91.0,
+    "class_code": 91.02
+  },
+  {
+    "section_code": "R",
+    "name": "Діяльність із охорони та використання пам'яток історії, будівель та інших пам'яток культури",
+    "partition_code": 91.0,
+    "group_code": 91.0,
+    "class_code": 91.03
+  },
+  {
+    "section_code": "R",
+    "name": "Функціювання ботанічних садів, зоопарків і природних заповідників",
+    "partition_code": 91.0,
+    "group_code": 91.0,
+    "class_code": 91.04
+  },
+  {
+    "section_code": "R",
+    "name": "Організування азартних ігор",
+    "partition_code": 92.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "R",
+    "name": "Організування азартних ігор",
+    "partition_code": 92.0,
+    "group_code": 92.0,
+    "class_code": null
+  },
+  {
+    "section_code": "R",
+    "name": "Організування азартних ігор",
+    "partition_code": 92.0,
+    "group_code": 92.0,
+    "class_code": 92.0
+  },
+  {
+    "section_code": "R",
+    "name": "Діяльність у сфері спорту, організування відпочинку та розваг",
+    "partition_code": 93.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "R",
+    "name": "Діяльність у сфері спорту",
+    "partition_code": 93.0,
+    "group_code": 93.1,
+    "class_code": null
+  },
+  {
+    "section_code": "R",
+    "name": "Функціювання спортивних споруд",
+    "partition_code": 93.0,
+    "group_code": 93.1,
+    "class_code": 93.11
+  },
+  {
+    "section_code": "R",
+    "name": "Діяльність спортивних клубів",
+    "partition_code": 93.0,
+    "group_code": 93.1,
+    "class_code": 93.12
+  },
+  {
+    "section_code": "R",
+    "name": "Діяльність фітнес-центрів",
+    "partition_code": 93.0,
+    "group_code": 93.1,
+    "class_code": 93.13
+  },
+  {
+    "section_code": "R",
+    "name": "Інша діяльність у сфері спорту",
+    "partition_code": 93.0,
+    "group_code": 93.1,
+    "class_code": 93.19
+  },
+  {
+    "section_code": "R",
+    "name": "Організування відпочинку та розваг",
+    "partition_code": 93.0,
+    "group_code": 93.2,
+    "class_code": null
+  },
+  {
+    "section_code": "R",
+    "name": "Функціювання атракціонів і тематичних парків",
+    "partition_code": 93.0,
+    "group_code": 93.2,
+    "class_code": 93.21
+  },
+  {
+    "section_code": "R",
+    "name": "Організування інших видів відпочинку та розваг",
+    "partition_code": 93.0,
+    "group_code": 93.2,
+    "class_code": 93.29
+  },
+  {
+    "section_code": "S",
+    "name": "Надання інших видів послуг",
+    "partition_code": null,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "S",
+    "name": "Діяльність громадських організацій",
+    "partition_code": 94.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "S",
+    "name": "Діяльність організацій промисловців і підприємців, професійних організацій",
+    "partition_code": 94.0,
+    "group_code": 94.1,
+    "class_code": null
+  },
+  {
+    "section_code": "S",
+    "name": "Діяльність організацій промисловців і підприємців",
+    "partition_code": 94.0,
+    "group_code": 94.1,
+    "class_code": 94.11
+  },
+  {
+    "section_code": "S",
+    "name": "Діяльність професійних громадських організацій",
+    "partition_code": 94.0,
+    "group_code": 94.1,
+    "class_code": 94.12
+  },
+  {
+    "section_code": "S",
+    "name": "Діяльність професійних спілок",
+    "partition_code": 94.0,
+    "group_code": 94.2,
+    "class_code": null
+  },
+  {
+    "section_code": "S",
+    "name": "Діяльність професійних спілок",
+    "partition_code": 94.0,
+    "group_code": 94.2,
+    "class_code": 94.2
+  },
+  {
+    "section_code": "S",
+    "name": "Діяльність інших громадських організацій",
+    "partition_code": 94.0,
+    "group_code": 94.9,
+    "class_code": null
+  },
+  {
+    "section_code": "S",
+    "name": "Діяльність релігійних організацій",
+    "partition_code": 94.0,
+    "group_code": 94.9,
+    "class_code": 94.91
+  },
+  {
+    "section_code": "S",
+    "name": "Діяльність політичних організацій",
+    "partition_code": 94.0,
+    "group_code": 94.9,
+    "class_code": 94.92
+  },
+  {
+    "section_code": "S",
+    "name": "Діяльність інших громадських організацій, н.в.і.у.",
+    "partition_code": 94.0,
+    "group_code": 94.9,
+    "class_code": 94.99
+  },
+  {
+    "section_code": "S",
+    "name": "Ремонт комп'ютерів, побутових виробів і предметів особистого вжитку",
+    "partition_code": 95.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "S",
+    "name": "Ремонт комп'ютерів і обладнання зв'язку",
+    "partition_code": 95.0,
+    "group_code": 95.1,
+    "class_code": null
+  },
+  {
+    "section_code": "S",
+    "name": "Ремонт комп'ютерів і периферійного устатковання",
+    "partition_code": 95.0,
+    "group_code": 95.1,
+    "class_code": 95.11
+  },
+  {
+    "section_code": "S",
+    "name": "Ремонт обладнання зв'язку",
+    "partition_code": 95.0,
+    "group_code": 95.1,
+    "class_code": 95.12
+  },
+  {
+    "section_code": "S",
+    "name": "Ремонт побутових виробів і предметів особистого вжитку",
+    "partition_code": 95.0,
+    "group_code": 95.2,
+    "class_code": null
+  },
+  {
+    "section_code": "S",
+    "name": "Ремонт електронної апаратури побутового призначення для приймання, записування, відтворювання звуку й зображення",
+    "partition_code": 95.0,
+    "group_code": 95.2,
+    "class_code": 95.21
+  },
+  {
+    "section_code": "S",
+    "name": "Ремонт побутових приладів, домашнього та садового обладнання",
+    "partition_code": 95.0,
+    "group_code": 95.2,
+    "class_code": 95.22
+  },
+  {
+    "section_code": "S",
+    "name": "Ремонт взуття та шкіряних виробів",
+    "partition_code": 95.0,
+    "group_code": 95.2,
+    "class_code": 95.23
+  },
+  {
+    "section_code": "S",
+    "name": "Ремонт меблів і домашнього начиння",
+    "partition_code": 95.0,
+    "group_code": 95.2,
+    "class_code": 95.24
+  },
+  {
+    "section_code": "S",
+    "name": "Ремонт годинників і ювелірних виробів",
+    "partition_code": 95.0,
+    "group_code": 95.2,
+    "class_code": 95.25
+  },
+  {
+    "section_code": "S",
+    "name": "Ремонт інших побутових виробів і предметів особистого вжитку",
+    "partition_code": 95.0,
+    "group_code": 95.2,
+    "class_code": 95.29
+  },
+  {
+    "section_code": "S",
+    "name": "Надання інших індивідуальних послуг",
+    "partition_code": 96.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "S",
+    "name": "Надання інших індивідуальних послуг",
+    "partition_code": 96.0,
+    "group_code": 96.0,
+    "class_code": null
+  },
+  {
+    "section_code": "S",
+    "name": "Прання та хімічне чищення текстильних і хутряних виробів",
+    "partition_code": 96.0,
+    "group_code": 96.0,
+    "class_code": 96.01
+  },
+  {
+    "section_code": "S",
+    "name": "Надання послуг перукарнями та салонами краси",
+    "partition_code": 96.0,
+    "group_code": 96.0,
+    "class_code": 96.02
+  },
+  {
+    "section_code": "S",
+    "name": "Організування поховань і надання суміжних послуг",
+    "partition_code": 96.0,
+    "group_code": 96.0,
+    "class_code": 96.03
+  },
+  {
+    "section_code": "S",
+    "name": "Діяльність із забезпечення фізичного комфорту",
+    "partition_code": 96.0,
+    "group_code": 96.0,
+    "class_code": 96.04
+  },
+  {
+    "section_code": "S",
+    "name": "Надання інших індивідуальних послуг, н.в.і.у.",
+    "partition_code": 96.0,
+    "group_code": 96.0,
+    "class_code": 96.09
+  },
+  {
+    "section_code": "T",
+    "name": "Діяльність домашніх господарств",
+    "partition_code": null,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "T",
+    "name": "Діяльність домашніх господарств як роботодавців для домашньої прислуги",
+    "partition_code": 97.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "T",
+    "name": "Діяльність домашніх господарств як роботодавців для домашньої прислуги",
+    "partition_code": 97.0,
+    "group_code": 97.0,
+    "class_code": null
+  },
+  {
+    "section_code": "T",
+    "name": "Діяльність домашніх господарств як роботодавців для домашньої прислуги",
+    "partition_code": 97.0,
+    "group_code": 97.0,
+    "class_code": 97.0
+  },
+  {
+    "section_code": "T",
+    "name": "Діяльність домашніх господарств як виробників товарів та послуг для власного споживання",
+    "partition_code": 98.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "T",
+    "name": "Діяльність домашніх господарств як виробників товарів для власного споживання",
+    "partition_code": 98.0,
+    "group_code": 98.1,
+    "class_code": null
+  },
+  {
+    "section_code": "T",
+    "name": "Діяльність домашніх господарств як виробників товарів для власного споживання",
+    "partition_code": 98.0,
+    "group_code": 98.1,
+    "class_code": 98.1
+  },
+  {
+    "section_code": "T",
+    "name": "Діяльність домашніх господарств як виробників послуг для власного споживання",
+    "partition_code": 98.0,
+    "group_code": 98.2,
+    "class_code": null
+  },
+  {
+    "section_code": "T",
+    "name": "Діяльність домашніх господарств як виробників послуг для власного споживання",
+    "partition_code": 98.0,
+    "group_code": 98.2,
+    "class_code": 98.2
+  },
+  {
+    "section_code": "U",
+    "name": "Діяльність екстериторіальних організацій і органів",
+    "partition_code": null,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "U",
+    "name": "Діяльність екстериторіальних організацій і органів",
+    "partition_code": 99.0,
+    "group_code": null,
+    "class_code": null
+  },
+  {
+    "section_code": "U",
+    "name": "Діяльність екстериторіальних організацій і органів",
+    "partition_code": 99.0,
+    "group_code": 99.0,
+    "class_code": null
+  },
+  {
+    "section_code": "U",
+    "name": "Діяльність екстериторіальних організацій і органів",
+    "partition_code": 99.0,
+    "group_code": 99.0,
+    "class_code": 99.0
+  }
+]
