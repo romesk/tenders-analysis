@@ -9,7 +9,6 @@ class MongoService:
 
     def __init__(self, uri: str, db_name: str):
         self.client = MongoClient(uri.strip(), server_api=ServerApi('1'))
-        print(uri)
         self.db = self.client[db_name]
 
     def insert(self, collection: str, data):
