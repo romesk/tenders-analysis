@@ -7,7 +7,6 @@ import requests
 from src.services.mongo import MongoService
 from src.config import CONFIG
 from src.utlis.logger import get_logger
-from src.processors.entities_processor import EntityProcessor
 
 
 class TendersProcessor:
@@ -64,15 +63,6 @@ class TendersProcessor:
                                 self._mongo_service.delete(CONFIG.MONGO.TENDERS_COLLECTION,
                                                            {"tenderID": tender_info["tenderID"]})
                                 self._mongo_service.insert(CONFIG.MONGO.TENDERS_COLLECTION, tender_info)
-                                if status == "complete":
-                                    try:
-                                        edrpou = tender_info['awards'][0]['suppliers'][0]['identifier']['id']
-                                    except Exception as e:
-                                        self._logger.error(
-                                            f"Exception occurred during EDRPOU parsing from Tender info: {e}")
-                                        edrpou = None
-                                    if edrpou:
-                                        self._entity_processor.process_data(edrpou)
                             except Exception as e:
                                 self._logger.error(f"Exception occurred: {e}")
 
