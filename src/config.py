@@ -14,6 +14,7 @@ class CONFIG:
         KATOTTG_COLLECTION = "katottg"
         DK_COLLECTION = "dk"
         TENDERS_COLLECTION = "tenders"
+        ENTITIES_COLLECTION = "entities"
 
     class FILES:
         CWD = os.getcwd()
