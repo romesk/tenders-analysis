@@ -3,7 +3,7 @@ from config import CONFIG
 from utlis.logger import get_logger
 from datetime import date, timedelta
 
-from src.tenders.tenders_processor import TendersProcessor
+from src.processors.tenders_processor import TendersProcessor
 
 logger = get_logger(__name__)
 
