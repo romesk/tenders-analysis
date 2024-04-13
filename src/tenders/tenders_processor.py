@@ -4,9 +4,11 @@ from datetime import timedelta
 import time
 
 import requests
-from src.services.mongo import MongoService
-from src.config import CONFIG
-from src.utlis.logger import get_logger
+
+from services.mongo import MongoService
+from config import CONFIG
+from utlis.logger import get_logger
+
 
 
 class TendersProcessor:
@@ -60,18 +62,27 @@ class TendersProcessor:
                         if tender_request.status_code == 200:
                             try:
                                 tender_info = json.loads(tender_request.content)
-                                self._mongo_service.delete(CONFIG.MONGO.TENDERS_COLLECTION,
-                                                           {"tenderID": tender_info["tenderID"]})
-                                self._mongo_service.insert(CONFIG.MONGO.TENDERS_COLLECTION, tender_info)
+
+                                self._mongo_service.delete(
+                                    CONFIG.MONGO.TENDERS_COLLECTION,
+                                    {"tenderID": tender_info["tenderID"]},
+                                )
+                                self._mongo_service.insert(
+                                    CONFIG.MONGO.TENDERS_COLLECTION, tender_info
+                                )
+
                             except Exception as e:
                                 self._logger.error(f"Exception occurred: {e}")
 
                         elif tender_request.status_code == 429:
-                            self._logger.info(f'Timeout for {tender_request.headers["Retry-After"]} secs')
+                            self._logger.info(
+                                f'Timeout for {tender_request.headers["Retry-After"]} secs'
+                            )
                             time.sleep(int(tender_request.headers["Retry-After"]))
 
                         else:
-                            self._logger.info(f'Got {tender_request.status_code}')
+                            self._logger.info(f"Got {tender_request.status_code}")
+
 
                     page_number += 1
                 end_date = period_start_date
