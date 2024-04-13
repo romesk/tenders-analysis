@@ -25,21 +25,12 @@ class EntityProcessor:
         find_raw_info = p.findall(soup.prettify())
         return json.loads(find_raw_info[0].replace('\\"', '').replace('\\', ''))["pageData"]["registryCell"]
 
-    def upsert_entity(self, edrpou, edrpou_info):
-        if self._mongo_service.find_one(CONFIG.MONGO.ENTITIES_COLLECTION, {"edrpou": edrpou}):
-            self._mongo_service.update(CONFIG.MONGO.ENTITIES_COLLECTION,
-                                       {"edrpou": edrpou},
-                                       {"edrpou": edrpou, "info": edrpou_info})
-            self._logger.info(f"EDRPOU ({edrpou}) info already exist, updating")
-        else:
-            self._mongo_service.insert(CONFIG.MONGO.ENTITIES_COLLECTION,
-                                       {"edrpou": edrpou, "info": edrpou_info})
-            self._logger.info(f"EDRPOU ({edrpou}) inserted")
+    def get_many_entities_details(self, edrpous: list):
+        return [self.get_entity_details(edrpou) for edrpou in edrpous]
 
-    def process_entity_info(self, edrpou: str):
+    def get_entity_details(self, edrpou: str):
         try:
             page = self.get_entity_page(edrpou)
-            num_of_retries = 0
             while page.status_code != 200:
                 if page.status_code == 429:
                     retry_after_value = page.headers.get("Retry-After")
@@ -48,23 +39,18 @@ class EntityProcessor:
                         time.sleep(int(retry_after_value))
                     else:
                         self._logger.info('Retry-After header not found')
-                        if num_of_retries >= 10:
-                            raise Exception(f'Reached max number of retries {num_of_retries}')
-                        num_of_retries += 1
-                        time.sleep(1)
+                        time.sleep(5)
                 else:
                     self._logger.info(f'Got code: {page.status_code}')
                     raise Exception('Page not found')
                 page = self.get_entity_page(edrpou)
             edrpou_info = self.parse_entity_page(page)
             self._logger.info(f'EDRPOU ({edrpou}) info successfully parsed')
-            self.upsert_entity(edrpou, edrpou_info)
-
+            return {"edrpou": edrpou, "info": edrpou_info}
         except Exception as ex:
             self._logger.error(f'Error parsing EPRDOU info: {ex}')
+            return None
 
 
 if __name__ == "__main__":
-    # For testing
-    entity_processor = EntityProcessor()
-    entity_processor.process_entity_info('39231218')
+    pass
