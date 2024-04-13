@@ -2,7 +2,6 @@ import datetime
 from typing import Iterable
 from pymongo import MongoClient
 from pymongo.server_api import ServerApi
-from datetime import datetime
 
 from config import CONFIG
 from utlis.logger import get_logger
@@ -58,13 +57,17 @@ class MongoService:
         return self.db.list_collection_names()
 
     def create_collection_with_unique_index(
-            self, collection_name: str, unique_columns: list[str]
+            self, collection_name: str, unique_columns: list[str], force: bool = False
     ) -> bool:
-        if collection_name in self.get_collections():
+        if collection_name in self.get_collections() and not force:
             raise Exception(f"Collection {collection_name} already exists")
+        
+        if force: 
+            logger.info(f"Collection {collection_name} already exists. Dropping...")
+            self.db.drop_collection(collection_name)
 
         # create collection with unique index
-        self.db.create_collection(collection_name)
+        self.db.create_collection(collection_name, check_exists=False)
         self.db[collection_name].create_index(
             [(col, 1) for col in unique_columns], unique=True, name="unique_index"
         )

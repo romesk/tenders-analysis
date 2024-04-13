@@ -1,4 +1,5 @@
 import json
+import argparse
 from config import CONFIG
 from services.mongo import MongoService
 from utlis.logger import get_logger
@@ -7,7 +8,7 @@ from utlis.logger import get_logger
 logger = get_logger("static_files_load")
 
 
-def load_kveds(mongo: MongoService) -> None:
+def load_kveds(mongo: MongoService, force: bool = False) -> None:
 
     logger.info("Loading KVEDs")
 
@@ -18,6 +19,7 @@ def load_kveds(mongo: MongoService) -> None:
     mongo.create_collection_with_unique_index(
         CONFIG.MONGO.KVEDS_COLLECTION,
         ["name", "group_code", "class_code", "partition_code"],
+        force
     )
     logger.info(f"Inserting {len(kveds)} KVEDs into {CONFIG.MONGO.KVEDS_COLLECTION}")
     mongo.insert_many(CONFIG.MONGO.KVEDS_COLLECTION, kveds)
@@ -25,7 +27,7 @@ def load_kveds(mongo: MongoService) -> None:
     logger.info("KVEDs loaded")
 
 
-def load_katottg(mongo: MongoService) -> None:
+def load_katottg(mongo: MongoService, force: bool = False) -> None:
 
     logger.info("Loading KATOTTG")
 
@@ -36,6 +38,7 @@ def load_katottg(mongo: MongoService) -> None:
     mongo.create_collection_with_unique_index(
         CONFIG.MONGO.KATOTTG_COLLECTION,
         ["level1", "level2", "level3", "level4", "name"],
+        force
     )
     logger.info(
         f"Inserting {len(katottg)} KATOTTG into {CONFIG.MONGO.KATOTTG_COLLECTION}"
@@ -45,7 +48,7 @@ def load_katottg(mongo: MongoService) -> None:
     logger.info("KATOTTG loaded")
 
 
-def load_dk(mongo: MongoService) -> None:
+def load_dk(mongo: MongoService, force: bool = False) -> None:
 
     logger.info("Loading DK")
 
@@ -56,6 +59,7 @@ def load_dk(mongo: MongoService) -> None:
     mongo.create_collection_with_unique_index(
         CONFIG.MONGO.DK_COLLECTION,
         ["Division", "Group", "Class", "Category", "Clarification"],
+        force
     )
     logger.info(f"Inserting {len(dk)} DK into {CONFIG.MONGO.DK_COLLECTION}")
     mongo.insert_many(CONFIG.MONGO.DK_COLLECTION, dk)
@@ -63,24 +67,33 @@ def load_dk(mongo: MongoService) -> None:
     logger.info("DK loaded")
 
 
-def run():
+def run(force: bool = False):
     """
     Loads static files into MongoDB. For one-time use only.
     Files cannot be loaded if the collections already exist.
     """
+    # TODO: load from cloud, not from local files
     mongo = MongoService(CONFIG.MONGO.URI, CONFIG.MONGO.DB_NAME)
 
     try:
-        load_kveds(mongo)
-        load_katottg(mongo)
-        load_dk(mongo)
+        load_kveds(mongo, force)
+        load_katottg(mongo, force)
+        load_dk(mongo, force)
     except Exception as e:
         logger.error(f"Failed loading static files: {e}")
         raise e
     finally:
         mongo.close()
-        print("Done")
 
 
 if __name__ == "__main__":
-    run()
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--force",
+        action="store_true",
+        help="Force load static files even if collections already exist",
+    )
+    args = parser.parse_args()
+
+    run(args.force)
