@@ -3,7 +3,6 @@ from datetime import date, timedelta
 from espo_crm.espo import EspoCRM
 from services import MongoService
 from config import CONFIG
-from src.upserters import upsert_tender_details, upsert_entity_details
 from utlis.logger import get_logger
 from processors.tenders_processor import TendersProcessor
 from processors.entities_processor import EntityProcessor
@@ -36,11 +35,11 @@ def load_history_data(mongo: MongoService, start_date: date = date.today() - tim
             entities_details = entities_processor.get_many_entities_details(edrpous)
 
             logger.info(f"Uploading {len(tenders_details)} tenders with status {status} to Mongo")
-            [upsert_tender_details(mongo, tender) for tender in tenders_details]
+            mongo.upsert_many_tender_details(tenders_details)
             logger.info(f"{status} tenders were uploaded to Mongo")
 
             logger.info(f"Uploading entities to Mongo")
-            [upsert_entity_details(mongo, entity) for entity in entities_details if entity is not None]
+            mongo.upsert_many_entity_details(entities_details)
             logger.info(f"Entities were uploaded to Mongo")
 
     except Exception as e:
