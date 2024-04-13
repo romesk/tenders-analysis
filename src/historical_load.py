@@ -4,7 +4,7 @@ from espo_crm.espo import EspoCRM
 from services import MongoService
 from config import CONFIG
 from utlis.logger import get_logger
-from tenders.tenders_processor import TendersProcessor
+from processors.tenders_processor import TendersProcessor
 
 
 logger = get_logger("historical_load")

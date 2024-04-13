@@ -20,6 +20,9 @@ class CONFIG:
         # tender collection
         TENDERS_COLLECTION = "tenders"
 
+        # entities collection
+        ENTITIES_COLLECTION = 'entities'
+
         # EspoCRM collections
         ACCOUNTS_COLLECTION = "espo_accounts"
         OPPORTUNITIES_COLLECTION = "espo_opportunities"
