@@ -4,9 +4,11 @@ from datetime import timedelta
 import time
 
 import requests
+
 from services.mongo import MongoService
 from config import CONFIG
 from utlis.logger import get_logger
+
 
 
 class TendersProcessor:
@@ -19,10 +21,10 @@ class TendersProcessor:
         self._logger = get_logger(__name__)
 
     def process_historical_data(
-        self,
-        start_date: date = date(2024, 1, 1),
-        end_date: date = date.today(),
-        status: str = "complete",
+            self,
+            start_date: date = date(2024, 1, 1),
+            end_date: date = date.today(),
+            status: str = "complete",
     ) -> None:
         """
         This method is responsible for uploading the tenders in specific time limits(from start_date to end_date)
@@ -60,6 +62,7 @@ class TendersProcessor:
                         if tender_request.status_code == 200:
                             try:
                                 tender_info = json.loads(tender_request.content)
+
                                 self._mongo_service.delete(
                                     CONFIG.MONGO.TENDERS_COLLECTION,
                                     {"tenderID": tender_info["tenderID"]},
@@ -67,6 +70,7 @@ class TendersProcessor:
                                 self._mongo_service.insert(
                                     CONFIG.MONGO.TENDERS_COLLECTION, tender_info
                                 )
+
                             except Exception as e:
                                 self._logger.error(f"Exception occurred: {e}")
 
@@ -78,6 +82,7 @@ class TendersProcessor:
 
                         else:
                             self._logger.info(f"Got {tender_request.status_code}")
+
 
                     page_number += 1
                 end_date = period_start_date
