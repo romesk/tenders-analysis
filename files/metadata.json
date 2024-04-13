@@ -1,0 +1,263 @@
+{
+  "facts": [
+    {
+      "name": "TenderOpened",
+      "description": "The fact of opening a tender with procurement entity.",
+      "primary_key": "tender_id, procurement_id",
+      "metrics": [
+        {
+          "name": "amount",
+          "type": "double",
+          "description": "The price Tender opened.",
+          "calculation": null,
+          "rules": {
+            "min": 0,
+            "max": null,
+            "precision": 2
+          }
+        },
+        {
+          "name": "time_to_end",
+          "type": "int",
+          "description": "Time period for propositions.",
+          "calculation": "open_time_id - close_time_id",
+          "rules": {
+            "min": 0,
+            "max": null,
+            "precision": null
+          }
+        }
+      ],
+      "units": {
+        "amount": "UAH",
+        "time_to_end": "minutes"
+      }
+    },
+    {
+      "name": "TenderClosed",
+      "description": "The fact of closing a tender. With its participants and results",
+      "primary_key": "tender_id, peformer_id",
+      "metrics": [
+        {
+          "name": "amount",
+          "type": "double",
+          "description": "The price Tender closed.",
+          "calculation": null,
+          "rules": {
+            "min": 0,
+            "max": null,
+            "precision": 2
+          }
+        },
+        {
+          "name": "duration",
+          "type": "int",
+          "description": "The time between opening and closing.",
+          "calculation": "open_time_id - close_time_id",
+          "rules": {
+            "min": 0,
+            "max": null,
+            "precision": null
+          }
+        },
+        {
+          "name": "participant_count",
+          "type": "int",
+          "description": "Amount of participants during the time tender was opened.",
+          "calculation": null,
+          "rules": {
+            "min": 1,
+            "max": null,
+            "precision": null
+          }
+        }
+      ],
+      "units": {
+        "amount": "UAH",
+        "duration": "minutes"
+      }
+    },
+    {
+      "name": "SaleActivity",
+      "description": "Action that related to tender.",
+      "primary_key": "tender_id",
+      "metrics": [
+        {
+          "name": "price",
+          "type": "double",
+          "description": "Price proposed by customer.",
+          "calculation": null,
+          "rules": {
+            "min": 0,
+            "max": null,
+            "precision": 2
+          }
+        },
+        {
+          "name": "time_spent",
+          "type": "int",
+          "description": "Time that passed from start to final tender offer.",
+          "calculation": null,
+          "rules": {
+            "min": 0,
+            "max": null,
+            "precision": null
+          }
+        },
+        {
+          "name": "estimated_profit",
+          "type": "int",
+          "description": "Money that will be earned by deal.",
+          "calculation": "price * 0,005",
+          "rules": {
+            "min": 0,
+            "max": null,
+            "precision": 2
+          }
+        },
+        {
+          "name": "manager_seniority",
+          "type": "int",
+          "description": "Manager experience.",
+          "calculation": null,
+          "rules": {
+            "min": 1,
+            "max": 4,
+            "precision": null
+          }
+        }
+      ],
+      "units": {
+        "price": "UAH",
+        "time_spent": "minutes",
+        "estimated_profit": "UAH"
+      }
+    },
+    {
+      "name": "LeadActivity",
+      "description": "Action of Manager to search for new leads for a tender.",
+      "primary_key": "manager_id, performer_id, stage_id, campaing_id",
+      "metrics": [
+        {
+          "name": "sucess_rate",
+          "type": "int",
+          "description": "The evaluation of success of the current stage made by manager.",
+          "calculation": null,
+          "rules": {
+            "min": 0,
+            "max": 5,
+            "precision": null
+          }
+        },
+        {
+          "name": "time_from_prev_stage",
+          "type": "int",
+          "description": "The time passed from the previous stage to the current.",
+          "calculation": null,
+          "rules": {
+            "min": 0,
+            "max": null,
+            "precision": null
+          }
+        },
+        {
+          "name": "activities_from_last_stage",
+          "type": "int",
+          "description": "The number of actions made by a manager after finishing previous stage. E.g: calls, emails, etc.",
+          "calculation": null,
+          "rules": {
+            "min": 0,
+            "max": null,
+            "precision": null
+          }
+        },
+        {
+          "name": "feedbacks_from_last_stage",
+          "type": "int",
+          "description": "The number of actions made by a client after finishing previous stage. E.g: calls, emails, etc.",
+          "calculation": null,
+          "rules": {
+            "min": 0,
+            "max": null,
+            "precision": null
+          }
+        }
+      ],
+      "units": {
+        "time_from_prev_stage": "minutes"
+      }
+    }
+  ],
+  "dimensions": [
+    {
+      "name": "TenderInfo",
+      "primary_key": "tender_id",
+      "description": "The tender entity information.",
+      "linked_facts": ["TenderOpened", "TenderClosed", "SaleActivity"],
+      "hierarchy": ["Division", "Group", "Class", "Category", "Clarification"]
+    },
+    {
+      "name": "ProcurementEntity",
+      "primary_key": "entity_id",
+      "description": "Procurement info.",
+      "linked_facts": ["TenderOpened", "TenderClosed"],
+      "hierarchy": ["section_code", "partition_code", "group_code", "class_code"]
+    },
+    {
+      "name": "Location",
+      "primary_key": "location_id",
+      "description": "",
+      "linked_facts": [],
+      "hierarchy": ["katottg_code", "parent_code"]
+    },
+    {
+      "name": "Performer",
+      "primary_key": "performer_id",
+      "description": "",
+      "linked_facts": ["SaleActivity", "TenderClosed", "LeadActivity"],
+      "hierarchy": []
+    },
+    {
+      "name": "Manager",
+      "primary_key": "manager_id",
+      "description": "",
+      "linked_facts": ["SaleActivity", "LeadActivity"],
+      "hierarchy": []
+    },
+    {
+      "name": "results",
+      "primary_key": "results_id",
+      "description": "",
+      "linked_facts": ["SaleActivity"],
+      "hierarchy": []
+    },
+    {
+      "name": "date_dim",
+      "primary_key": "day",
+      "description": "",
+      "linked_facts": ["SaleActivity", "TenderClosed", "LeadActivity", "TenderOpened"],
+      "hierarchy": ["day", "month", "quarter", "year"]
+    },
+    {
+      "name": "Campaing",
+      "primary_key": "campaing_id",
+      "description": "",
+      "linked_facts": ["LeadActivity"],
+      "hierarchy": []
+    },
+    {
+      "name": "Channel",
+      "primary_key": "channel_id",
+      "description": "",
+      "linked_facts": ["LeadActivity"],
+      "hierarchy": []
+    },
+    {
+      "name": "Stage",
+      "primary_key": "stage_id",
+      "description": "",
+      "linked_facts": ["LeadActivity"],
+      "hierarchy": []
+    }
+  ]
+}
