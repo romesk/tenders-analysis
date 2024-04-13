@@ -9,7 +9,7 @@ logger = get_logger("EspoCRM")
 
 class EspoCRM:
 
-    PAGE_SIZE = 10
+    PAGE_SIZE = 100
 
     def __init__(self) -> None:
         self._headers = {"X-Api-Key": f"{CONFIG.ESPO.API_KEY}"}
