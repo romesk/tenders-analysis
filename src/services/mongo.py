@@ -2,6 +2,7 @@ import datetime
 from typing import Iterable
 from pymongo import MongoClient
 from pymongo.server_api import ServerApi
+from datetime import datetime
 
 from config import CONFIG
 from utlis.logger import get_logger
@@ -27,7 +28,7 @@ class MongoService:
         self.db[collection].insert_one(data)
 
     def insert_many(
-        self, collection: str, data: Iterable, use_schema_versioning: bool = True
+            self, collection: str, data: Iterable, use_schema_versioning: bool = True
     ):
         if use_schema_versioning:
             schema_version = self.get_schema_version(collection)
@@ -57,7 +58,7 @@ class MongoService:
         return self.db.list_collection_names()
 
     def create_collection_with_unique_index(
-        self, collection_name: str, unique_columns: list[str]
+            self, collection_name: str, unique_columns: list[str]
     ) -> bool:
         if collection_name in self.get_collections():
             raise Exception(f"Collection {collection_name} already exists")
@@ -99,3 +100,40 @@ class MongoService:
             )
             return 1
         return result[0]["version"]
+
+    def upsert_tender_details(self, tender_info):
+        tender_in_coll = self.find_one(CONFIG.MONGO.TENDERS_COLLECTION,
+                                       {"tenderID": tender_info["tenderID"]})
+        if (tender_in_coll is not None
+                and datetime.fromisoformat(tender_in_coll['dateModified']) <= datetime.fromisoformat(
+                    tender_info['dateModified'])
+        ):
+            self.update(CONFIG.MONGO.TENDERS_COLLECTION,
+                        {"tenderID": tender_info["tenderID"]},
+                        tender_info)
+            logger.info(f"Tender {tender_info['tenderID']} updated")
+        else:
+            self.insert(CONFIG.MONGO.TENDERS_COLLECTION, tender_info, False)
+            logger.info(f"Tender {tender_info['tenderID']} inserted")
+
+    def upsert_entity_details(self, edrpou_info):
+        if self.find_one(CONFIG.MONGO.ENTITIES_COLLECTION, {"edrpou": edrpou_info["edrpou"]}):
+            self.update(CONFIG.MONGO.ENTITIES_COLLECTION,
+                        {"edrpou": edrpou_info["edrpou"]},
+                        edrpou_info)
+            logger.info(f"EDRPOU ({edrpou_info['edrpou']}) info already exist, updating")
+        else:
+            self.insert(CONFIG.MONGO.ENTITIES_COLLECTION,
+                        edrpou_info,
+                        False)
+            logger.info(f"EDRPOU ({edrpou_info['edrpou']}) inserted")
+
+    def upsert_many_tender_details(self, tenders_details):
+        for tender in tenders_details:
+            if tender is not None:
+                self.upsert_tender_details(tender)
+
+    def upsert_many_entity_details(self, entities_details):
+        for entity in entities_details:
+            if entity is not None:
+                self.upsert_entity_details(entity)
