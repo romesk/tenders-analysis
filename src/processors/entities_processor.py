@@ -4,9 +4,9 @@ import json
 import time
 
 import requests
-from src.services.mongo import MongoService
-from src.config import CONFIG
-from src.utlis.logger import get_logger
+from services.mongo import MongoService
+from config import CONFIG
+from utlis.logger import get_logger
 
 
 class EntityProcessor:

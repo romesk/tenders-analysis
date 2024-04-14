@@ -40,3 +40,7 @@ class CONFIG:
     class ESPO:
         API_URL = os.getenv("ESPO_API_URL").rstrip("/")
         API_KEY = os.getenv("ESPO_API_KEY")
+
+    class PROZORRO:
+        API_URL = "https://prozorro.gov.ua/api"
+        

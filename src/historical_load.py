@@ -1,11 +1,10 @@
 from datetime import date, timedelta
 
-from espo_crm.espo import EspoCRM
 from services import MongoService
 from config import CONFIG
 from utlis.logger import get_logger
-from processors.tenders_processor import TendersProcessor
-from processors.entities_processor import EntityProcessor
+from processors import ProzorroProcessor, EntityProcessor, EspoCRM
+
 
 logger = get_logger("historical_load")
 
@@ -19,23 +18,27 @@ def load_last_week_data(mongo: MongoService) -> None:
 
 
 def load_history_data(mongo: MongoService, start_date: date = date.today() - timedelta(days=7),
-                      end_date: date = date.today()) -> None:
+                      end_date: date = None) -> None:
     try:
-        tenders_processor = TendersProcessor()
+        prozorro = ProzorroProcessor()
         entities_processor = EntityProcessor()
-        logger.info(f"Getting tenders for period from {start_date} to {end_date}")
+
         for status in ['complete', 'active.tendering']:
 
             logger.info(f"Getting {status} tenders info and ERDPOU-s")
-            tenders_details, edrpous = tenders_processor.get_historical_data(start_date=start_date,
-                                                                             end_date=end_date,
-                                                                             status=status)
+            tenders = prozorro.get_tender_list(
+                start_date=start_date, end_date=end_date, status=status)
+            
+            logger.info(f"Received {len(tenders)} tenders with status {status}")
+
+            edrpous = list(filter(None, [prozorro.get_edrpou_from_tender(tender) for tender in tenders]))
+            print(edrpous)
 
             logger.info(f"Getting info about {len(edrpous)} EDRPOU-s")
             entities_details = entities_processor.get_many_entities_details(edrpous)
 
-            logger.info(f"Uploading {len(tenders_details)} tenders with status {status} to Mongo")
-            mongo.upsert_many_tender_details(tenders_details)
+            logger.info(f"Uploading {len(tenders)} tenders with status {status} to Mongo")
+            mongo.upsert_many_tender_details(tenders)
             logger.info(f"{status} tenders were uploaded to Mongo")
 
             logger.info(f"Uploading entities to Mongo")
