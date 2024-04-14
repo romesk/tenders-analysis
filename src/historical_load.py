@@ -29,7 +29,7 @@ def load_history_data(
         for status in ["complete", "active.tendering"]:
 
             logger.info(f"Getting {status} tenders info and ERDPOU-s")
-            tenders = prozorro.get_tender_list(start_date=start_date, end_date=end_date, status=status)
+            tenders = prozorro.get_tender_details_list(start_date=start_date, end_date=end_date, status=status)
 
             logger.info(f"Received {len(tenders)} tenders with status {status}")
             edrpous = list(filter(None, [prozorro.get_edrpou_from_tender(tender) for tender in tenders]))
