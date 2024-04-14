@@ -4,9 +4,9 @@ import json
 import time
 
 import requests
-from src.services.mongo import MongoService
-from src.config import CONFIG
-from src.utlis.logger import get_logger
+from services.mongo import MongoService
+from config import CONFIG
+from utlis.logger import get_logger
 
 
 class EntityProcessor:
@@ -23,7 +23,7 @@ class EntityProcessor:
         soup = BeautifulSoup(page.content, "html.parser")
         p = re.compile("""window.__INITIAL_STATE__='(.*)'""")
         find_raw_info = p.findall(soup.prettify())
-        return json.loads(find_raw_info[0].replace('\\"', '').replace('\\', ''))["pageData"]["registryCell"]
+        return json.loads(find_raw_info[0].replace('\\"', "").replace("\\", ""))["pageData"]["registryCell"]
 
     def get_many_entities_details(self, edrpous: list):
         return [self.get_entity_details(edrpou) for edrpou in edrpous]
@@ -35,20 +35,20 @@ class EntityProcessor:
                 if page.status_code == 429:
                     retry_after_value = page.headers.get("Retry-After")
                     if retry_after_value:
-                        self._logger.info(f'Timeout for {retry_after_value} secs')
+                        self._logger.info(f"Timeout for {retry_after_value} secs")
                         time.sleep(int(retry_after_value))
                     else:
-                        self._logger.info('Retry-After header not found')
+                        self._logger.info("Retry-After header not found")
                         time.sleep(5)
                 else:
-                    self._logger.info(f'Got code: {page.status_code}')
-                    raise Exception('Page not found')
+                    self._logger.info(f"Got code: {page.status_code}")
+                    raise Exception("Page not found")
                 page = self.get_entity_page(edrpou)
             edrpou_info = self.parse_entity_page(page)
-            self._logger.info(f'EDRPOU ({edrpou}) info successfully parsed')
+            self._logger.info(f"EDRPOU ({edrpou}) info successfully parsed")
             return {"edrpou": edrpou, "info": edrpou_info}
         except Exception as ex:
-            self._logger.error(f'Error parsing EPRDOU info: {ex}')
+            self._logger.error(f"Error parsing EPRDOU info: {ex}")
             return None
 
 

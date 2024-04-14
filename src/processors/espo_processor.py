@@ -9,7 +9,7 @@ logger = get_logger("EspoCRM")
 
 class EspoCRM:
 
-    PAGE_SIZE = 10
+    PAGE_SIZE = 100
 
     def __init__(self) -> None:
         self._headers = {"X-Api-Key": f"{CONFIG.ESPO.API_KEY}"}
@@ -38,9 +38,7 @@ class EspoCRM:
         response = requests.get(url, headers=self._headers, params=params)
 
         if response.status_code != 200:
-            raise Exception(
-                f"Failed to get accounts from EspoCRM: {response.text}. [{response.status_code}]"
-            )
+            raise Exception(f"Failed to get accounts from EspoCRM: {response.text}. [{response.status_code}]")
 
         return response.json()
 
@@ -68,9 +66,7 @@ class EspoCRM:
         response = requests.get(url, headers=self._headers, params=params)
 
         if response.status_code != 200:
-            raise Exception(
-                f"Failed to get opportunities from EspoCRM: {response.text}. [{response.status_code}]"
-            )
+            raise Exception(f"Failed to get opportunities from EspoCRM: {response.text}. [{response.status_code}]")
 
         return response.json()
 
@@ -79,9 +75,7 @@ class EspoCRM:
 
         response = self._get_streams(entity_type, entity_id)
         total = response["total"]
-        logger.info(
-            f"Total streams for {entity_type} '{entity_id}' in EspoCRM: {total}"
-        )
+        logger.info(f"Total streams for {entity_type} '{entity_id}' in EspoCRM: {total}")
 
         streams = response["list"]
         pages = total // self.PAGE_SIZE + 1
@@ -106,8 +100,6 @@ class EspoCRM:
         response = requests.get(url, headers=self._headers, params=params)
 
         if response.status_code != 200:
-            raise Exception(
-                f"Failed to get streams from EspoCRM: {response.text}. [{response.status_code}]"
-            )
+            raise Exception(f"Failed to get streams from EspoCRM: {response.text}. [{response.status_code}]")
 
         return response.json()
