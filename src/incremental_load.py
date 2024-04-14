@@ -1,4 +1,5 @@
 def run():
+    # TODO: get incremental data from data sources (ESPO, Prozorro, etc.)
     pass
 
 

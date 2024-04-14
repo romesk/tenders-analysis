@@ -1,6 +1,7 @@
 import datetime
 from typing import Iterable
-import pymongo
+from pymongo.results import InsertManyResult, InsertOneResult, UpdateResult
+from pymongo import MongoClient
 from pymongo.server_api import ServerApi
 
 from config import CONFIG
@@ -16,15 +17,15 @@ class MongoService:
     """
 
     def __init__(self, uri: str, db_name: str):
-        self.client = pymongo.MongoClient(uri.strip(), server_api=ServerApi("1"))
+        self.client = MongoClient(uri.strip(), server_api=ServerApi("1"))
         self.db = self.client[db_name]
         self._schema_collection = CONFIG.MONGO.SCHEMA_VERSIONING_COLLECTION
 
-    def insert(self, collection: str, data, use_schema_versioning: bool = True) -> pymongo.results.InsertOneResult:
+    def insert(self, collection: str, data, use_schema_versioning: bool = True) -> InsertOneResult:
         if use_schema_versioning:
             schema_version = self.get_schema_version(collection)
             data = [{**item, "schema_version": schema_version} for item in data]
-        self.db[collection].insert_one(data)
+        return self.db[collection].insert_one(data)
 
     def insert_many(
         self, collection: str, data: Iterable, use_schema_versioning: bool = True
@@ -41,8 +42,8 @@ class MongoService:
     def find_one(self, collection: str, query):
         return self.db[collection].find_one(query)
 
-    def update(self, collection: str, query, data):
-        self.db[collection].update_one(query, {"$set": data})
+    def update(self, collection: str, query, data) -> UpdateResult:
+        return self.db[collection].update_one(query, {"$set": data})
 
     def delete(self, collection: str, query):
         self.db[collection].delete_one(query)
@@ -100,25 +101,29 @@ class MongoService:
             return 1
         return result[0]["version"]
 
-    def upsert_tender_details(self, tender_info: dict):
+    def upsert_tender_details(self, tender_info: dict) -> InsertOneResult | UpdateResult:
         tender_in_coll = self.find_one(CONFIG.MONGO.TENDERS_COLLECTION, {"tenderID": tender_info["tenderID"]})
 
         if tender_in_coll is not None and datetime.fromisoformat(
             tender_in_coll["dateModified"]
         ) <= datetime.fromisoformat(tender_info["dateModified"]):
-            self.update(CONFIG.MONGO.TENDERS_COLLECTION, {"tenderID": tender_info["tenderID"]}, tender_info)
+            res = self.update(CONFIG.MONGO.TENDERS_COLLECTION, {"tenderID": tender_info["tenderID"]}, tender_info)
             logger.info(f"Tender {tender_info['tenderID']} updated")
         else:
-            self.insert(CONFIG.MONGO.TENDERS_COLLECTION, tender_info, False)
+            res = self.insert(CONFIG.MONGO.TENDERS_COLLECTION, tender_info, False)
             logger.info(f"Tender {tender_info['tenderID']} inserted")
 
-    def upsert_entity_details(self, edrpou_info):
+        return res
+
+    def upsert_entity_details(self, edrpou_info) -> InsertOneResult | UpdateResult:
         if self.find_one(CONFIG.MONGO.ENTITIES_COLLECTION, {"edrpou": edrpou_info["edrpou"]}):
-            self.update(CONFIG.MONGO.ENTITIES_COLLECTION, {"edrpou": edrpou_info["edrpou"]}, edrpou_info)
+            res = self.update(CONFIG.MONGO.ENTITIES_COLLECTION, {"edrpou": edrpou_info["edrpou"]}, edrpou_info)
             logger.info(f"EDRPOU ({edrpou_info['edrpou']}) info already exist, updating")
         else:
-            self.insert(CONFIG.MONGO.ENTITIES_COLLECTION, edrpou_info, False)
+            res = self.insert(CONFIG.MONGO.ENTITIES_COLLECTION, edrpou_info, False)
             logger.info(f"EDRPOU ({edrpou_info['edrpou']}) inserted")
+
+        return res
 
     def upsert_many_tender_details(self, tenders_details):
         for tender in tenders_details:

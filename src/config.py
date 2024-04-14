@@ -11,6 +11,7 @@ class CONFIG:
         DB_NAME = os.getenv("MONGO_DB_NAME")
 
         SCHEMA_VERSIONING_COLLECTION = "schema_versioning"
+        RUNS_LOGS_COLLECTION = "runs_logs"
         RUNS_COLLECTION = "runs"
 
         # static collections
