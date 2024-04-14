@@ -1,6 +1,6 @@
 import datetime
 from typing import Iterable
-from pymongo import MongoClient
+import pymongo
 from pymongo.server_api import ServerApi
 
 from config import CONFIG
@@ -16,24 +16,24 @@ class MongoService:
     """
 
     def __init__(self, uri: str, db_name: str):
-        self.client = MongoClient(uri.strip(), server_api=ServerApi("1"))
+        self.client = pymongo.MongoClient(uri.strip(), server_api=ServerApi("1"))
         self.db = self.client[db_name]
         self._schema_collection = CONFIG.MONGO.SCHEMA_VERSIONING_COLLECTION
 
-    def insert(self, collection: str, data, use_schema_versioning: bool = True):
+    def insert(self, collection: str, data, use_schema_versioning: bool = True) -> pymongo.results.InsertOneResult:
         if use_schema_versioning:
             schema_version = self.get_schema_version(collection)
             data = [{**item, "schema_version": schema_version} for item in data]
         self.db[collection].insert_one(data)
 
     def insert_many(
-            self, collection: str, data: Iterable, use_schema_versioning: bool = True
-    ):
+        self, collection: str, data: Iterable, use_schema_versioning: bool = True
+    ) -> pymongo.results.InsertManyResult:
         if use_schema_versioning:
             schema_version = self.get_schema_version(collection)
             data = [{**item, "schema_version": schema_version} for item in data]
 
-        self.db[collection].insert_many(data)
+        return self.db[collection].insert_many(data)
 
     def find(self, collection: str, query):
         return self.db[collection].find(query)
@@ -57,20 +57,18 @@ class MongoService:
         return self.db.list_collection_names()
 
     def create_collection_with_unique_index(
-            self, collection_name: str, unique_columns: list[str], force: bool = False
+        self, collection_name: str, unique_columns: list[str], force: bool = False
     ) -> bool:
         if collection_name in self.get_collections() and not force:
             raise Exception(f"Collection {collection_name} already exists")
-        
-        if force: 
+
+        if force:
             logger.info(f"Collection {collection_name} already exists. Dropping...")
             self.db.drop_collection(collection_name)
 
         # create collection with unique index
         self.db.create_collection(collection_name, check_exists=False)
-        self.db[collection_name].create_index(
-            [(col, 1) for col in unique_columns], unique=True, name="unique_index"
-        )
+        self.db[collection_name].create_index([(col, 1) for col in unique_columns], unique=True, name="unique_index")
         return True
 
     def get_schema_version(self, collection: str):
@@ -89,9 +87,7 @@ class MongoService:
         )
         result = list(schema)
         if not result:
-            logger.info(
-                f"Schema version not found for collection {collection}. Creating new one."
-            )
+            logger.info(f"Schema version not found for collection {collection}. Creating new one.")
             self.insert(
                 self._schema_collection,
                 {
@@ -104,16 +100,13 @@ class MongoService:
             return 1
         return result[0]["version"]
 
-    def upsert_tender_details(self, tender_info):
-        tender_in_coll = self.find_one(CONFIG.MONGO.TENDERS_COLLECTION,
-                                       {"tenderID": tender_info["tenderID"]})
-        if (tender_in_coll is not None
-                and datetime.fromisoformat(tender_in_coll['dateModified']) <= datetime.fromisoformat(
-                    tender_info['dateModified'])
-        ):
-            self.update(CONFIG.MONGO.TENDERS_COLLECTION,
-                        {"tenderID": tender_info["tenderID"]},
-                        tender_info)
+    def upsert_tender_details(self, tender_info: dict):
+        tender_in_coll = self.find_one(CONFIG.MONGO.TENDERS_COLLECTION, {"tenderID": tender_info["tenderID"]})
+
+        if tender_in_coll is not None and datetime.fromisoformat(
+            tender_in_coll["dateModified"]
+        ) <= datetime.fromisoformat(tender_info["dateModified"]):
+            self.update(CONFIG.MONGO.TENDERS_COLLECTION, {"tenderID": tender_info["tenderID"]}, tender_info)
             logger.info(f"Tender {tender_info['tenderID']} updated")
         else:
             self.insert(CONFIG.MONGO.TENDERS_COLLECTION, tender_info, False)
@@ -121,14 +114,10 @@ class MongoService:
 
     def upsert_entity_details(self, edrpou_info):
         if self.find_one(CONFIG.MONGO.ENTITIES_COLLECTION, {"edrpou": edrpou_info["edrpou"]}):
-            self.update(CONFIG.MONGO.ENTITIES_COLLECTION,
-                        {"edrpou": edrpou_info["edrpou"]},
-                        edrpou_info)
+            self.update(CONFIG.MONGO.ENTITIES_COLLECTION, {"edrpou": edrpou_info["edrpou"]}, edrpou_info)
             logger.info(f"EDRPOU ({edrpou_info['edrpou']}) info already exist, updating")
         else:
-            self.insert(CONFIG.MONGO.ENTITIES_COLLECTION,
-                        edrpou_info,
-                        False)
+            self.insert(CONFIG.MONGO.ENTITIES_COLLECTION, edrpou_info, False)
             logger.info(f"EDRPOU ({edrpou_info['edrpou']}) inserted")
 
     def upsert_many_tender_details(self, tenders_details):

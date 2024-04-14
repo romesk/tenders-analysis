@@ -11,6 +11,7 @@ class CONFIG:
         DB_NAME = os.getenv("MONGO_DB_NAME")
 
         SCHEMA_VERSIONING_COLLECTION = "schema_versioning"
+        RUNS_COLLECTION = "runs"
 
         # static collections
         KVEDS_COLLECTION = "kveds"
@@ -22,7 +23,7 @@ class CONFIG:
         TENDERS_COLLECTION = "tenders"
 
         # entities collection
-        ENTITIES_COLLECTION = 'entities'
+        ENTITIES_COLLECTION = "entities"
 
         # EspoCRM collections
         ACCOUNTS_COLLECTION = "espo_accounts"
@@ -43,4 +44,3 @@ class CONFIG:
 
     class PROZORRO:
         API_URL = "https://prozorro.gov.ua/api"
-        

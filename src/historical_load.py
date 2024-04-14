@@ -4,31 +4,32 @@ from services import MongoService
 from config import CONFIG
 from utlis.logger import get_logger
 from processors import ProzorroProcessor, EntityProcessor, EspoCRM
+from utlis.tools import generate_run_id
 
 
 logger = get_logger("historical_load")
 
 
-def load_last_month_data(mongo: MongoService) -> None:
-    load_history_data(mongo, start_date=date.today(), end_date=date.today() - timedelta(days=30))
+def load_last_month_data(mongo: MongoService, run_id: str) -> None:
+    load_history_data(mongo, run_id=run_id, start_date=date.today() - timedelta(days=30))
 
 
-def load_last_week_data(mongo: MongoService) -> None:
-    load_history_data(mongo)
+def load_last_week_data(mongo: MongoService, run_id: str) -> None:
+    load_history_data(mongo, run_id=run_id)
 
 
-def load_history_data(mongo: MongoService, start_date: date = date.today() - timedelta(days=7),
-                      end_date: date = None) -> None:
+def load_history_data(
+    mongo: MongoService, run_id: str, start_date: date = date.today() - timedelta(days=7), end_date: date = None
+) -> None:
     try:
         prozorro = ProzorroProcessor()
         entities_processor = EntityProcessor()
 
-        for status in ['complete', 'active.tendering']:
+        for status in ["complete", "active.tendering"]:
 
             logger.info(f"Getting {status} tenders info and ERDPOU-s")
-            tenders = prozorro.get_tender_list(
-                start_date=start_date, end_date=end_date, status=status)
-            
+            tenders = prozorro.get_tender_list(start_date=start_date, end_date=end_date, status=status)
+
             logger.info(f"Received {len(tenders)} tenders with status {status}")
 
             edrpous = list(filter(None, [prozorro.get_edrpou_from_tender(tender) for tender in tenders]))
@@ -41,9 +42,9 @@ def load_history_data(mongo: MongoService, start_date: date = date.today() - tim
             mongo.upsert_many_tender_details(tenders)
             logger.info(f"{status} tenders were uploaded to Mongo")
 
-            logger.info(f"Uploading entities to Mongo")
+            logger.info("Uploading entities to Mongo")
             mongo.upsert_many_entity_details(entities_details)
-            logger.info(f"Entities were uploaded to Mongo")
+            logger.info("Entities were uploaded to Mongo")
 
     except Exception as e:
         logger.error(f"Failed to upload tenders and EDRPOU-s: {e}")
@@ -63,9 +64,7 @@ def load_espo_data(mongo: MongoService) -> None:
 
     logger.info("Loading streams...")
     account_streams = [espo.get_streams("Account", acc["id"]) for acc in accounts]
-    opportunity_streams = [
-        espo.get_streams("Opportunity", opp["id"]) for opp in opportunities
-    ]
+    opportunity_streams = [espo.get_streams("Opportunity", opp["id"]) for opp in opportunities]
 
     streams = account_streams + opportunity_streams
     flat_streams = [item for sublist in streams for item in sublist]
@@ -74,11 +73,12 @@ def load_espo_data(mongo: MongoService) -> None:
 
 
 def run() -> None:
+    run_id = generate_run_id()
     mongo = MongoService(CONFIG.MONGO.URI, CONFIG.MONGO.DB_NAME)
 
     try:
-        load_last_week_data(mongo)
-        load_espo_data(mongo)
+        load_last_week_data(mongo, run_id)
+        load_espo_data(mongo, run_id)
     finally:
         mongo.close()
 

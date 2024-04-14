@@ -1,6 +1,6 @@
 import math
 import time
-from datetime import date, datetime
+from datetime import date
 from typing import Optional
 
 import requests
@@ -9,7 +9,7 @@ from config import CONFIG
 from utlis.logger import get_logger
 
 
-logger = get_logger('ProzorroProcessor')
+logger = get_logger("ProzorroProcessor")
 
 
 class ProzorroProcessor:
@@ -22,7 +22,7 @@ class ProzorroProcessor:
 
     def __init__(self):
         pass
-    
+
     @staticmethod
     def get_tender_list(start_date: date, end_date: date, status: str = "complete") -> list:
         """Get the list of tenders from Prozorro API in the specified filters.
@@ -51,20 +51,14 @@ class ProzorroProcessor:
 
     @staticmethod
     def _get_tenders_page(
-            start_date: date,
-            end_date: date,
-            status: str = "complete", 
-            page_number: int = 1, 
-            retry_count: int = 5
-        ) -> dict:
+        start_date: date, end_date: date, status: str = "complete", page_number: int = 1, retry_count: int = 5
+    ) -> dict:
         """
         Get the page of tenders from Prozorro API.
         If the request fails with 429 status code, it will retry the request
         """
 
-        params = {
-            "page": page_number
-        }
+        params = {"page": page_number}
         if start_date:
             params["date[tender][start]"] = start_date
         if end_date:
@@ -84,7 +78,7 @@ class ProzorroProcessor:
             return ProzorroProcessor._get_tenders_page(start_date, end_date, status, page_number, retry_count - 1)
         else:
             raise Exception(f"Failed to get tenders: {response.status_code}. {response.text}")
-        
+
     @staticmethod
     def _validate_dates(start_date: date, end_date: date):
 
@@ -93,20 +87,20 @@ class ProzorroProcessor:
 
         if start_date and end_date and start_date > end_date:
             raise ValueError(f"Start date should be less than end date. ({start_date} > {end_date})")
-        
+
     @staticmethod
     def get_tender_details_response(tender_id: str) -> requests.Response:
         response = requests.get(f"{ProzorroProcessor.GET_TENDER_URL}/{tender_id}")
 
         if response.status_code != 200:
             raise Exception(f"Failed to get tender details: {response.status_code}. {response.text}")
-        
+
         return response
 
     @staticmethod
     def get_edrpou_from_tender(tender_info: dict) -> Optional[str]:
         try:
-            edrpou = tender_info['awards'][0]['suppliers'][0]['identifier']['id']
+            edrpou = tender_info["awards"][0]["suppliers"][0]["identifier"]["id"]
             # logger.info(f"Got EDRPOU: {edrpou}")
         except Exception as e:
             # logger.error(f"Exception occurred during EDRPOU parsing from Tender info: {e}")
