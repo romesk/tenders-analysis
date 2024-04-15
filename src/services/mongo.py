@@ -1,11 +1,11 @@
-import datetime
+from datetime import datetime
 from typing import Iterable
 from pymongo.results import InsertManyResult, InsertOneResult, UpdateResult
 from pymongo import MongoClient
 from pymongo.server_api import ServerApi
 
-from config import CONFIG
-from utlis.logger import get_logger
+from src.config import CONFIG
+from src.utlis.logger import get_logger
 
 
 logger = get_logger("MongoService")
@@ -29,7 +29,7 @@ class MongoService:
 
     def insert_many(
         self, collection: str, data: Iterable, use_schema_versioning: bool = True
-    ) -> pymongo.results.InsertManyResult:
+    ) -> InsertManyResult:
         if use_schema_versioning:
             schema_version = self.get_schema_version(collection)
             data = [{**item, "schema_version": schema_version} for item in data]
@@ -94,35 +94,41 @@ class MongoService:
                 {
                     "collection": collection,
                     "version": 1,
-                    "active_from": datetime.datetime.now(),
+                    "active_from": datetime.now(),
                 },
                 use_schema_versioning=False,
             )
             return 1
         return result[0]["version"]
 
-    def upsert_tender_details(self, tender_info: dict) -> InsertOneResult | UpdateResult:
-        tender_in_coll = self.find_one(CONFIG.MONGO.TENDERS_COLLECTION, {"tenderID": tender_info["tenderID"]})
-
-        if tender_in_coll is not None and datetime.fromisoformat(
+    def upsert_tender_details(self, received_tender: dict) -> InsertOneResult | UpdateResult:
+        tender_in_coll = self.find_one(CONFIG.MONGO.TENDERS_COLLECTION, {"tenderID": received_tender["tenderID"]})
+        res = None
+        if tender_in_coll is None:
+            res = self.insert(CONFIG.MONGO.TENDERS_COLLECTION, received_tender, False)
+            logger.info(f"Tender {received_tender['tenderID']} inserted")
+        elif tender_in_coll is not None and datetime.fromisoformat(
             tender_in_coll["dateModified"]
-        ) <= datetime.fromisoformat(tender_info["dateModified"]):
-            res = self.update(CONFIG.MONGO.TENDERS_COLLECTION, {"tenderID": tender_info["tenderID"]}, tender_info)
-            logger.info(f"Tender {tender_info['tenderID']} updated")
-        else:
-            res = self.insert(CONFIG.MONGO.TENDERS_COLLECTION, tender_info, False)
-            logger.info(f"Tender {tender_info['tenderID']} inserted")
-
+        ) < datetime.fromisoformat(received_tender["dateModified"]):
+            res = self.update(CONFIG.MONGO.TENDERS_COLLECTION, {"tenderID": received_tender["tenderID"]}, received_tender)
+            logger.info(f"Tender {received_tender['tenderID']} info updated")
+        # else:
+        #     logger.info(f"No need for update: TenderID {received_tender['tenderID']}")
         return res
 
-    def upsert_entity_details(self, edrpou_info) -> InsertOneResult | UpdateResult:
-        if self.find_one(CONFIG.MONGO.ENTITIES_COLLECTION, {"edrpou": edrpou_info["edrpou"]}):
-            res = self.update(CONFIG.MONGO.ENTITIES_COLLECTION, {"edrpou": edrpou_info["edrpou"]}, edrpou_info)
-            logger.info(f"EDRPOU ({edrpou_info['edrpou']}) info already exist, updating")
+    def upsert_entity_details(self, received_entity) -> InsertOneResult | UpdateResult:
+        entity_in_coll = self.find_one(CONFIG.MONGO.ENTITIES_COLLECTION, {"edrpou": received_entity["edrpou"]})
+        res = None
+        if entity_in_coll is None:
+            res = self.insert(CONFIG.MONGO.ENTITIES_COLLECTION, received_entity, False)
+            logger.info(f"Entity with EDRPOU {received_entity['edrpou']} inserted")
+        elif entity_in_coll is not None and datetime.fromisoformat(
+            entity_in_coll['info'][0]["subtitle"]["dateTime"]
+        ) < datetime.fromisoformat(received_entity['info'][0]["subtitle"]["dateTime"]):
+            res = self.update(CONFIG.MONGO.ENTITIES_COLLECTION, {"edrpou": received_entity["edrpou"]}, received_entity)
+            logger.info(f"Entity with EDRPOU ({received_entity['edrpou']}) updated")
         else:
-            res = self.insert(CONFIG.MONGO.ENTITIES_COLLECTION, edrpou_info, False)
-            logger.info(f"EDRPOU ({edrpou_info['edrpou']}) inserted")
-
+            logger.info(f"No need for update: EDRPOU ({received_entity['edrpou']})")
         return res
 
     def upsert_many_tender_details(self, tenders_details):
