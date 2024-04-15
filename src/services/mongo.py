@@ -132,11 +132,15 @@ class MongoService:
         return res
 
     def upsert_many_tender_details(self, tenders_details):
+        res = []
         for tender in tenders_details:
             if tender is not None:
-                self.upsert_tender_details(tender)
+                res.append(self.upsert_tender_details(tender))
+        return list(filter(None, res))
 
     def upsert_many_entity_details(self, entities_details):
+        res = []
         for entity in entities_details:
             if entity is not None:
-                self.upsert_entity_details(entity)
+                res.append(self.upsert_entity_details(entity))
+        return list(filter(None, res))
