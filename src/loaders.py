@@ -1,11 +1,10 @@
-from datetime import date, datetime, timedelta
+from datetime import date, timedelta
 
 from services import MongoService
 from config import CONFIG
-from utlis.helpers import add_results_to_run_table, add_new_run_to_table
+from utlis.helpers import add_results_to_run_table
 from utlis.logger import get_logger
 from processors import ProzorroProcessor, EntityProcessor, EspoCRM
-from utlis.tools import generate_run_id
 
 
 logger = get_logger("data_load")
@@ -20,7 +19,7 @@ def load_last_week_data(mongo: MongoService, run_id: str) -> None:
 
 
 def load_data(
-    mongo: MongoService, run_id: str, start_date: date = date.today() - timedelta(days=5), end_date: date = None
+    mongo: MongoService, run_id: str, start_date: date = date.today() - timedelta(days=7), end_date: date = date.today()
 ) -> None:
     try:
         prozorro = ProzorroProcessor()
@@ -79,24 +78,3 @@ def load_espo_data(mongo: MongoService, run_id: str) -> None:
     insert_results = mongo.upsert_many_espo_details(CONFIG.MONGO.STREAMS_COLLECTION, flat_streams)
     for result in insert_results:
         add_results_to_run_table(run_id, mongo, result, CONFIG.MONGO.STREAMS_COLLECTION)
-
-
-def run() -> None:
-    run_id = generate_run_id()
-
-    logger.info(f"Starting data load. Run ID: {run_id}")
-    start_time = datetime.now()
-    mongo = MongoService(CONFIG.MONGO.URI, CONFIG.MONGO.DB_NAME)
-
-    try:
-        load_last_week_data(mongo, run_id)
-        load_espo_data(mongo, run_id)
-    finally:
-        add_new_run_to_table(mongo, run_id, "data_load", start_date=start_time)
-        mongo.close()
-
-    logger.info("Data load finished.")
-
-
-if __name__ == "__main__":
-    run()
