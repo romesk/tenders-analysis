@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from datetime import datetime
 from typing import Iterable
 from pymongo.results import InsertManyResult, InsertOneResult, UpdateResult
@@ -125,25 +127,25 @@ class MongoService:
         elif datetime.fromisoformat(
             entity_in_coll['info'][0]["subtitle"]["dateTime"]
         ) < datetime.fromisoformat(received_entity['info'][0]["subtitle"]["dateTime"]):
-            res = self.insert(CONFIG.MONGO.ENTITIES_COLLECTION, {"edrpou": received_entity["edrpou"]}, received_entity)
+            res = self.update(CONFIG.MONGO.ENTITIES_COLLECTION, {"edrpou": received_entity["edrpou"]}, received_entity)
             logger.info(f"Entity with EDRPOU ({received_entity['edrpou']}) updated")
         else:
             logger.info(f"No need for update: EDRPOU ({received_entity['edrpou']})")
         return res
 
-    def upsert_espo_details(self, received_espo) -> InsertOneResult | UpdateResult:
-        espo_in_coll = self.find_one(CONFIG.MONGO.ENTITIES_COLLECTION, {"id": received_espo["id"]})
+    def upsert_espo_details(self, collection_name, received_espo) -> InsertOneResult | UpdateResult:
+        espo_in_coll = self.find_one(collection_name, {"id": received_espo["id"]})
         res = None
         if espo_in_coll is None:
-            res = self.insert(CONFIG.MONGO.ENTITIES_COLLECTION, received_espo, False)
-            logger.info(f"ESPO: {received_espo['id']} inserted")
+            res = self.insert(collection_name, received_espo, False)
+            logger.info(f"ESPO {collection_name}: {received_espo['id']} inserted")
         elif datetime.fromisoformat(
             espo_in_coll["modifiedAt"]
         ) < datetime.fromisoformat(received_espo["modifiedAt"]):
-            res = self.update(CONFIG.MONGO.ENTITIES_COLLECTION, {"id": received_espo["id"]}, received_espo)
-            logger.info(f"ESPO: ({received_espo['id']}) updated")
+            res = self.update(collection_name, {"id": received_espo["id"]}, received_espo)
+            logger.info(f"ESPO {collection_name}: ({received_espo['id']}) updated")
         else:
-            logger.info(f"No need for update: ESPO ({received_espo['id']})")
+            logger.info(f"No need for update: ESPO {collection_name} ({received_espo['id']})")
         return res
 
     def upsert_many_tender_details(self, tenders_details):
@@ -158,4 +160,11 @@ class MongoService:
         for entity in entities_details:
             if entity is not None:
                 res.append(self.upsert_entity_details(entity))
+        return list(filter(None, res))
+
+    def upsert_many_espo_details(self, collection_name, espo_details):
+        res = []
+        for espo in espo_details:
+            if espo is not None:
+                res.append(self.upsert_espo_details(collection_name, espo))
         return list(filter(None, res))
