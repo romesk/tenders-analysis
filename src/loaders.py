@@ -19,7 +19,7 @@ def load_last_week_data(mongo: MongoService, run_id: str) -> None:
 
 
 def load_data(
-    mongo: MongoService, run_id: str, start_date: date = date.today() - timedelta(days=7), end_date: date = date.today()
+    mongo: MongoService, run_id: str, start_date: date = date.today() - timedelta(days=5), end_date: date = None
 ) -> None:
     try:
         prozorro = ProzorroProcessor()
