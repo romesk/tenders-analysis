@@ -18,7 +18,7 @@ def run() -> None:
     mongo = MongoService(CONFIG.MONGO.URI, CONFIG.MONGO.DB_NAME)
 
     try:
-        load_data(mongo, run_id, start_date=date.today() - timedelta(days=90), end_date=date.today())
+        load_data(mongo, run_id, start_date=date.today() - timedelta(days=90))
         load_espo_data(mongo, run_id)
     finally:
         add_new_run_to_table(mongo, run_id, "historical_load", start_date=start_time)
