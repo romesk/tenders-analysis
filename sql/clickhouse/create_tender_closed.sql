@@ -1,14 +1,14 @@
-CREATE TABLE default.TenderInfo
+CREATE TABLE default.TenderClosed
 (
-    `tender_id` String,
-    `title` String DEFAULT 'Table Title',
-    `delivery_address` Nullable(String),
-    `division` String,
-    `group` Nullable(String),
-    `class` Nullable(String),
-    `category` Nullable(String),
-    `clarification` Nullable(String)
+    `amount` Int32 DEFAULT '0',
+    `duration` Int32 DEFAULT '0',
+    `participant_count` Int32 DEFAULT '0',
+    `open_time_id` Nullable(String),
+    `close_time_id` Nullable(String),
+    `tender_id` Nullable(String),
+    `procurement_id` Nullable(String),
+    `performer_id` Nullable(String)
 )
 ENGINE = SharedMergeTree('/clickhouse/tables/{uuid}/{shard}', '{replica}')
-ORDER BY ()
+ORDER BY (duration, participant_count, amount)
 SETTINGS index_granularity = 8192

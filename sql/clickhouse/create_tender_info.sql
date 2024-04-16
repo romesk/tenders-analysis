@@ -3,7 +3,7 @@ CREATE TABLE default.TenderInfo
     `tender_id` String,
     `title` String DEFAULT 'Table Title',
     `delivery_address` Nullable(String),
-    `division` String,
+    `division` Nullable(String),
     `group` Nullable(String),
     `class` Nullable(String),
     `category` Nullable(String),

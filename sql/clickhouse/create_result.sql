@@ -1,7 +1,7 @@
 CREATE TABLE default.Result
 (
     `result_id` Int32,
-    `stage` String
+    `stage` Nullable(String)
 )
 ENGINE = SharedMergeTree('/clickhouse/tables/{uuid}/{shard}', '{replica}')
 ORDER BY (result_id, stage)

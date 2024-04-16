@@ -8,7 +8,7 @@ CREATE TABLE default.LeadActivity
     `campaing_id` Nullable(Int32),
     `channel_id` Nullable(Int32),
     `prev_stage_id` Nullable(Int32),
-    `curr_stage_id` Int32,
+    `curr_stage_id` Nullable(Int32),
     `time_id` Nullable(String)
 )
 ENGINE = SharedMergeTree('/clickhouse/tables/{uuid}/{shard}', '{replica}')

@@ -2,6 +2,7 @@ CREATE TABLE default.Performer
 (
     `performer_id` String,
     `organization_type` String DEFAULT 'type_of_organization',
+    `contact_phone` String DEFAULT 'phone',
     `location` Nullable(Int32),
     `section_code` Nullable(Int32),
     `name` String DEFAULT 'name',
