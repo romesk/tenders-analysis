@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 from datetime import datetime
 from typing import Iterable
 from pymongo.results import InsertManyResult, InsertOneResult, UpdateResult
@@ -125,8 +123,8 @@ class MongoService:
             res = self.insert(CONFIG.MONGO.ENTITIES_COLLECTION, received_entity, False)
             logger.info(f"Entity with EDRPOU {received_entity['edrpou']} inserted")
         elif datetime.fromisoformat(
-            entity_in_coll['info'][0]["subtitle"]["dateTime"]
-        ) < datetime.fromisoformat(received_entity['info'][0]["subtitle"]["dateTime"]):
+            entity_in_coll["lastTime"]["subtitle"]["dateTime"]
+        ) < datetime.fromisoformat(received_entity["lastTime"]["subtitle"]["dateTime"]):
             res = self.update(CONFIG.MONGO.ENTITIES_COLLECTION, {"edrpou": received_entity["edrpou"]}, received_entity)
             logger.info(f"Entity with EDRPOU ({received_entity['edrpou']}) updated")
         else:
