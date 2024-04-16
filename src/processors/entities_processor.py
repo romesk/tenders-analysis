@@ -30,6 +30,7 @@ class EntityProcessor:
         details = {}
         for val in parsed_info:
             details[val['key']] = val['subtitle']
+        del details['code']
         return details
 
     def get_many_entities_details(self, edrpous: list):
