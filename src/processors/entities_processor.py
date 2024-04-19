@@ -25,6 +25,14 @@ class EntityProcessor:
         find_raw_info = p.findall(soup.prettify())
         return json.loads(find_raw_info[0].replace('\\"', "").replace("\\", ""))["pageData"]["registryCell"]
 
+    @staticmethod
+    def create_details_dict(parsed_info) -> dict:
+        details = {}
+        for val in parsed_info:
+            details[val['key']] = val['subtitle']
+        del details['code']
+        return details
+
     def get_many_entities_details(self, edrpous: list):
         return [self.get_entity_details(edrpou) for edrpou in edrpous]
 
@@ -44,9 +52,11 @@ class EntityProcessor:
                     self._logger.info(f"Got code: {page.status_code}")
                     raise Exception("Page not found")
                 page = self.get_entity_page(edrpou)
-            edrpou_info = self.parse_entity_page(page)
+            unstuctured_edrpou_info = self.parse_entity_page(page)
+            stuctured_edrpou_info = self.create_details_dict(unstuctured_edrpou_info)
+            stuctured_edrpou_info['edrpou'] = edrpou
             self._logger.info(f"EDRPOU ({edrpou}) info successfully parsed")
-            return {"edrpou": edrpou, "info": edrpou_info}
+            return stuctured_edrpou_info
         except Exception as ex:
             self._logger.error(f"Error parsing EPRDOU info: {ex}")
             return None

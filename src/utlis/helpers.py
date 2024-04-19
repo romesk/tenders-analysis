@@ -32,7 +32,7 @@ def add_results_to_run_table(
     if operation == "insert":
         inserted_ids = results.inserted_ids if isinstance(results, InsertManyResult) else [results.inserted_id]
     elif operation == "update":
-        inserted_ids = [UpdateResult.upserted_id]
+        inserted_ids = [results.upserted_id]
     else:
         raise NotImplementedError(f"Unsupported operation: {operation}")
 

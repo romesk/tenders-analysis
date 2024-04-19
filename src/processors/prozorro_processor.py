@@ -1,3 +1,4 @@
+import json
 import math
 import time
 from datetime import date
@@ -90,12 +91,50 @@ class ProzorroProcessor:
 
     @staticmethod
     def get_tender_details_response(tender_id: str) -> requests.Response:
-        response = requests.get(f"{ProzorroProcessor.GET_TENDER_URL}/{tender_id}")
+        return requests.get(f"{ProzorroProcessor.GET_TENDER_URL}/{tender_id}")
 
-        if response.status_code != 200:
-            raise Exception(f"Failed to get tender details: {response.status_code}. {response.text}")
+    @staticmethod
+    def get_tender_details(tender_id: str):
+        """
+        Make a request to the Prozorro API to get detailed information about tender and return that information.
+        :param tender_id: ID of tender to get details for
+        :return: detailed information about tender
+        """
+        tender_details_response = ProzorroProcessor.get_tender_details_response(tender_id)
+        if tender_details_response.status_code == 200:
+            return json.loads(tender_details_response.content)
+        elif tender_details_response.status_code == 429:
+            timeout = int(tender_details_response.headers.get("Retry-After", 10))
+            logger.error(
+                f"Failed to get details for tender {tender_id}: {tender_details_response.status_code}. Retrying in {timeout} sec...")
+            time.sleep(timeout)
+            return ProzorroProcessor.get_tender_details(tender_id)
+        else:
+            raise Exception(
+                f"Failed to get tender details for {tender_id}: {tender_details_response.status_code}.")
 
-        return response
+    @staticmethod
+    def get_tender_details_list(start_date: date, end_date: date, status: str = "complete") -> list:
+        """
+        Get the list of tenders from Prozorro API in the specified filters
+        and request detailed info about each tender from list mentioned above.
+        Return only successfully retrieved tenders details.
+        :param start_date: start date of the tenders to get
+        :param end_date: end date of the tenders to get
+        :param status: status of tenders to get, defaults to "complete"
+        :return: list of extracted tenders details
+        """
+        tenders_without_details = ProzorroProcessor.get_tender_list(start_date, end_date, status)
+        tender_details_list = []
+        logger.info(f"Getting tenders details")
+        for tender in tenders_without_details:
+            try:
+                tender_details = ProzorroProcessor.get_tender_details(tender['tenderID'])
+                tender_details_list.append(tender_details)
+                # logger.info(f"Successfully retrieved tender details for tender: {tender['tenderID']}")
+            except Exception as ex:
+                logger.error(f"ERROR: {ex}")
+        return tender_details_list
 
     @staticmethod
     def get_edrpou_from_tender(tender_info: dict) -> Optional[str]:
