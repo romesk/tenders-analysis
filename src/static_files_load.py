@@ -75,7 +75,7 @@ def run(force: bool = False):
 
     run_id = generate_run_id()
     start_time = datetime.now()
-    
+
     logger.info(f"Starting static files load. Run ID: {run_id}")
     mongo = MongoService(CONFIG.MONGO.URI, CONFIG.MONGO.DB_NAME)
 

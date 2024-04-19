@@ -29,8 +29,8 @@ class EntityProcessor:
     def create_details_dict(parsed_info) -> dict:
         details = {}
         for val in parsed_info:
-            details[val['key']] = val['subtitle']
-        del details['code']
+            details[val["key"]] = val["subtitle"]
+        del details["code"]
         return details
 
     def get_many_entities_details(self, edrpous: list):
@@ -54,7 +54,7 @@ class EntityProcessor:
                 page = self.get_entity_page(edrpou)
             unstuctured_edrpou_info = self.parse_entity_page(page)
             stuctured_edrpou_info = self.create_details_dict(unstuctured_edrpou_info)
-            stuctured_edrpou_info['edrpou'] = edrpou
+            stuctured_edrpou_info["edrpou"] = edrpou
             self._logger.info(f"EDRPOU ({edrpou}) info successfully parsed")
             return stuctured_edrpou_info
         except Exception as ex:
