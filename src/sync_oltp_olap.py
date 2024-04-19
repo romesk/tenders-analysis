@@ -11,8 +11,8 @@ def run():
 
     try:
         run_ids_to_process = get_unprocessed_runs()
-        
-    finally: 
+
+    finally:
         # add this run to the run table
         add_new_run_to_table(mongo, run_id, "etl", start_time)
         mongo.close_connection()

@@ -27,9 +27,7 @@ class MongoService:
             data = [{**item, "schema_version": schema_version} for item in data]
         return self.db[collection].insert_one(data)
 
-    def insert_many(
-        self, collection: str, data: Iterable, use_schema_versioning: bool = True
-    ) -> InsertManyResult:
+    def insert_many(self, collection: str, data: Iterable, use_schema_versioning: bool = True) -> InsertManyResult:
         if use_schema_versioning:
             schema_version = self.get_schema_version(collection)
             data = [{**item, "schema_version": schema_version} for item in data]
@@ -107,10 +105,12 @@ class MongoService:
         if tender_in_coll is None:
             res = self.insert(CONFIG.MONGO.TENDERS_COLLECTION, received_tender, False)
             logger.info(f"Tender {received_tender['tenderID']} inserted")
-        elif datetime.fromisoformat(
-            tender_in_coll["dateModified"]
-        ) < datetime.fromisoformat(received_tender["dateModified"]):
-            res = self.update(CONFIG.MONGO.TENDERS_COLLECTION, {"tenderID": received_tender["tenderID"]}, received_tender)
+        elif datetime.fromisoformat(tender_in_coll["dateModified"]) < datetime.fromisoformat(
+            received_tender["dateModified"]
+        ):
+            res = self.update(
+                CONFIG.MONGO.TENDERS_COLLECTION, {"tenderID": received_tender["tenderID"]}, received_tender
+            )
             logger.info(f"Tender {received_tender['tenderID']} info updated")
         # else:
         #     logger.info(f"No need for update: TenderID {received_tender['tenderID']}")
@@ -122,9 +122,9 @@ class MongoService:
         if entity_in_coll is None:
             res = self.insert(CONFIG.MONGO.ENTITIES_COLLECTION, received_entity, False)
             logger.info(f"Entity with EDRPOU {received_entity['edrpou']} inserted")
-        elif datetime.fromisoformat(
-            entity_in_coll["lastTime"]["subtitle"]["dateTime"]
-        ) < datetime.fromisoformat(received_entity["lastTime"]["subtitle"]["dateTime"]):
+        elif datetime.fromisoformat(entity_in_coll["lastTime"]["subtitle"]["dateTime"]) < datetime.fromisoformat(
+            received_entity["lastTime"]["subtitle"]["dateTime"]
+        ):
             res = self.update(CONFIG.MONGO.ENTITIES_COLLECTION, {"edrpou": received_entity["edrpou"]}, received_entity)
             logger.info(f"Entity with EDRPOU ({received_entity['edrpou']}) updated")
         else:
@@ -137,9 +137,7 @@ class MongoService:
         if espo_in_coll is None:
             res = self.insert(collection_name, received_espo, False)
             logger.info(f"ESPO {collection_name}: {received_espo['id']} inserted")
-        elif datetime.fromisoformat(
-            espo_in_coll["modifiedAt"]
-        ) < datetime.fromisoformat(received_espo["modifiedAt"]):
+        elif datetime.fromisoformat(espo_in_coll["modifiedAt"]) < datetime.fromisoformat(received_espo["modifiedAt"]):
             res = self.update(collection_name, {"id": received_espo["id"]}, received_espo)
             logger.info(f"ESPO {collection_name}: ({received_espo['id']}) updated")
         else:

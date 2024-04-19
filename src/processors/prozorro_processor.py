@@ -106,12 +106,12 @@ class ProzorroProcessor:
         elif tender_details_response.status_code == 429:
             timeout = int(tender_details_response.headers.get("Retry-After", 10))
             logger.error(
-                f"Failed to get details for tender {tender_id}: {tender_details_response.status_code}. Retrying in {timeout} sec...")
+                f"Failed to get details for tender {tender_id}: {tender_details_response.status_code}. Retrying in {timeout} sec..."
+            )
             time.sleep(timeout)
             return ProzorroProcessor.get_tender_details(tender_id)
         else:
-            raise Exception(
-                f"Failed to get tender details for {tender_id}: {tender_details_response.status_code}.")
+            raise Exception(f"Failed to get tender details for {tender_id}: {tender_details_response.status_code}.")
 
     @staticmethod
     def get_tender_details_list(start_date: date, end_date: date, status: str = "complete") -> list:
@@ -129,7 +129,7 @@ class ProzorroProcessor:
         logger.info(f"Getting tenders details")
         for tender in tenders_without_details:
             try:
-                tender_details = ProzorroProcessor.get_tender_details(tender['tenderID'])
+                tender_details = ProzorroProcessor.get_tender_details(tender["tenderID"])
                 tender_details_list.append(tender_details)
                 # logger.info(f"Successfully retrieved tender details for tender: {tender['tenderID']}")
             except Exception as ex:
