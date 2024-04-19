@@ -57,7 +57,8 @@ def build_tender_kattotg_hierarchy(mongo: MongoService, tender_id: str) -> tuple
                              "level5": None})
     city = mongo.find_one(CONFIG.MONGO.KATOTTG_COLLECTION,
                           {"level1": region["level1"],
-                           "category": {"$exists": True},
+                           "level4": {"$exists": True},
+                           "level5": None,
                            "name": tender_city_name})
 
     return (region['name'], region['level1']), (city['name'], city['level4'])
