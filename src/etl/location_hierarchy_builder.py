@@ -1,4 +1,7 @@
+import json
 from typing import Tuple, Any
+
+import requests
 
 from src.config import CONFIG
 from src.services import MongoService
@@ -59,6 +62,12 @@ def build_tender_kattotg_hierarchy(mongo: MongoService, tender_id: str) -> tuple
     return (region["name"], region["level1"]), (city["name"], city["level4"])
 
 
+def get_coordinates(adress: str):
+    query = f"https://maps.googleapis.com/maps/api/geocode/json?address={adress}&key=AIzaSyCkV30fHW24EXjHvzYewtzQ7HzpN1zWMec"
+    request = requests.get(query)
+    return json.loads(request.content)["results"][0]["geometry"]["location"]
+
+
 if __name__ == "__main__":
     edrpou = "44858321"
     tender_id = "UA-2024-04-14-000214-a"
@@ -66,3 +75,5 @@ if __name__ == "__main__":
     print(f"Entity region: {region} | City: {city}")
     region, city = build_tender_kattotg_hierarchy(mongo, "UA-2024-04-10-009873-a")
     print(f"Tender region: {region} | City: {city}")
+    coordinates = get_coordinates("Рахів")
+    print(coordinates)
