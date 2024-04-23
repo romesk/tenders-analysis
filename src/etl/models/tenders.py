@@ -67,8 +67,11 @@ class Performer:
     performer_id: str
     organization_type: str
     location: str
+    class_name: str
+    section_name: str
+    partition_name: str
+    group_name: str
     section_code: str
-    name: str
     partition_code: str
     group_code: str
     class_code: str

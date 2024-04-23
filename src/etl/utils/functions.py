@@ -63,3 +63,17 @@ def get_KVED_record(edrpou: str) -> dict:
         mongo.close()
 
     return result
+
+
+def get_kved_code_name(name: str, code: str) -> str:
+
+    if not code:
+        return 'n/a'
+
+    mongo = MongoService(CONFIG.MONGO.URI, CONFIG.MONGO.DB_NAME)
+    try:
+        result = mongo.find_one(CONFIG.MONGO.KVEDS_COLLECTION, {name: code})
+    finally:
+        mongo.close()
+
+    return result["name"] if result else 'n/a'

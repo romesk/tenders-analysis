@@ -64,7 +64,9 @@ def insert_performer(clickhouse: ClickhouseService, model: tenders.Performer) ->
 
     logger.info(f"Inserting performer: {model.performer_id}")
     items = asdict(model)
-    clickhouse.insert("Performer", [list(items.values())], list(items.keys()))
+    logger.info("ADSSAKDKLASJKDJKLASDJKLAJKLDLLJKALKMSDLKALKDLKLKASLKDLASDAJLKSDJKLASKJLDAJKSLDJKLASJKLDJKLAKDSASJDJKLASDJKLASJKLDJKLASDJKLJKLASDJKLAJKLSDJKLASJKLDJKLASDJKLJKLSD")
+    res = clickhouse.insert("Performer", [list(items.values())], list(items.keys()))
+    print(dict(res))
 
 
 def insert_streetadress(clickhouse: ClickhouseService, model: tenders.StreetAddress) -> None:
