@@ -33,11 +33,11 @@ def sync_espo_activity(
 
 
 def sync_inserted(run_id: str, clickhouse: ClickhouseService, inserted: list[dict]) -> None:
-    
-        for activity in inserted:
-            activity_type = 'SALE' if activity.get("stage") == 'Closed Won' else 'LEAD'
-            mapper = mappers[activity_type](activity)
-            mapped_data = mapper.map()
-    
-            for model in mapped_data:
-                clickhouse_utils.insert_clickhouse_model(clickhouse, model)
+
+    for activity in inserted:
+        activity_type = "SALE" if activity.get("stage") == "Closed Won" else "LEAD"
+        mapper = mappers[activity_type](activity)
+        mapped_data = mapper.map()
+
+        for model in mapped_data:
+            clickhouse_utils.insert_clickhouse_model(clickhouse, model)

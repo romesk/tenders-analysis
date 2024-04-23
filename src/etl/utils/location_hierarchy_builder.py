@@ -42,11 +42,16 @@ def build_entity_kattotg_hierarchy(edrpou: str):
             {"level1": city["level1"], "level2": None, "level3": None, "level4": None, "level5": None},
         )
 
-    return entity["address"][0]["creator"]["boldText"], (region["name"], region["level1"]), (city["name"], city["level4"])
+    return (
+        entity["address"][0]["creator"]["boldText"],
+        (region["name"], region["level1"]),
+        (city["name"], city["level4"]),
+    )
 
 
-def build_tender_kattotg_hierarchy(tender) -> Union[
-    tuple[tuple[str, str], tuple[str, str]], tuple[str, UUID, tuple[Any, Any], tuple[Any, Any]]]:
+def build_tender_kattotg_hierarchy(
+    tender,
+) -> Union[tuple[tuple[str, str], tuple[str, str]], tuple[str, UUID, tuple[Any, Any], tuple[Any, Any]]]:
     tender_city_name = tender["items"][0]["deliveryAddress"]["locality"].replace(".", " ").split()[-1]
     tender_region_name = tender["items"][0]["deliveryAddress"]["region"].replace(".", " ").split()[0]
 

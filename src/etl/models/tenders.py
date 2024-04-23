@@ -99,6 +99,7 @@ class City:
     city_name: str
     region_katottg: str
 
+
 @dataclass
 class Region:
     region_katottg: str

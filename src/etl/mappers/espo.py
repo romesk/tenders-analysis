@@ -34,8 +34,8 @@ class LeadActivityMapperV1:
     def map_to_campaign(self) -> espo.Campaign:
         # TODO: add getting campaings from espo to oltp
         return espo.Campaign(
-            campaign_id=self._data.get("campaignId", '1'),
-            campaign_type=self._data.get("campaignName", 'main'),
+            campaign_id=self._data.get("campaignId", "1"),
+            campaign_type=self._data.get("campaignName", "main"),
             start_date="n/a",
             end_date="n/a",
             duration_hours=0,

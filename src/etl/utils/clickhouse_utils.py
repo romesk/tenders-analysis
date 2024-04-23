@@ -90,7 +90,7 @@ def insert_region(clickhouse: ClickhouseService, model: tenders.Region) -> None:
     items = asdict(model)
     clickhouse.insert("Region", [list(items.values())], list(items.keys()))
 
-    
+
 def insert_manager(clickhouse: ClickhouseService, model: espo.Manager) -> None:
     """Insert a performer into ClickHouse"""
 
