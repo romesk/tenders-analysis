@@ -72,6 +72,7 @@ def insert_streetadress(clickhouse: ClickhouseService, model: tenders.StreetAddr
 
     logger.info(f"Inserting StreetAddress: {model.id}")
     items = asdict(model)
+    print(list(items.values()))
     clickhouse.insert("StreetAddress", [list(items.values())], list(items.keys()))
 
 

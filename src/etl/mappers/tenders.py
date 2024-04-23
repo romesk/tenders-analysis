@@ -81,7 +81,6 @@ class TenderMapperV1(ABC):
             coordinares = get_coordinates(f"{address}, місто {city_katottg[0]}, область {region_katottg[0]}, Україна")
         else:
             return None, None, None
-            coordinares = {"lng": -1, "lat": -1}
         address = address if address else "n/a"
         city_katottg = city_katottg if city_katottg else "n/a"
         region_katottg = region_katottg if region_katottg else "n/a"
