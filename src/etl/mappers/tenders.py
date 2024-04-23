@@ -92,12 +92,15 @@ class TenderMapperV1(ABC):
                 latitude=coordinares["lng"],
                 longitude=coordinares["lat"],
                 city_katottg=city_katottg[1],
+                city_name=city_katottg[0],
                 region_katottg=region_katottg[1],
+                region_name=region_katottg[0]
             ),
             tenders.City(
                 city_katottg=city_katottg[1],
                 city_name=city_katottg[0],
                 region_katottg=region_katottg[1],
+                region_name=region_katottg[0]
             ),
             tenders.Region(
                 region_katottg=region_katottg[1],

@@ -90,7 +90,10 @@ class StreetAddress:
     longitude: float
     latitude: float
     city_katottg: str
+    city_name: str
     region_katottg: str
+    region_name: str
+
 
 
 @dataclass
@@ -98,7 +101,7 @@ class City:
     city_katottg: str
     city_name: str
     region_katottg: str
-
+    region_name: str
 
 @dataclass
 class Region:
