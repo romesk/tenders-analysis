@@ -70,7 +70,7 @@ def insert_performer(clickhouse: ClickhouseService, model: tenders.Performer) ->
 def insert_streetadress(clickhouse: ClickhouseService, model: tenders.StreetAddress) -> None:
     """Insert a performer into ClickHouse"""
 
-    logger.info(f"Inserting performer: {model.id}")
+    logger.info(f"Inserting StreetAddress: {model.id}")
     items = asdict(model)
     clickhouse.insert("StreetAddress", [list(items.values())], list(items.keys()))
 
@@ -78,15 +78,15 @@ def insert_streetadress(clickhouse: ClickhouseService, model: tenders.StreetAddr
 def insert_city(clickhouse: ClickhouseService, model: tenders.City) -> None:
     """Insert a performer into ClickHouse"""
 
-    logger.info(f"Inserting performer: {model.city_katottg}")
+    logger.info(f"Inserting City: {model.city_katottg}")
     items = asdict(model)
     clickhouse.insert("City", [list(items.values())], list(items.keys()))
 
 
 def insert_region(clickhouse: ClickhouseService, model: tenders.Region) -> None:
-    """Insert a performer into ClickHouse"""
+    """Insert a Region into ClickHouse"""
 
-    logger.info(f"Inserting performer: {model.region_katottg}")
+    logger.info(f"Inserting Region: {model.region_katottg}")
     items = asdict(model)
     clickhouse.insert("Region", [list(items.values())], list(items.keys()))
 
@@ -94,7 +94,7 @@ def insert_region(clickhouse: ClickhouseService, model: tenders.Region) -> None:
 def insert_manager(clickhouse: ClickhouseService, model: espo.Manager) -> None:
     """Insert a performer into ClickHouse"""
 
-    logger.info(f"Inserting manager: {model.manager_id}")
+    logger.info(f"Inserting Manager: {model.manager_id}")
     items = asdict(model)
     clickhouse.insert("Manager", [list(items.values())], list(items.keys()))
 

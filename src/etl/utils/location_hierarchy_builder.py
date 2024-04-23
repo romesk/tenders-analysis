@@ -4,9 +4,9 @@ from uuid import UUID
 
 import requests
 
-from src.config import CONFIG
-from src.services import MongoService
-import uuid
+from config import CONFIG
+from services import MongoService
+
 
 kyiv_kattotg = "UA80000000000093317"
 

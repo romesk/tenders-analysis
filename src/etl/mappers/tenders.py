@@ -4,11 +4,11 @@ import re
 import math
 from abc import ABC, abstractmethod
 from typing import Union, Tuple, Any
-from src.etl.models import tenders
-from src.etl.models.tenders import DateDim
-from src.etl.utils import functions
+from etl.models import tenders
+from etl.models.tenders import DateDim
+from etl.utils import functions
 
-from src.etl.utils.location_hierarchy_builder import build_entity_kattotg_hierarchy, get_coordinates
+from etl.utils.location_hierarchy_builder import build_entity_kattotg_hierarchy, get_coordinates
 
 
 class TenderMapperV1(ABC):
