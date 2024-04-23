@@ -31,7 +31,8 @@ def sync_tenders(
 
     if updated:
         updated_tenders = [tender for tender in mongo.find(CONFIG.MONGO.TENDERS_COLLECTION, {"_id": {"$in": updated}})]
-        sync_updated(run_id, clickhouse, updated_tenders)
+        # inside upsert logic and auto detection of status (OPENED/CLOSED)
+        sync_inserted(run_id, clickhouse, updated_tenders)
 
     if deleted:
         raise NotImplementedError("Deletion of tenders is not supported yet.")
@@ -40,18 +41,6 @@ def sync_tenders(
 def sync_inserted(run_id: str, clickhouse: ClickhouseService, inserted: list[dict]) -> None:
 
     for tender in inserted:
-        status = "CLOSED" if tender.get("status") == "complete" else "OPENED"
-
-        mapper = mappers[status](tender)
-        mapped_data = mapper.map()
-
-        for model in mapped_data:
-            clickhouse_utils.insert_clickhouse_model(clickhouse, model)
-
-
-def sync_updated(run_id: str, clickhouse: ClickhouseService, updated: list[dict]) -> None:
-
-    for tender in updated:
         status = "CLOSED" if tender.get("status") == "complete" else "OPENED"
 
         mapper = mappers[status](tender)

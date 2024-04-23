@@ -1,6 +1,6 @@
 from dataclasses import asdict
 from services.clickhouse import ClickhouseService
-from etl.models import tenders
+from etl.models import tenders, espo
 from utlis.logger import get_logger
 
 # TODO: replace table names with constants
@@ -90,6 +90,46 @@ def insert_region(clickhouse: ClickhouseService, model: tenders.Region) -> None:
     items = asdict(model)
     clickhouse.insert("Region", [list(items.values())], list(items.keys()))
 
+    
+def insert_manager(clickhouse: ClickhouseService, model: espo.Manager) -> None:
+    """Insert a performer into ClickHouse"""
+
+    logger.info(f"Inserting manager: {model.manager_id}")
+    items = asdict(model)
+    clickhouse.insert("Manager", [list(items.values())], list(items.keys()))
+
+
+def insert_campaign(clickhouse: ClickhouseService, model: espo.Campaign) -> None:
+    """Insert a performer into ClickHouse"""
+
+    logger.info(f"Inserting campaign: {model.campaign_id}")
+    items = asdict(model)
+    clickhouse.insert("Campaign", [list(items.values())], list(items.keys()))
+
+
+def insert_channel(clickhouse: ClickhouseService, model: espo.Channel) -> None:
+    """Insert a performer into ClickHouse"""
+
+    logger.info(f"Inserting channel: {model.channel_id}")
+    items = asdict(model)
+    clickhouse.insert("Channel", [list(items.values())], list(items.keys()))
+
+
+def insert_stage(clickhouse: ClickhouseService, model: espo.Stage) -> None:
+    """Insert a performer into ClickHouse"""
+
+    logger.info(f"Inserting stage: {model.stage_id}")
+    items = asdict(model)
+    clickhouse.insert("Stage", [list(items.values())], list(items.keys()))
+
+
+def insert_lead_activity(clickhouse: ClickhouseService, model: espo.LeadActivity) -> None:
+    """Insert a performer into ClickHouse"""
+
+    logger.info(f"Inserting lead activity: {model.time_id}")
+    items = asdict(model)
+    clickhouse.insert("LeadActivity", [list(items.values())], list(items.keys()))
+
 
 INSERTERS = {
     tenders.TenderOpened.__name__: insert_tender_opened,
@@ -100,5 +140,10 @@ INSERTERS = {
     tenders.Performer.__name__: insert_performer,
     tenders.StreetAddress.__name__: insert_streetadress,
     tenders.City.__name__: insert_city,
-    tenders.Region.__name__: insert_region
+    tenders.Region.__name__: insert_region,
+    espo.Manager.__name__: insert_manager,
+    espo.Campaign.__name__: insert_campaign,
+    espo.Channel.__name__: insert_channel,
+    espo.Stage.__name__: insert_stage,
+    espo.LeadActivity.__name__: insert_lead_activity,
 }

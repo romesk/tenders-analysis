@@ -180,7 +180,7 @@ class TenderClosedMapperV1(TenderMapperV1):
         return tenders.TenderClosed(
             amount=self._tender["awards"][0]["value"]["amount"],
             duration=duration,
-            participant_count=len("bids"),
+            participant_count=len(self._tender["bids"]),
             open_time_id=open_date,
             close_time_id=close_date,
             tender_id=tender_id,

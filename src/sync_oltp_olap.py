@@ -17,6 +17,7 @@ def run():
     logger.info(f"Starting sync OLTP to OLAP. Run ID: {run_id}")
 
     mongo = MongoService(CONFIG.MONGO.URI, CONFIG.MONGO.DB_NAME)
+
     clickhouse = ClickhouseService(CONFIG.CLICKHOUSE.HOST, CONFIG.CLICKHOUSE.USER, CONFIG.CLICKHOUSE.PASSWORD)
 
     try:
@@ -28,6 +29,7 @@ def run():
         mongo.close()
 
     end_time = datetime.datetime.now()
+    logger.info(f"Sync finished in: {end_time - start_time}")
 
 
 if __name__ == "__main__":
