@@ -4,8 +4,8 @@ from pymongo.results import InsertManyResult, InsertOneResult, UpdateResult
 from pymongo import MongoClient
 from pymongo.server_api import ServerApi
 
-from src.config import CONFIG
-from src.utlis.logger import get_logger
+from config import CONFIG
+from utlis.logger import get_logger
 
 
 logger = get_logger("MongoService")

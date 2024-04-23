@@ -1,18 +1,38 @@
-def start_sync(run_ids_to_process: list[str]) -> None:
+from services import MongoService, ClickhouseService
+from etl.utils.functions import get_run_logs_per_run, group_results_by_collection_name, group_rows_by_operation_type
+from etl.syncers import sync_tenders
+from utlis.logger import get_logger
+from etl.utils import functions
 
-    # TODO: Implement the logic to sync the OLTP and OLAP databases
+
+logger = get_logger("etl-sync")
+
+
+collection_syncers = {"tenders": sync_tenders}
+
+
+def start_sync(run_ids_to_process: list[str], mongo: MongoService, clickhouse: ClickhouseService) -> None:
+
     for run_id in run_ids_to_process:
+        logger.info(f"Processing run: {run_id}")
 
-        # TODO: sync runs one by one (not to lose the data mofifications order)
-        # for each run_id select all rows from the run_logs collection
-        # process each row based on collection name and operation type
-        # for each collection there must be a separate mapper function/class
+        actions = get_run_logs_per_run(mongo, run_id)
 
-        # e.g:
-        # sync_tenders(run_id)  <-- inside get all rows from run_logs where collection is TENDERS and map
-        # sync_entities(run_id) <-- inside get all rows from run_logs where collection is ENTITIES and map
-        # sync_accounts(run_id) <-- inside get all rows from run_logs where collection is ACCOUNTS and map
+        if not len(list(actions.clone())):
+            logger.info(f"No results for run: {run_id}")
+            continue
 
-        # etc...
+        collection_grouped = group_results_by_collection_name(actions)
 
-        pass
+        # group by operation type (insert, update, delete)
+        for collection_name, rows in collection_grouped.items():
+            operation_grouped = group_rows_by_operation_type(rows)
+            collection_syncer = collection_syncers.get(collection_name)
+
+            if not collection_syncer:
+                logger.error(f"No syncer found for collection: {collection_name}")
+                continue
+
+            collection_syncer(run_id, mongo, clickhouse, operation_grouped)
+
+        functions.mark_run_as_synced(mongo, run_id)

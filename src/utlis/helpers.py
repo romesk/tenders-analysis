@@ -3,6 +3,7 @@ from pymongo.results import InsertManyResult, InsertOneResult, UpdateResult
 import pymongo
 
 from config import CONFIG
+from models.operations import LogOperation
 from services.mongo import MongoService
 from utlis.logger import get_logger
 
@@ -23,15 +24,15 @@ def add_results_to_run_table(
     """
 
     if isinstance(results, (InsertManyResult, InsertOneResult)):
-        operation = "insert"
+        operation = LogOperation.INSERT
     elif isinstance(results, UpdateResult):
-        operation = "update"
+        operation = LogOperation.UPDATE
     else:
         raise NotImplementedError(f"Unsupported result type: {type(results)}")
 
-    if operation == "insert":
+    if operation == LogOperation.INSERT:
         inserted_ids = results.inserted_ids if isinstance(results, InsertManyResult) else [results.inserted_id]
-    elif operation == "update":
+    elif operation == LogOperation.UPDATE:
         inserted_ids = [results.upserted_id]
     else:
         raise NotImplementedError(f"Unsupported operation: {operation}")
@@ -78,7 +79,7 @@ def add_new_run_to_table(
     return mongo.insert(CONFIG.MONGO.RUNS_COLLECTION, run_row, use_schema_versioning=False)
 
 
-def get_unprocessed_runs(mongo: MongoService = None) -> list[str]:
+def get_unprocessed_runs(mongo: MongoService) -> list[str]:
     """Get the list of unprocessed runs
 
     :param mongo: MongoService instance

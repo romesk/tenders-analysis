@@ -3,7 +3,6 @@ from typing import Tuple, Any
 from src.config import CONFIG
 from src.services import MongoService
 
-mongo = MongoService(CONFIG.MONGO.URI, CONFIG.MONGO.DB_NAME)
 
 kyiv_kattotg = "UA80000000000093317"
 
@@ -60,6 +59,7 @@ def build_tender_kattotg_hierarchy(mongo: MongoService, tender_id: str) -> tuple
 
 
 if __name__ == "__main__":
+    mongo = MongoService(CONFIG.MONGO.URI, CONFIG.MONGO.DB_NAME)
     edrpou = "44858321"
     tender_id = "UA-2024-04-14-000214-a"
     region, city = build_entity_kattotg_hierarchy(mongo, edrpou)

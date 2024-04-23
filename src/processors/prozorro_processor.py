@@ -126,7 +126,7 @@ class ProzorroProcessor:
         """
         tenders_without_details = ProzorroProcessor.get_tender_list(start_date, end_date, status)
         tender_details_list = []
-        logger.info(f"Getting tenders details")
+        logger.info("Getting tenders details")
         for tender in tenders_without_details:
             try:
                 tender_details = ProzorroProcessor.get_tender_details(tender["tenderID"])
