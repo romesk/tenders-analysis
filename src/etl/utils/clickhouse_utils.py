@@ -67,6 +67,30 @@ def insert_performer(clickhouse: ClickhouseService, model: tenders.Performer) ->
     clickhouse.insert("Performer", [list(items.values())], list(items.keys()))
 
 
+def insert_streetadress(clickhouse: ClickhouseService, model: tenders.StreetAddress) -> None:
+    """Insert a performer into ClickHouse"""
+
+    logger.info(f"Inserting performer: {model.id}")
+    items = asdict(model)
+    clickhouse.insert("StreetAddress", [list(items.values())], list(items.keys()))
+
+
+def insert_city(clickhouse: ClickhouseService, model: tenders.City) -> None:
+    """Insert a performer into ClickHouse"""
+
+    logger.info(f"Inserting performer: {model.city_katottg}")
+    items = asdict(model)
+    clickhouse.insert("City", [list(items.values())], list(items.keys()))
+
+
+def insert_region(clickhouse: ClickhouseService, model: tenders.Region) -> None:
+    """Insert a performer into ClickHouse"""
+
+    logger.info(f"Inserting performer: {model.region_katottg}")
+    items = asdict(model)
+    clickhouse.insert("Region", [list(items.values())], list(items.keys()))
+
+
 INSERTERS = {
     tenders.TenderOpened.__name__: insert_tender_opened,
     tenders.TenderClosed.__name__: insert_tender_closed,
@@ -74,5 +98,7 @@ INSERTERS = {
     tenders.ProcurementEntity.__name__: insert_procurement_entity,
     tenders.DateDim.__name__: insert_date_dim,
     tenders.Performer.__name__: insert_performer,
-    # tenders.Location.__name__: insert_location,
+    tenders.StreetAddress.__name__: insert_streetadress,
+    tenders.City.__name__: insert_city,
+    tenders.Region.__name__: insert_region
 }

@@ -1,10 +1,14 @@
+import uuid
 from datetime import datetime
 import re
 import math
 from abc import ABC, abstractmethod
-from typing import Union
-from etl.models import tenders
-from etl.utils import functions
+from typing import Union, Tuple, Any
+from src.etl.models import tenders
+from src.etl.models.tenders import DateDim
+from src.etl.utils import functions
+
+from src.etl.utils.location_hierarchy_builder import build_entity_kattotg_hierarchy, get_coordinates
 
 
 class TenderMapperV1(ABC):
@@ -16,7 +20,6 @@ class TenderMapperV1(ABC):
         pass
 
     def map_to_tender_info(self) -> tenders.TenderInfo:
-
         classifier = self._tender["generalClassifier"]["description"]
         classifier_code = re.findall(r"\d+-\d", classifier)[0]
         dk_hierarchy = functions.get_DK_record(classifier_code)
@@ -40,7 +43,7 @@ class TenderMapperV1(ABC):
             contact_phone=entity["contactPoint"].get("telephone", None),
         )
 
-    def map_to_date_dim(self) -> Union[tenders.DateDim, tenders.DateDim]:
+    def map_to_date_dim(self) -> tuple[DateDim, DateDim]:
         """Return two DateDim objects for open and close time"""
 
         open_time = self._tender["tenderPeriod"]["startDate"]
@@ -67,12 +70,40 @@ class TenderMapperV1(ABC):
             ),
         )
 
-    def map_to_location(self) -> str:
-
+    def map_to_location(self):
         # TODO: implement location hierarch mapping
         # all 5 levels can be returned here and inserted in map() func.
         # use separate Model for each location level
-        return self._tender["items"][0]["deliveryAddress"].get("locality", 'n/a')
+        address, city_katottg, region_katottg = build_entity_kattotg_hierarchy(self._tender["awards"][0]["suppliers"][0]["identifier"]["id"])
+        if address is not None and city_katottg is not None and region_katottg is not None:
+            coordinares = get_coordinates(f"{address}, місто {city_katottg[0]}, область {region_katottg[0]}, Україна")
+        else:
+            return None, None, None
+            coordinares = {"lng": -1, 'lat': -1}
+        address = address if address else 'n/a'
+        city_katottg = city_katottg if city_katottg else 'n/a'
+        region_katottg = region_katottg if region_katottg else 'n/a'
+        return (
+            tenders.StreetAddress(
+                id= str(coordinares['lng']) + str(coordinares['lat']),
+                address=address,
+                latitude=coordinares['lng'],
+                longitude=coordinares['lat'],
+                city_katottg=city_katottg[1],
+                region_katottg=region_katottg[1]
+
+            ),
+            tenders.City(
+                city_katottg=city_katottg[1],
+                city_name=city_katottg[0],
+                region_katottg=region_katottg[1],
+
+            ),
+            tenders.Region(
+                region_katottg=region_katottg[1],
+                region_name=region_katottg[0],
+            )
+        )
 
 
 class TenderOpenedMapperV1(TenderMapperV1):
@@ -98,7 +129,7 @@ class TenderOpenedMapperV1(TenderMapperV1):
         return [tender_info, procurement_entity, open_date, close_date, tender_opened]
 
     def map_to_tender_opened(
-        self, open_date: str, close_date: str, tender_id: str, procurement_id: str
+            self, open_date: str, close_date: str, tender_id: str, procurement_id: str
     ) -> tenders.TenderOpened:
         # open_date, close_date = self.map_to_date_dim()
         end_date = datetime.fromisoformat(self._tender["tenderPeriod"]["endDate"])
@@ -129,19 +160,18 @@ class TenderClosedMapperV1(TenderMapperV1):
         procurement_entity = self.map_to_procurement_entity()
         close_date, open_date = self.map_to_date_dim()
 
-        # location_l1, location_l2, location_l3, ... = self.map_to_location()
-        performer = self.map_to_performer('last_location_level.id')
+        streetaddress, city, region = self.map_to_location()
+        performer = self.map_to_performer(streetaddress.id if streetaddress else 'n/a')
 
         tender_closed = self.map_to_tender_closed(
             open_date.day, close_date.day, tender_info.tender_id, procurement_entity.entity_id, performer.performer_id
         )
 
-        return [tender_info, procurement_entity, open_date, close_date, location, performer, tender_closed]
+        return [tender_info, procurement_entity, open_date, close_date, streetaddress, city, region, performer, tender_closed]
 
     def map_to_tender_closed(
-        self, open_date: str, close_date: str, tender_id: str, procurement_id: str, performer_id: str
+            self, open_date: str, close_date: str, tender_id: str, procurement_id: str, performer_id: str
     ) -> tenders.TenderClosed:
-
         end_date = datetime.fromisoformat(self._tender["tenderPeriod"]["endDate"])
         start_date = datetime.fromisoformat(self._tender["tenderPeriod"]["startDate"])
 

@@ -35,4 +35,4 @@ def start_sync(run_ids_to_process: list[str], mongo: MongoService, clickhouse: C
 
             collection_syncer(run_id, mongo, clickhouse, operation_grouped)
 
-        functions.mark_run_as_synced(mongo, run_id)
+        # functions.mark_run_as_synced(mongo, run_id)

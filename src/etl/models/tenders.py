@@ -81,3 +81,25 @@ class Performer:
                     setattr(self, field, "n/a")
                 elif self.__dataclass_fields__[field].type == int:
                     setattr(self, field, -1)
+
+
+@dataclass
+class StreetAddress:
+    id: str
+    address: str
+    longitude: float
+    latitude: float
+    city_katottg: str
+    region_katottg: str
+
+
+@dataclass
+class City:
+    city_katottg: str
+    city_name: str
+    region_katottg: str
+
+@dataclass
+class Region:
+    region_katottg: str
+    region_name: str
