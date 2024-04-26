@@ -71,8 +71,27 @@ def get_kved_code_name(name: str, code: str) -> str:
         return 'n/a'
 
     mongo = MongoService(CONFIG.MONGO.URI, CONFIG.MONGO.DB_NAME)
+
+    # TODO: Refactor this
+    query = { }
+    if name == "section_code":
+        query['section_code'] = code
+        query['partition_code'] = None
+        query['group_code'] = None
+        query['class_code'] = None
+    elif name == "partition_code":
+        query['partition_code'] = code
+        query['group_code'] = None
+        query['class_code'] = None
+    elif name == "group_code":
+        query['group_code'] = code
+        query['class_code'] = None
+    else:
+        query['class_code'] = code
+
     try:
-        result = mongo.find_one(CONFIG.MONGO.KVEDS_COLLECTION, {name: code})
+        result = mongo.find_one(CONFIG.MONGO.KVEDS_COLLECTION, query)
+        print(list(result))
     finally:
         mongo.close()
 
