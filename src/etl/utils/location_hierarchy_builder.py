@@ -51,10 +51,11 @@ def build_entity_kattotg_hierarchy(edrpou: str):
 
 def build_tender_kattotg_hierarchy(
     tender,
-) -> Union[tuple[tuple[str, str], tuple[str, str]], tuple[str, UUID, tuple[Any, Any], tuple[Any, Any]]]:
+):
+    mongo = MongoService(CONFIG.MONGO.URI, CONFIG.MONGO.DB_NAME)
     tender_city_name = tender["items"][0]["deliveryAddress"]["locality"].replace(".", " ").split()[-1]
     tender_region_name = tender["items"][0]["deliveryAddress"]["region"].replace(".", " ").split()[0]
-
+    tender_address = tender["items"][0]["deliveryAddress"]["streetAddress"]
     if tender_city_name == "Київ" and tender_region_name == "Київська":
         return ("Київ", kyiv_kattotg), ("Київ", kyiv_kattotg)
 
@@ -67,7 +68,11 @@ def build_tender_kattotg_hierarchy(
         {"level1": region["level1"], "level4": {"$exists": True}, "level5": None, "name": tender_city_name},
     )
 
-    return (region["name"], region["level1"]), (city["name"], city["level4"])
+    return (
+        tender_address,
+        (region["name"], region["level1"]),
+        (city["name"], city["level4"])
+    )
 
 
 def get_coordinates(address: str):

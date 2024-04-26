@@ -27,6 +27,7 @@ class TenderClosed:
 class TenderInfo:
     tender_id: str
     title: str
+    location: str
     division: str
     group: str
     class_name: str
