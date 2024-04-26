@@ -3,3 +3,4 @@ pymongo
 requests
 beautifulsoup4
 black
+clickhouse-connect

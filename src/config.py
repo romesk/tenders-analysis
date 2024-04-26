@@ -31,6 +31,11 @@ class CONFIG:
         OPPORTUNITIES_COLLECTION = "espo_opportunities"
         STREAMS_COLLECTION = "espo_streams"
 
+    class CLICKHOUSE:
+        HOST = os.getenv("CLICKHOUSE_HOST")
+        USER = os.getenv("CLICKHOUSE_USER")
+        PASSWORD = os.getenv("CLICKHOUSE_PASS")
+
     class FILES:
         CWD = os.getcwd()
         FILES_DIR = os.path.join(CWD, "files")
