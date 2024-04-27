@@ -1,7 +1,7 @@
 import json
 import math
 import time
-from datetime import date
+from datetime import date, timedelta
 from typing import Optional
 
 import requests
@@ -34,20 +34,24 @@ class ProzorroProcessor:
         :param status: status of tenders to get, defaults to "complete"
         :return: list of extracted tenders
         """
-
+        current_end_date = date.today()
+        current_start_date = date.today() - timedelta(days=5)
         tenders = []
-        ProzorroProcessor._validate_dates(start_date, end_date)
-        logger.info(f"Getting tenders from Prozorro API in time borders: {start_date} - {end_date}")
-        first_page = ProzorroProcessor._get_tenders_page(start_date, end_date, status)
+        while start_date <= current_end_date:
+            ProzorroProcessor._validate_dates(current_start_date, end_date)
+            logger.info(f"Getting tenders from Prozorro API in time borders: {current_start_date} - {end_date}")
+            first_page = ProzorroProcessor._get_tenders_page(current_start_date, end_date, status)
 
-        logger.info(f"Found {first_page['total']} tenders")
-        tenders.extend(first_page["data"])
+            logger.info(f"Found {first_page['total']} tenders")
+            tenders.extend(first_page["data"])
 
-        page_count = math.ceil(int(first_page["total"]) / int(first_page["per_page"]))
+            page_count = math.ceil(int(first_page["total"]) / int(first_page["per_page"]))
 
-        for page_number in range(2, page_count + 1):
-            tenders.extend(ProzorroProcessor._get_tenders_page(start_date, end_date, status, page_number)["data"])
-
+            for page_number in range(2, page_count + 1):
+                tenders.extend(ProzorroProcessor._get_tenders_page(current_start_date, end_date, status, page_number)["data"])
+            current_end_date -= timedelta(days=5)
+            end_date = current_end_date
+            current_start_date -= timedelta(days=5)
         return tenders
 
     @staticmethod
