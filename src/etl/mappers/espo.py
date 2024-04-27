@@ -78,6 +78,7 @@ class LeadActivityMapperV1:
             activities_from_last_stage=self._data.get("activitiesFromLastStage", 0),
             feedback_from_last_stage=self._data.get("feedbackFromLastStage", 0),
             manager_id=manager_id,
+            performer_id='n/s',
             campaign_id=campaign_id,
             channel_id=channel_id,
             prev_stage_id=prev_stage_id,

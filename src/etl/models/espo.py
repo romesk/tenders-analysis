@@ -34,6 +34,7 @@ class LeadActivity:
     activities_from_last_stage: int
     feedback_from_last_stage: int
     manager_id: str
+    performer_id: str
     campaign_id: str
     channel_id: str
     prev_stage_id: str
