@@ -48,7 +48,7 @@ class DateDim:
     day: str
     month: str
     year: int
-    quarter: str
+    quarter: int
     day_of_week: int
     day_of_month: int
 
