@@ -1,8 +1,8 @@
 CREATE TABLE default.Channel
 (
-    `channel_id` Int32,
-    `channel_name` String DEFAULT 'default_channel'
+    `channel_id` String,
+    `channel_name` String DEFAULT 'n/s'
 )
-ENGINE = SharedMergeTree('/clickhouse/tables/{uuid}/{shard}', '{replica}')
-ORDER BY (channel_id, channel_name)
+ENGINE = ReplacingMergeTree
+ORDER BY (channel_id)
 SETTINGS index_granularity = 8192
