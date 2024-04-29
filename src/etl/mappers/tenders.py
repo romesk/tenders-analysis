@@ -31,11 +31,11 @@ class TenderMapperV1(ABC):
             tender_id=self._tender["tenderID"],
             title=self._tender["title"],
             location=location_id,
-            division=dk_hierarchy["Division"] if dk_hierarchy else None,
-            group=dk_hierarchy["Group"] if dk_hierarchy else None,
-            class_name=dk_hierarchy["Class"] if dk_hierarchy else None,
-            category=dk_hierarchy["Category"] if dk_hierarchy else None,
-            clarification=dk_hierarchy["Clarification"] if dk_hierarchy else None,
+            division=dk_hierarchy["Division"] if dk_hierarchy and dk_hierarchy["Division"] else 'n/a',
+            group=dk_hierarchy["Group"] if dk_hierarchy and dk_hierarchy["Group"] else 'n/a',
+            class_name=dk_hierarchy["Class"] if dk_hierarchy and dk_hierarchy["Class"] else 'n/a',
+            category=dk_hierarchy["Category"] if dk_hierarchy and dk_hierarchy["Category"] else 'n/a',
+            clarification=dk_hierarchy["Clarification"] if dk_hierarchy and dk_hierarchy["Clarification"] else 'n/a',
         )
 
     def map_to_procurement_entity(self) -> tenders.ProcurementEntity:
@@ -230,6 +230,6 @@ class TenderClosedMapperV1(TenderMapperV1):
             group_name=functions.get_kved_code_name("group_code", kved_hierarchy["group_code"]) if kved_hierarchy else None,
             section_code=kved_hierarchy["section_code"] if kved_hierarchy else 'n/a',
             partition_code=kved_hierarchy["partition_code"] if kved_hierarchy else 'n/a',
-            group_code=kved_hierarchy["group_code"] if kved_hierarchy else None,
-            class_code=kved_hierarchy["class_code"] if kved_hierarchy else None,
+            group_code=kved_hierarchy["group_code"] if kved_hierarchy else 'n/a',
+            class_code=kved_hierarchy["class_code"] if kved_hierarchy else 'n/a',
         )

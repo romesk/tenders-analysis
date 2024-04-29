@@ -32,6 +32,10 @@ def insert_tender_closed(clickhouse: ClickhouseService, model: dict) -> None:
     logger.info(f"Inserting tender closed: {model.tender_id}")
     items = asdict(model)
     clickhouse.insert("TenderClosed", [list(items.values())], list(items.keys()))
+    try:
+        clickhouse.remove('TenderOpened', 'tender_id', model.tendeid)
+    except:
+        pass
 
 
 def insert_tender_info(clickhouse: ClickhouseService, model: tenders.TenderInfo) -> None:

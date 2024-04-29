@@ -16,3 +16,6 @@ class ClickhouseService:
         """
 
         return self._client.insert(table_name, values, columns)
+
+    def remove(self, table_name: str, column_name: str, column_value: str):
+        return self._client.query(f"DELETE FROM {table_name} WHERE {column_name} = '{column_value}'")
