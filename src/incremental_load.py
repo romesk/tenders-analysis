@@ -19,7 +19,7 @@ def run() -> None:
 
     try:
         load_last_week_data(mongo, run_id)
-        load_espo_data(mongo, run_id)
+        #load_espo_data(mongo, run_id)
     finally:
         add_new_run_to_table(mongo, run_id, "incremental_load", start_date=start_time)
         mongo.close()

@@ -9,8 +9,12 @@ import requests
 from config import CONFIG
 from utlis.logger import get_logger
 
-
 logger = get_logger("ProzorroProcessor")
+
+statuses = {
+    'complete': {'pages': 10, 'delta_days': 5},
+    'active.tendering': {'pages': 60, 'delta_days': 2}
+}
 
 
 class ProzorroProcessor:
@@ -25,7 +29,7 @@ class ProzorroProcessor:
         pass
 
     @staticmethod
-    def get_tender_list(start_date: date, end_date: date, status: str = "complete") -> list:
+    def get_tender_list(load_date: int, status: str = "complete") -> list:
         """Get the list of tenders from Prozorro API in the specified filters.
         The method will get all the pages of tenders and return the list of tenders.
 
@@ -34,24 +38,39 @@ class ProzorroProcessor:
         :param status: status of tenders to get, defaults to "complete"
         :return: list of extracted tenders
         """
-        current_end_date = date.today()
-        current_start_date = date.today() - timedelta(days=5)
         tenders = []
-        while start_date <= current_end_date:
-            ProzorroProcessor._validate_dates(current_start_date, end_date)
-            logger.info(f"Getting tenders from Prozorro API in time borders: {current_start_date} - {end_date}")
-            first_page = ProzorroProcessor._get_tenders_page(current_start_date, end_date, status)
+        processed_tenders_id = []
+        date_to_load = date.today() - timedelta(days=load_date)
+        while date_to_load < date.today():
+            ProzorroProcessor._validate_dates(date_to_load, date_to_load)
+            logger.info(f"Getting {status} tenders from Prozorro API till {date_to_load}")
+            if status == "complete":
+                first_page = ProzorroProcessor._get_tenders_page(None, date_to_load, status)
+            else:
+                first_page = ProzorroProcessor._get_tenders_page(date_to_load, None, status)
 
             logger.info(f"Found {first_page['total']} tenders")
-            tenders.extend(first_page["data"])
+            for tender in first_page['data']:
+                if tender['tenderID'] not in processed_tenders_id:
+                    tenders.append(tender)
+                    processed_tenders_id.append(tender['tenderID'])
+                    logger.info(f'Adding {len(processed_tenders_id)} tender ({tender['tenderID']})...')
 
             page_count = math.ceil(int(first_page["total"]) / int(first_page["per_page"]))
+            page_count = page_count if page_count <= statuses[status]['pages'] else statuses[status]['pages']
+            logger.info(f"Getting tenders from {page_count} pages")
 
             for page_number in range(2, page_count + 1):
-                tenders.extend(ProzorroProcessor._get_tenders_page(current_start_date, end_date, status, page_number)["data"])
-            current_end_date -= timedelta(days=5)
-            end_date = current_end_date
-            current_start_date -= timedelta(days=5)
+                if status == "complete":
+                    page = ProzorroProcessor._get_tenders_page(None, date_to_load, status, page_number)
+                else:
+                    page = ProzorroProcessor._get_tenders_page(date_to_load, None, status, page_number)
+                for tender in page['data']:
+                    if tender['tenderID'] not in processed_tenders_id:
+                        tenders.append(tender)
+                        processed_tenders_id.append(tender['tenderID'])
+                        logger.info(f'Adding {len(processed_tenders_id)} tender ({tender['tenderID']})...')
+            date_to_load += timedelta(days=statuses[status]['delta_days'])
         return tenders
 
     @staticmethod
@@ -118,7 +137,7 @@ class ProzorroProcessor:
             raise Exception(f"Failed to get tender details for {tender_id}: {tender_details_response.status_code}.")
 
     @staticmethod
-    def get_tender_details_list(start_date: date, end_date: date, status: str = "complete") -> list:
+    def get_tender_details_list(load_date: date, status: str = "complete") -> list:
         """
         Get the list of tenders from Prozorro API in the specified filters
         and request detailed info about each tender from list mentioned above.
@@ -128,7 +147,7 @@ class ProzorroProcessor:
         :param status: status of tenders to get, defaults to "complete"
         :return: list of extracted tenders details
         """
-        tenders_without_details = ProzorroProcessor.get_tender_list(start_date, end_date, status)
+        tenders_without_details = ProzorroProcessor.get_tender_list(load_date, status)
         tender_details_list = []
         logger.info("Getting tenders details")
         for tender in tenders_without_details:

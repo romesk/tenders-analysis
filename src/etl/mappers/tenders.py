@@ -21,7 +21,10 @@ class TenderMapperV1(ABC):
 
     def map_to_tender_info(self, location_id: str) -> tenders.TenderInfo:
         classifier = self._tender["generalClassifier"]["description"]
-        classifier_code = re.findall(r"\d+-\d", classifier)[0]
+        try:
+            classifier_code = re.findall(r"\d+-\d", classifier)[0]
+        except IndexError:
+            classifier_code = "n/a"
         dk_hierarchy = functions.get_DK_record(classifier_code)
 
         return tenders.TenderInfo(
@@ -129,9 +132,9 @@ class TenderOpenedMapperV1(TenderMapperV1):
         :return: list of ClickHouse models to be pushed to ClickHouse
         """
         streetaddress, city, region = self.map_to_location("tender")
-        tender_info = self.map_to_tender_info(streetaddress if streetaddress else 'n/a')
+        tender_info = self.map_to_tender_info(streetaddress.id if streetaddress else 'n/a')
         procurement_entity = self.map_to_procurement_entity()
-        close_date, open_date = self.map_to_date_dim()
+        open_date, close_date = self.map_to_date_dim()
 
         tender_opened = self.map_to_tender_opened(
             open_date.day, close_date.day, tender_info.tender_id, procurement_entity.entity_id
@@ -146,9 +149,8 @@ class TenderOpenedMapperV1(TenderMapperV1):
         # open_date, close_date = self.map_to_date_dim()
         end_date = datetime.fromisoformat(self._tender["tenderPeriod"]["endDate"])
         time_to_end = math.ceil((end_date - datetime.now(end_date.tzinfo)).total_seconds() // 60)
-
         return tenders.TenderOpened(
-            amount=self._tender["value"]["amount"],
+            amount=self._tender["value"]["amount"] if self._tender["value"] else 0,
             time_to_end=time_to_end,
             open_time_id=open_date,
             close_time_id=close_date,
@@ -203,7 +205,7 @@ class TenderClosedMapperV1(TenderMapperV1):
         duration = (end_date - start_date).days
 
         return tenders.TenderClosed(
-            amount=self._tender["awards"][0]["value"]["amount"],
+            amount=self._tender["awards"][0]["value"]["amount"] if self._tender["awards"][0]["value"] else 0,
             duration=duration,
             participant_count=len(self._tender["bids"]),
             open_time_id=open_date,
@@ -226,8 +228,8 @@ class TenderClosedMapperV1(TenderMapperV1):
             section_name=functions.get_kved_code_name("section_code", kved_hierarchy["section_code"]) if kved_hierarchy else None,
             partition_name=functions.get_kved_code_name("partition_code", kved_hierarchy["partition_code"]) if kved_hierarchy else None,
             group_name=functions.get_kved_code_name("group_code", kved_hierarchy["group_code"]) if kved_hierarchy else None,
-            section_code=kved_hierarchy["section_code"] if kved_hierarchy else None,
-            partition_code=kved_hierarchy["partition_code"] if kved_hierarchy else None,
+            section_code=kved_hierarchy["section_code"] if kved_hierarchy else 'n/a',
+            partition_code=kved_hierarchy["partition_code"] if kved_hierarchy else 'n/a',
             group_code=kved_hierarchy["group_code"] if kved_hierarchy else None,
             class_code=kved_hierarchy["class_code"] if kved_hierarchy else None,
         )

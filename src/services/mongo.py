@@ -122,8 +122,8 @@ class MongoService:
         if entity_in_coll is None:
             res = self.insert(CONFIG.MONGO.ENTITIES_COLLECTION, received_entity, False)
             logger.info(f"Entity with EDRPOU {received_entity['edrpou']} inserted")
-        elif datetime.fromisoformat(entity_in_coll["lastTime"]["subtitle"]["dateTime"]) < datetime.fromisoformat(
-            received_entity["lastTime"]["subtitle"]["dateTime"]
+        elif datetime.fromisoformat(entity_in_coll["lastTime"]["dateTime"]) < datetime.fromisoformat(
+            received_entity["lastTime"]["dateTime"]
         ):
             res = self.update(CONFIG.MONGO.ENTITIES_COLLECTION, {"edrpou": received_entity["edrpou"]}, received_entity)
             logger.info(f"Entity with EDRPOU ({received_entity['edrpou']}) updated")
@@ -148,19 +148,28 @@ class MongoService:
         res = []
         for tender in tenders_details:
             if tender is not None:
-                res.append(self.upsert_tender_details(tender))
+                try:
+                    res.append(self.upsert_tender_details(tender))
+                except Exception as e:
+                    logger.error(f"Failed to upload tender info: {e}")
         return list(filter(None, res))
 
     def upsert_many_entity_details(self, entities_details):
         res = []
         for entity in entities_details:
             if entity is not None:
-                res.append(self.upsert_entity_details(entity))
+                try:
+                    res.append(self.upsert_entity_details(entity))
+                except Exception as e:
+                    logger.error(f"Failed to upload entity info: {e}")
         return list(filter(None, res))
 
     def upsert_many_espo_details(self, collection_name, espo_details):
         res = []
         for espo in espo_details:
             if espo is not None:
-                res.append(self.upsert_espo_details(collection_name, espo))
+                try:
+                    res.append(self.upsert_espo_details(collection_name, espo))
+                except Exception as e:
+                    logger.error(f"Failed to upload espo info: {e}")
         return list(filter(None, res))

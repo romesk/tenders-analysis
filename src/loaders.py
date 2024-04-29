@@ -9,9 +9,13 @@ from processors import ProzorroProcessor, EntityProcessor, EspoCRM
 
 logger = get_logger("data_load")
 
+dates = {
+    'complete': 118,
+    'active.tendering': 2
+}
 
 def load_last_month_data(mongo: MongoService, run_id: str) -> None:
-    load_data(mongo, run_id=run_id, start_date=date.today() - timedelta(days=30))
+    load_data(mongo, run_id=run_id, load_date=30)
 
 
 def load_last_week_data(mongo: MongoService, run_id: str) -> None:
@@ -19,16 +23,16 @@ def load_last_week_data(mongo: MongoService, run_id: str) -> None:
 
 
 def load_data(
-    mongo: MongoService, run_id: str, start_date: date = date.today() - timedelta(days=5), end_date: date = None
+    mongo: MongoService, run_id: str, load_date: int = None
 ) -> None:
     try:
         prozorro = ProzorroProcessor()
         entities_processor = EntityProcessor()
 
-        for status in ["complete", "active.tendering"]:
-
+        for status in ["active.tendering", "complete"]:
+            date_start = load_date if load_date else dates[status]
             logger.info(f"Getting {status} tenders info and ERDPOU-s")
-            tenders = prozorro.get_tender_details_list(start_date=start_date, end_date=end_date, status=status)
+            tenders = prozorro.get_tender_details_list(load_date=date_start, status=status)
 
             logger.info(f"Received {len(tenders)} tenders with status {status}")
             edrpous = list(filter(None, [prozorro.get_edrpou_from_tender(tender) for tender in tenders]))

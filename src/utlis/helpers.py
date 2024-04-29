@@ -32,8 +32,10 @@ def add_results_to_run_table(
 
     if operation == LogOperation.INSERT:
         inserted_ids = results.inserted_ids if isinstance(results, InsertManyResult) else [results.inserted_id]
+        operation = "insert"
     elif operation == LogOperation.UPDATE:
         inserted_ids = [results.upserted_id]
+        operation = "update"
     else:
         raise NotImplementedError(f"Unsupported operation: {operation}")
 
