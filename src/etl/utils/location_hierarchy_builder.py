@@ -13,9 +13,9 @@ kyiv_kattotg = "UA80000000000093317"
 def build_entity_kattotg_hierarchy(edrpou: str):
     mongo = MongoService(CONFIG.MONGO.URI, CONFIG.MONGO.DB_NAME)
     entity = mongo.find_one(CONFIG.MONGO.ENTITIES_COLLECTION, {"edrpou": edrpou})
-    if not entity:
-        return None, None, None
     last_level_katottg = entity["address"][0]["creator"]["link"]
+    if not entity or not last_level_katottg:
+        return None, None, None
     city_region = mongo.find_one(CONFIG.MONGO.KATOTTG_COLLECTION, {"level5": last_level_katottg})
     if city_region and city_region["level1"] == kyiv_kattotg:
         return entity["address"][0]["creator"]["boldText"], ("Київ", kyiv_kattotg), ("Київ", kyiv_kattotg)
@@ -32,8 +32,9 @@ def build_entity_kattotg_hierarchy(edrpou: str):
         )
         region = mongo.find_one(
             CONFIG.MONGO.KATOTTG_COLLECTION,
-            {"level1": city_region["level1"], "level2": None, "level3": None, "level4": None, "level5": None},
+            {"level1": city["level1"], "level2": None, "level3": None, "level4": None, "level5": None},
         )
+        print(edrpou, "  IN CITY_REGION: city", city, " city-region: ", city_region)
     else:
         city = mongo.find_one(CONFIG.MONGO.KATOTTG_COLLECTION,
                               {"level1": {"$ne": None}, "level2": {"$ne": None}, "level3": {"$ne": None},
@@ -42,11 +43,12 @@ def build_entity_kattotg_hierarchy(edrpou: str):
             CONFIG.MONGO.KATOTTG_COLLECTION,
             {"level1": city["level1"], "level2": None, "level3": None, "level4": None, "level5": None},
         )
+        print(edrpou, "  IN CITY")
 
     return (
         entity["address"][0]["creator"]["boldText"],
-        (region["name"], region["level1"]),
         (city["name"], city["level4"]),
+        (region["name"], region["level1"]),
     )
 
 
@@ -72,8 +74,8 @@ def build_tender_kattotg_hierarchy(
 
     return (
         tender_address,
-        (region["name"], region["level1"]),
-        (city["name"], city["level4"])
+        (city["name"], city["level4"]),
+        (region["name"], region["level1"])
     )
 
 
@@ -89,5 +91,5 @@ if __name__ == "__main__":
 
     tender = mongo.find_one(CONFIG.MONGO.TENDERS_COLLECTION, {"tenderID": tender_id})
     edrpou = "44858321"
-    address, region, city = build_tender_kattotg_hierarchy(tender)
+    address, city, region = build_entity_kattotg_hierarchy('')
     print(f"Tender region: {region} | City: {city}")

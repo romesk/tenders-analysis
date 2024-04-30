@@ -26,16 +26,31 @@ class TenderMapperV1(ABC):
         except IndexError:
             classifier_code = "n/a"
         dk_hierarchy = functions.get_DK_record(classifier_code)
+        division, group, class_name = "n/a", "n/a", "n/a"
+        if dk_hierarchy:
+            if dk_hierarchy["Division"]:
+                try:
+                    division = dk_hierarchy["Division"].split(" ", 1)[1]
+                except:
+                    pass
+            if dk_hierarchy["Group"]:
+                try:
+                    group = dk_hierarchy["Group"].split(" ", 1)[1]
+                except:
+                    pass
+            if dk_hierarchy["Class"]:
+                try:
+                    class_name = dk_hierarchy["Class"].split(" ", 1)[1]
+                except:
+                    pass
 
         return tenders.TenderInfo(
             tender_id=self._tender["tenderID"],
             title=self._tender["title"],
             location=location_id,
-            division=dk_hierarchy["Division"] if dk_hierarchy and dk_hierarchy["Division"] else 'n/a',
-            group=dk_hierarchy["Group"] if dk_hierarchy and dk_hierarchy["Group"] else 'n/a',
-            class_name=dk_hierarchy["Class"] if dk_hierarchy and dk_hierarchy["Class"] else 'n/a',
-            category=dk_hierarchy["Category"] if dk_hierarchy and dk_hierarchy["Category"] else 'n/a',
-            clarification=dk_hierarchy["Clarification"] if dk_hierarchy and dk_hierarchy["Clarification"] else 'n/a',
+            division=division,
+            group=group,
+            class_name=class_name
         )
 
     def map_to_procurement_entity(self) -> tenders.ProcurementEntity:
@@ -93,16 +108,19 @@ class TenderMapperV1(ABC):
         if address is not None and city_katottg is not None and region_katottg is not None:
             try:
                 coordinares = get_coordinates(f"{address}, місто {city_katottg[0]}, область {region_katottg[0]}, Україна")
+                lat = round(coordinares["lat"], 6)
+                lon = round(coordinares["lng"], 6)
             except Exception:
                 return None, None, None
         else:
             return None, None, None
+
         return (
             tenders.StreetAddress(
-                id=str(coordinares["lat"]) + str(coordinares["lng"]),
+                id=str(lat) + str(lon),
                 address=address,
-                latitude=coordinares["lat"],
-                longitude=coordinares["lng"],
+                latitude=lat,
+                longitude=lon,
                 city_katottg=city_katottg[1],
                 city_name=city_katottg[0],
                 region_katottg=region_katottg[1],
@@ -172,13 +190,20 @@ class TenderClosedMapperV1(TenderMapperV1):
         streetaddress1, city1, region1 = self.map_to_location("tender")
         tender_info = self.map_to_tender_info(streetaddress1.id if streetaddress1 else "n/a")
         procurement_entity = self.map_to_procurement_entity()
-        close_date, open_date = self.map_to_date_dim()
+        open_date, close_date = self.map_to_date_dim()
 
         streetaddress2, city2, region2 = self.map_to_location("performer")
         performer = self.map_to_performer(streetaddress2.id if streetaddress2 else "n/a")
+        if not performer:
+            try:
+                performer_id = self._tender["awards"][0]["suppliers"][0]["identifier"]["id"]
+            except:
+                performer_id = "n/a"
+        else:
+            performer_id = performer.performer_id
 
         tender_closed = self.map_to_tender_closed(
-            open_date.day, close_date.day, tender_info.tender_id, procurement_entity.entity_id, performer.performer_id
+            open_date.day, close_date.day, tender_info.tender_id, procurement_entity.entity_id, performer_id
         )
 
         return [
@@ -217,17 +242,23 @@ class TenderClosedMapperV1(TenderMapperV1):
 
     def map_to_performer(self, location_id: str) -> tenders.Performer:
         award = self._tender["awards"][0]["suppliers"][0]
-
-        kved_hierarchy = functions.get_KVED_record(award["identifier"]["id"])
+        edrpou_type, edrpou_name, edrpou_phone, edrpou_email, edrpou_kved = functions.get_performer_info(award["identifier"]["id"])
+        print("EDRPOU INFO: ", edrpou_type, edrpou_name, edrpou_phone, edrpou_email, edrpou_kved)
+        if not edrpou_type:
+            return None
+        kved_hierarchy = functions.get_KVED_record(edrpou_kved)
 
         return tenders.Performer(
             performer_id=award["identifier"]["id"],
-            organization_type=award["name"].split(" ")[0],
+            organization_type=edrpou_type if edrpou_type else "n/a",
+            organization_name=edrpou_name if edrpou_name else "n/a",
+            organization_phone=edrpou_phone if edrpou_phone else "n/a",
+            organization_email=edrpou_email if edrpou_email else "n/a",
             location=location_id,
-            class_name=kved_hierarchy["name"] if kved_hierarchy else None,
-            section_name=functions.get_kved_code_name("section_code", kved_hierarchy["section_code"]) if kved_hierarchy else None,
-            partition_name=functions.get_kved_code_name("partition_code", kved_hierarchy["partition_code"]) if kved_hierarchy else None,
-            group_name=functions.get_kved_code_name("group_code", kved_hierarchy["group_code"]) if kved_hierarchy else None,
+            class_name=kved_hierarchy["name"] if kved_hierarchy else "n/a",
+            section_name=functions.get_kved_code_name("section_code", kved_hierarchy["section_code"]) if kved_hierarchy else "n/a",
+            partition_name=functions.get_kved_code_name("partition_code", kved_hierarchy["partition_code"]) if kved_hierarchy else "n/a",
+            group_name=functions.get_kved_code_name("group_code", kved_hierarchy["group_code"]) if kved_hierarchy else "n/a",
             section_code=kved_hierarchy["section_code"] if kved_hierarchy else 'n/a',
             partition_code=kved_hierarchy["partition_code"] if kved_hierarchy else 'n/a',
             group_code=kved_hierarchy["group_code"] if kved_hierarchy else 'n/a',

@@ -31,8 +31,6 @@ class TenderInfo:
     division: str
     group: str
     class_name: str
-    category: str
-    clarification: str
 
 
 @dataclass
@@ -67,6 +65,9 @@ class DateDim:
 class Performer:
     performer_id: str
     organization_type: str
+    organization_name: str
+    organization_phone: str
+    organization_email: str
     location: str
     class_name: str
     section_name: str
