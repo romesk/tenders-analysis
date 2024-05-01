@@ -173,3 +173,17 @@ class MongoService:
                 except Exception as e:
                     logger.error(f"Failed to upload espo info: {e}")
         return list(filter(None, res))
+
+    def upsert_dk_to_kved(self, collection_name, dk_division, dk_group, dk_class, kved) -> InsertOneResult | UpdateResult:
+        res = None
+        if dk_division != "n/a" and dk_group != "n/a" and dk_class != "n/a":
+            dk_record = self.find_one(collection_name,
+                                      {"division": dk_division, "group": dk_group, "class_name": dk_class})
+            if dk_record is None:
+                dk_record = {"division": dk_division,"group": dk_group, "class_name": dk_class, "kveds": [kved]}
+                res = self.insert(collection_name, dk_record, False)
+            else:
+                if kved not in dk_record["kveds"]:
+                    dk_record["kveds"].append(kved)
+                res = self.update(collection_name, {"dk": dk}, dk_record)
+        return res

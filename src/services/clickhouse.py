@@ -8,7 +8,7 @@ class ClickhouseService:
     """
 
     def __init__(self, host: str, user: str, password: str) -> None:
-        self._client = clickhouse_connect.get_client(host=host, username=user, password=password, secure=True)
+        self._client = clickhouse_connect.get_client(host=host, username=user, password=password, secure=True, verify=False)
 
     def insert(self, table_name: str, values: dict, columns: str | Iterable[str] = "*") -> None:
         """

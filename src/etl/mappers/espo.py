@@ -64,7 +64,7 @@ class LeadActivityMapperV1:
             day=action_datetime.strftime("%Y-%m-%d"),
             month=action_datetime.strftime("%Y-%m"),
             year=action_datetime.year,
-            quarter=str((action_datetime.month + 2) // 3),
+            quarter=(action_datetime.month + 2) // 3,
             day_of_week=action_datetime.weekday(),
             day_of_month=action_datetime.day,
         )

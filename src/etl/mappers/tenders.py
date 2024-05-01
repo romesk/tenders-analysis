@@ -3,12 +3,14 @@ from datetime import datetime
 import re
 import math
 from abc import ABC, abstractmethod
-from typing import Union, Tuple, Any
+from config import CONFIG
 from etl.models import tenders
 from etl.models.tenders import DateDim
 from etl.utils import functions
 
-from etl.utils.location_hierarchy_builder import build_entity_kattotg_hierarchy, build_tender_kattotg_hierarchy, get_coordinates
+from etl.utils.location_hierarchy_builder import build_entity_kattotg_hierarchy, build_tender_kattotg_hierarchy, \
+    get_coordinates
+from services import MongoService
 
 
 class TenderMapperV1(ABC):
@@ -107,7 +109,8 @@ class TenderMapperV1(ABC):
 
         if address is not None and city_katottg is not None and region_katottg is not None:
             try:
-                coordinares = get_coordinates(f"{address}, місто {city_katottg[0]}, область {region_katottg[0]}, Україна")
+                coordinares = get_coordinates(
+                    f"{address}, місто {city_katottg[0]}, область {region_katottg[0]}, Україна")
                 lat = round(coordinares["lat"], 6)
                 lon = round(coordinares["lng"], 6)
             except Exception:
@@ -187,6 +190,7 @@ class TenderClosedMapperV1(TenderMapperV1):
 
         :return: list of ClickHouse models to be pushed to ClickHouse
         """
+        mongo = MongoService(CONFIG.MONGO.URI, CONFIG.MONGO.DB_NAME)
         streetaddress1, city1, region1 = self.map_to_location("tender")
         tender_info = self.map_to_tender_info(streetaddress1.id if streetaddress1 else "n/a")
         procurement_entity = self.map_to_procurement_entity()
@@ -201,7 +205,11 @@ class TenderClosedMapperV1(TenderMapperV1):
                 performer_id = "n/a"
         else:
             performer_id = performer.performer_id
-
+            try:
+                mongo.upsert_dk_to_kved(CONFIG.MONGO.DK_TO_KVED_COLLECTION, tender_info.division, tender_info.group,
+                                        tender_info.class_name, performer.class_code)
+            except:
+                pass
         tender_closed = self.map_to_tender_closed(
             open_date.day, close_date.day, tender_info.tender_id, procurement_entity.entity_id, performer_id
         )
@@ -242,7 +250,8 @@ class TenderClosedMapperV1(TenderMapperV1):
 
     def map_to_performer(self, location_id: str) -> tenders.Performer:
         award = self._tender["awards"][0]["suppliers"][0]
-        edrpou_type, edrpou_name, edrpou_phone, edrpou_email, edrpou_kved = functions.get_performer_info(award["identifier"]["id"])
+        edrpou_type, edrpou_name, edrpou_phone, edrpou_email, edrpou_kved = functions.get_performer_info(
+            award["identifier"]["id"])
         print("EDRPOU INFO: ", edrpou_type, edrpou_name, edrpou_phone, edrpou_email, edrpou_kved)
         if not edrpou_type:
             return None
@@ -256,9 +265,12 @@ class TenderClosedMapperV1(TenderMapperV1):
             organization_email=edrpou_email if edrpou_email else "n/a",
             location=location_id,
             class_name=kved_hierarchy["name"] if kved_hierarchy else "n/a",
-            section_name=functions.get_kved_code_name("section_code", kved_hierarchy["section_code"]) if kved_hierarchy else "n/a",
-            partition_name=functions.get_kved_code_name("partition_code", kved_hierarchy["partition_code"]) if kved_hierarchy else "n/a",
-            group_name=functions.get_kved_code_name("group_code", kved_hierarchy["group_code"]) if kved_hierarchy else "n/a",
+            section_name=functions.get_kved_code_name("section_code",
+                                                      kved_hierarchy["section_code"]) if kved_hierarchy else "n/a",
+            partition_name=functions.get_kved_code_name("partition_code",
+                                                        kved_hierarchy["partition_code"]) if kved_hierarchy else "n/a",
+            group_name=functions.get_kved_code_name("group_code",
+                                                    kved_hierarchy["group_code"]) if kved_hierarchy else "n/a",
             section_code=kved_hierarchy["section_code"] if kved_hierarchy else 'n/a',
             partition_code=kved_hierarchy["partition_code"] if kved_hierarchy else 'n/a',
             group_code=kved_hierarchy["group_code"] if kved_hierarchy else 'n/a',
