@@ -1,11 +1,11 @@
-CREATE TABLE default.Campaing
+CREATE TABLE default.Campaign
 (
-    `campaing_id` Int32,
-    `type` String DEFAULT 'default_type',
-    `start_date` Nullable(String),
+    `campaign_id` String,
+    `campaign_type` String DEFAULT 'n/s',
+    `start_date` String,
     `end_date` Nullable(String),
     `duration_hours` Int32 DEFAULT '0'
 )
-ENGINE = SharedMergeTree('/clickhouse/tables/{uuid}/{shard}', '{replica}')
-ORDER BY (start_date, end_date, duration_hours, campaing_id)
+ENGINE = ReplacingMergeTree
+ORDER BY (campaign_id)
 SETTINGS index_granularity = 8192

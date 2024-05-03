@@ -64,7 +64,7 @@ class LeadActivityMapperV1:
             day=action_datetime.strftime("%Y-%m-%d"),
             month=action_datetime.strftime("%Y-%m"),
             year=action_datetime.year,
-            quarter=str((action_datetime.month + 2) // 3),
+            quarter=(action_datetime.month + 2) // 3,
             day_of_week=action_datetime.weekday(),
             day_of_month=action_datetime.day,
         )
@@ -78,6 +78,7 @@ class LeadActivityMapperV1:
             activities_from_last_stage=self._data.get("activitiesFromLastStage", 0),
             feedback_from_last_stage=self._data.get("feedbackFromLastStage", 0),
             manager_id=manager_id,
+            performer_id='n/s',
             campaign_id=campaign_id,
             channel_id=channel_id,
             prev_stage_id=prev_stage_id,

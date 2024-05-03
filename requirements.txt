@@ -4,3 +4,4 @@ requests
 beautifulsoup4
 black
 clickhouse-connect
+reflex==0.4.9

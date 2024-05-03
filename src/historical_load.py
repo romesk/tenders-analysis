@@ -18,8 +18,8 @@ def run() -> None:
     mongo = MongoService(CONFIG.MONGO.URI, CONFIG.MONGO.DB_NAME)
 
     try:
-        load_data(mongo, run_id, start_date=date.today() - timedelta(days=90))
-        load_espo_data(mongo, run_id)
+        load_data(mongo, run_id)
+        #load_espo_data(mongo, run_id)
     finally:
         add_new_run_to_table(mongo, run_id, "historical_load", start_date=start_time)
         mongo.close()
@@ -29,3 +29,11 @@ def run() -> None:
 
 if __name__ == "__main__":
     run()
+    # mongo = MongoService(CONFIG.MONGO.URI, CONFIG.MONGO.DB_NAME)
+    # mongo.delete_all(CONFIG.MONGO.TENDERS_COLLECTION)
+    # mongo.delete_all(CONFIG.MONGO.ENTITIES_COLLECTION)
+    # mongo.delete_all(CONFIG.MONGO.ACCOUNTS_COLLECTION)
+    # mongo.delete_all(CONFIG.MONGO.STREAMS_COLLECTION)
+    # mongo.delete_all(CONFIG.MONGO.OPPORTUNITIES_COLLECTION)
+    # mongo.delete_all(CONFIG.MONGO.RUNS_COLLECTION)
+    # mongo.delete_all(CONFIG.MONGO.RUNS_LOGS_COLLECTION)

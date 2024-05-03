@@ -27,11 +27,10 @@ class TenderClosed:
 class TenderInfo:
     tender_id: str
     title: str
+    location: str
     division: str
     group: str
     class_name: str
-    category: str
-    clarification: str
 
 
 @dataclass
@@ -47,7 +46,7 @@ class DateDim:
     day: str
     month: str
     year: int
-    quarter: str
+    quarter: int
     day_of_week: int
     day_of_month: int
 
@@ -66,6 +65,9 @@ class DateDim:
 class Performer:
     performer_id: str
     organization_type: str
+    organization_name: str
+    organization_phone: str
+    organization_email: str
     location: str
     class_name: str
     section_name: str

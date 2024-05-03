@@ -32,6 +32,10 @@ def insert_tender_closed(clickhouse: ClickhouseService, model: dict) -> None:
     logger.info(f"Inserting tender closed: {model.tender_id}")
     items = asdict(model)
     clickhouse.insert("TenderClosed", [list(items.values())], list(items.keys()))
+    try:
+        clickhouse.remove('TenderOpened', 'tender_id', model.tendeid)
+    except:
+        pass
 
 
 def insert_tender_info(clickhouse: ClickhouseService, model: tenders.TenderInfo) -> None:
@@ -67,7 +71,7 @@ def insert_performer(clickhouse: ClickhouseService, model: tenders.Performer) ->
     clickhouse.insert("Performer", [list(items.values())], list(items.keys()))
 
 
-def insert_streetadress(clickhouse: ClickhouseService, model: tenders.StreetAddress) -> None:
+def insert_streetaddress(clickhouse: ClickhouseService, model: tenders.StreetAddress) -> None:
     """Insert a performer into ClickHouse"""
 
     logger.info(f"Inserting StreetAddress: {model.id}")
@@ -139,7 +143,7 @@ INSERTERS = {
     tenders.ProcurementEntity.__name__: insert_procurement_entity,
     tenders.DateDim.__name__: insert_date_dim,
     tenders.Performer.__name__: insert_performer,
-    tenders.StreetAddress.__name__: insert_streetadress,
+    tenders.StreetAddress.__name__: insert_streetaddress,
     tenders.City.__name__: insert_city,
     tenders.Region.__name__: insert_region,
     espo.Manager.__name__: insert_manager,
