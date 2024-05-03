@@ -25,6 +25,7 @@ class CONFIG:
 
         # entities collection
         ENTITIES_COLLECTION = "entities"
+        DK_TO_KVED_COLLECTION = "dk_to_kved"
 
         # EspoCRM collections
         ACCOUNTS_COLLECTION = "espo_accounts"
