@@ -10,7 +10,7 @@ accent_color = rx.color("accent", 1)
 hover_accent_color = {"_hover": {"color": accent_text_color}}
 hover_accent_bg = {"_hover": {"background_color": accent_color}}
 content_width_vw = "90vw"
-sidebar_width = "20em"
+sidebar_width = "5em"
 
 template_page_style = {"padding_top": "5em", "padding_x": ["auto", "2em"], "flex": "1"}
 

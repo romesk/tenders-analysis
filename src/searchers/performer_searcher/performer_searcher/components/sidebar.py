@@ -14,7 +14,7 @@ def sidebar_header() -> rx.Component:
     return rx.hstack(
         # The logo.
 
-        rx.image(src="/tender_logo.svg", height="2em") ,
+        rx.image(src="/tender_logo.svg", height="2em"),
 
         rx.spacer(),
         align="center",
@@ -34,15 +34,13 @@ def sidebar_footer() -> rx.Component:
     return rx.hstack(
         rx.spacer(),
         rx.text(
-            "Developed by Erikh Petrushynets | Roman Skok",
+            "Developed by PetSko",
             color_scheme="gray",
             align="left"
         ),
         width="100%",
         border_top=styles.border,
-        padding="1em",
-        alignitems="left"
-
+        padding="1em"
     )
 
 
@@ -126,4 +124,5 @@ def sidebar() -> rx.Component:
         position="sticky",
         top="0px",
         border_right=styles.border,
+        style={"width": "17em"}
     )
