@@ -1,95 +1,213 @@
 {
   "cubes": [
     {
-      "name": "tender_opened",
-      "fact_table_name": "TableOpened",
+      "name": "TenderOpened",
       "measurements": [
         {
           "name": "amount",
           "definition": "The price of Tender.",
           "unit_of_measurement": "UAH",
-          "column": "amount",
           "aggregation_function": "SUM",
-          "data_type": "float",
-          "calculation_formula": ""
+          "data_type": "float"
         },
         {
           "name": "time_to_end",
           "definition": "The time after which bidding for the tender ends",
-          "unit_of_measurement": "Min",
-          "column": "time_to_end",
-          "aggregation_function": "",
-          "data_type": "int",
-          "calculation_formula": "math.ceil((end_date - datetime.now(end_date.tzinfo)).total_seconds() // 60)"
+          "unit_of_measurement": "min",
+          "aggregation_function": "n/s",
+          "data_type": "int"
+        }
+      ],
+      "columns": [
+        {
+          "name": "tender_id",
+          "definition": "ID of tender",
+          "data_type": "string",
+          "foreign_key": "tender_id",
+          "foreign_table": "TenderInfo"
+        },
+        {
+          "name": "open_time_id",
+          "definition": "Time when tender was opened",
+          "data_type": "string",
+          "foreign_key": "day",
+          "foreign_table": "DateDim"
+        },
+        {
+          "name": "close_time_id",
+          "definition": "Time when tender will be closed",
+          "data_type": "string",
+          "foreign_key": "day",
+          "foreign_table": "DateDim"
+        },
+        {
+          "name": "procurement_id",
+          "definition": "ID of procurement entity",
+          "data_type": "string",
+          "foreign_key": null,
+          "foreign_table": null
         }
       ],
       "dimensions": [
         {
           "name": "DateDim",
-          "table_name": "DateDim",
           "definition": "This dimension Date hierarchy.",
-          "p_key": "day",
-          "f_key": [
-            "start_time_id",
-            "end_time_id"
-          ],
-          "attributes": [
+          "columns": [
             {
-              "name": "day_of_week",
-              "definition": "Number that describes day of week",
-              "column": "day_of_week",
-              "data_type": "int"
-            },
-            {
-              "name": "day_of_month",
-              "definition": "Number that describes day of month",
-              "column": "day_of_month",
-              "data_type": "int"
-            },
-            {
-              "name": "month",
-              "definition": "Describes specific year and month",
-              "column": "month",
-              "data_type": "string"
-            },
-            {
-              "name": "quarter",
-              "definition": "Number that describes quarter in year",
-              "column": "quarter",
-              "data_type": "int"
+              "name": "day",
+              "definition": "Number that describes Day",
+              "data_type": "int",
+              "foreign_key": null,
+              "foreign_table": null
             },
             {
               "name": "year",
               "definition": "Number that describes Year",
-              "column": "year",
-              "data_type": "int"
+              "data_type": "int",
+              "foreign_key": null,
+              "foreign_table": null
+            },
+            {
+              "name": "quarter",
+              "definition": "Number that describes quarter in year",
+              "data_type": "int",
+              "foreign_key": null,
+              "foreign_table": null
+            },
+            {
+              "name": "month",
+              "definition": "Describes specific year and month",
+              "data_type": "string",
+              "foreign_key": null,
+              "foreign_table": null
+            },
+            {
+              "name": "day_of_month",
+              "definition": "Number that describes day of month",
+              "data_type": "int",
+              "foreign_key": null,
+              "foreign_table": null
+            },
+            {
+              "name": "day_of_week",
+              "definition": "Number that describes day of week",
+              "data_type": "int",
+              "foreign_key": null,
+              "foreign_table": null
             }
-          ],
-          "hierarchies": [
-            [
-              "day"
-            ],
-            [
-              "day",
-              "month"
-            ],
-            [
-              "day",
-              "month",
-              "year"
-            ],
-            [
-              "day",
-              "day_of_month"
-            ],
-            [
-              "day",
-              "day_of_week"
-            ]
+          ]
+        },
+        {
+          "name": "TenderInfo",
+          "definition": "Information about tender.",
+          "columns": [
+            {
+              "name": "tender_id",
+              "definition": "ID of tender",
+              "data_type": "string",
+              "foreign_key": null,
+              "foreign_table": null
+            },
+            {
+              "name": "title",
+              "definition": "Title of Tender",
+              "data_type": "string",
+              "foreign_key": null,
+              "foreign_table": null
+            },
+            {
+              "name": "location_id",
+              "definition": "ID of location",
+              "data_type": "string",
+              "foreign_key": "id",
+              "foreign_table": "StreetAddress"
+            },
+            {
+              "name": "division",
+              "definition": "Division of DK hierarchy",
+              "data_type": "string",
+              "foreign_key": null,
+              "foreign_table": null
+            },
+            {
+              "name": "group",
+              "definition": "Group of DK hierarchy",
+              "data_type": "string",
+              "foreign_key": null,
+              "foreign_table": null
+            },
+            {
+              "name": "class_name",
+              "definition": "Class name of DK hierarchy",
+              "data_type": "int",
+              "foreign_key": null,
+              "foreign_table": null
+            }
+          ]
+        },
+        {
+          "name": "StreetAddress",
+          "definition": "Information about tender.",
+          "columns": [
+            {
+              "name": "id",
+              "definition": "ID of StreetAddress",
+              "data_type": "string",
+              "foreign_key": null,
+              "foreign_table": null
+            },
+            {
+              "name": "address",
+              "definition": "Address of location",
+              "data_type": "string",
+              "foreign_key": null,
+              "foreign_table": null
+            },
+            {
+              "name": "longitude",
+              "definition": "Longitude of location",
+              "data_type": "float",
+              "foreign_key": null,
+              "foreign_table": null
+            },
+            {
+              "name": "latitude",
+              "definition": "Latitude of location",
+              "data_type": "float",
+              "foreign_key": null,
+              "foreign_table": null
+            },
+            {
+              "name": "city_katottg",
+              "definition": "City in KATOTTG hierarchy",
+              "data_type": "string",
+              "foreign_key": null,
+              "foreign_table": null
+            },
+            {
+              "name": "city_name",
+              "definition": "City name in DK hierarchy",
+              "data_type": "string",
+              "foreign_key": null,
+              "foreign_table": null
+            },
+            {
+              "name": "region_katottg",
+              "definition": "Region in KATOTTG hierarchy",
+              "data_type": "string",
+              "foreign_key": null,
+              "foreign_table": null
+            },
+            {
+              "name": "region_name",
+              "definition": "Region name in DK hierarchy",
+              "data_type": "string",
+              "foreign_key": null,
+              "foreign_table": null
+            }
           ]
         }
       ]
     }
   ]
 }
-
