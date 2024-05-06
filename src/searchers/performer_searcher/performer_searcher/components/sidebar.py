@@ -13,11 +13,30 @@ def sidebar_header() -> rx.Component:
     """
     return rx.hstack(
         # The logo.
-
-        rx.image(src="/tender_logo.svg", height="2em"),
-
-        rx.spacer(),
+        rx.flex(
+            rx.color_mode_cond(
+                light=rx.image(
+                    src="/black_tender_logo.svg", height="4em", align="center"
+                ),
+                dark=rx.image(
+                    src="/light_tender_logo.svg", height="4em", align="center"
+                ),
+            ),
+            rx.flex(
+                rx.text("P", weight="medium", size="5", align="center"),
+                rx.text("er", weight="medium", size="5", align="center", style = {"color": "red"}),
+                rx.text("fo", weight="medium", size="5", align="center"),
+                rx.text("ro", weight="medium", size="5", align="center", style={"color": "red"}),
+                align="center",
+                justify="center",
+                direction="row"
+            ),
+            align="center",
+            justify="center",
+            direction="column"
+        ),
         align="center",
+        justify="center",
         width="100%",
         border_bottom=styles.border,
         padding_x="1em",
@@ -32,15 +51,16 @@ def sidebar_footer() -> rx.Component:
         The sidebar footer component.
     """
     return rx.hstack(
-        rx.spacer(),
         rx.text(
             "Developed by PetSko",
             color_scheme="gray",
-            align="left"
+            align="center"
         ),
         width="100%",
         border_top=styles.border,
-        padding="1em"
+        padding="1em",
+        align="center",
+        justify="center"
     )
 
 
@@ -56,7 +76,7 @@ def sidebar_item(text: str, url: str) -> rx.Component:
     """
     # Whether the item is active.
     active = (rx.State.router.page.path == url.lower()) | (
-        (rx.State.router.page.path == "/") & text == "Home"
+            (rx.State.router.page.path == "/") & text == "Home"
     )
 
     return rx.link(

@@ -17,9 +17,10 @@ def settings() -> rx.Component:
         rx.hstack(
             rx.text("Dark mode: "),
             rx.color_mode.switch(),
+            align="center"
         ),
         rx.hstack(
-            rx.text("Primary color: "),
+            rx.text("Theme color: "),
             rx.select(
                 [
                     "tomato",
@@ -52,25 +53,7 @@ def settings() -> rx.Component:
                 value=ThemeState.accent_color,
                 on_change=ThemeState.set_accent_color,
             ),
+            align="center"
         ),
-        rx.hstack(
-            rx.text("Secondary color: "),
-            rx.select(
-                [
-                    "gray",
-                    "mauve",
-                    "slate",
-                    "sage",
-                    "olive",
-                    "sand",
-                ],
-                value=ThemeState.gray_color,
-                on_change=ThemeState.set_gray_color,
-            ),
-        ),
-        rx.text(
-            "You can edit this page in ",
-            rx.code("{your_app}/pages/settings.py"),
-            size="1",
-        ),
+        spacing="5"
     )
