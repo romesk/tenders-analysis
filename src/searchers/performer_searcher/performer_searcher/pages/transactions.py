@@ -1,4 +1,5 @@
 """The dashboard page."""
+from datetime import datetime
 from typing import List
 
 from performer_searcher.templates import template, ThemeState
@@ -13,24 +14,84 @@ mongo = MongoService(CONFIG.MONGO.URI, CONFIG.MONGO.DB_NAME)
 
 class TransactionController(rx.State):
     run_logs_data: List[str] = []
-    run_logs_data_columns: List[str] = ["coll_id", "collection", "operation", "run_id"]
-    run_data: List[str] = []
-    run_data_columns: List[str] = ["run_id", "start_dt", "end_dt"]
+    run_logs_data_columns: List[str] = ["description", "period_start", "period_end"]
+    logs_info_style = "hidden"
+    transaction_type = "All"
+    entity_type = "All"
+    processing = False
 
     def get_run_logs_data(self):
-        run_logs = mongo.find(CONFIG.MONGO.RUNS_LOGS_COLLECTION, {})
-        for log in run_logs[:200]:
-            key_id = ""
-            if log["collection"] == "tenders":
-                key_id = mongo.find_one(CONFIG.MONGO.TENDERS_COLLECTION, {"_id": log["object_id"]})["tenderID"]
-            elif log["collection"] == "entities":
-                key_id = mongo.find_one(CONFIG.MONGO.ENTITIES_COLLECTION, {"_id": log["object_id"]})["edrpou"]
-            self.run_logs_data.append([str(key_id), str(log["collection"]), str(log["operation"]), str(log["run_id"])])
+        query = {}
+        if self.transaction_type == "Added":
+            query["operation"] = "insert"
+        elif self.transaction_type == "Modified":
+            query["operation"] = "update"
 
-    def get_runs(self):
-        runs = mongo.find(CONFIG.MONGO.RUNS_COLLECTION, {})
-        for run in runs[:200]:
-            self.run_data.append([str(run["run_id"]), str(run["start"]), str(run["end"])])
+        if self.entity_type == "Tender":
+            query["collection"] = "tenders"
+        elif self.entity_type == "Performer":
+            query["collection"] = "entities"
+
+        try:
+            self.processing = True
+            yield
+            self.run_logs_data = []
+            pipeline = [
+                {
+                    "$match": query  # Match documents based on the query filters
+                },
+                {
+                    "$lookup": {
+                        "from": "runs",  # Specify the collection to join with
+                        "localField": "run_id",  # Field from the current collection
+                        "foreignField": "run_id",  # Field from the other collection
+                        "as": "joined_data"  # Name for the output array
+                    }
+                }
+            ]
+            run_logs = sorted(list(mongo.db.get_collection(CONFIG.MONGO.RUNS_LOGS_COLLECTION).aggregate(pipeline)),
+                              key=lambda x: x.get("joined_data", [])[0].get("start", 0), reverse=True)
+            if len(run_logs) == 0: self.logs_info_style = "visible"
+            for log in run_logs[:100]:
+                print(log)
+                key_id = ""
+                if log["collection"] == "tenders":
+                    try:
+                        key_id = mongo.find_one(CONFIG.MONGO.TENDERS_COLLECTION, {"_id": log["object_id"]})["tenderID"]
+                        if log["operation"] == "insert":
+                            self.run_logs_data.append(
+                                [str(f"Tender with ID: {key_id} added"),
+                                 str(log["joined_data"][0]["start"]).split(".")[0],
+                                 str(log["joined_data"][0]["end"]).split(".")[0]])
+                        elif log["operation"] == "update":
+                            self.run_logs_data.append(
+                                [str(f"Tender with ID: {key_id} updated"),
+                                 str(log["joined_data"][0]["start"]).split(".")[0],
+                                 str(log["joined_data"][0]["end"]).split(".")[0]])
+                    except:
+                        pass
+
+                elif log["collection"] == "entities":
+                    try:
+                        key_id = mongo.find_one(CONFIG.MONGO.ENTITIES_COLLECTION, {"_id": log["object_id"]})["edrpou"]
+                        if log["operation"] == "insert":
+                            self.run_logs_data.append(
+                                [str(f"Entity with EDRPOU: {key_id} added"),
+                                 str(log["joined_data"][0]["start"]).split(".")[0],
+                                 str(log["joined_data"][0]["end"]).split(".")[0]])
+                        elif log["operation"] == "update":
+                            self.run_logs_data.append(
+                                [str(f"Entity with EDRPOU: {key_id} updated"),
+                                 str(log["joined_data"][0]["start"]).split(".")[0],
+                                 str(log["joined_data"][0]["end"]).split(".")[0]])
+                    except:
+                        pass
+        except:
+            pass
+        self.processing = False
+
+    def change_logs_info_style(self, value):
+        self.logs_info_style = value
 
 
 @template(route="/transactions", title="Transaction Logs")
@@ -41,11 +102,62 @@ def transtactions() -> rx.Component:
         The UI for the dashboard page.
     """
     return rx.flex(
-        rx.button("Get Logs", on_click=[TransactionController.get_run_logs_data, TransactionController.get_runs],
-                  style={"max-width": "8em", "margin-bottom": "0.5em"}),
+        rx.flex(
+            rx.flex(
+                rx.text("Transaction type"),
+                rx.select(["All", "Added", "Modified"], placeholder="Select transaction type",
+                          on_change=TransactionController.set_transaction_type,
+                          default_value="All", width="8em"),
+                direction="row",
+                spacing="3",
+                align="center"
+            ),
+            rx.flex(
+                rx.text("Entity type"),
+                rx.select(["All", "Tender", "Performer"], placeholder="Select entity type",
+                          on_change=TransactionController.set_entity_type,
+                          default_value="All", width="8em"),
+                direction="row",
+                spacing="3",
+                align="center"
+            ),
+            rx.button("Get Logs", on_click=TransactionController.get_run_logs_data, style={"max-width": "8em"}, ),
+            rx.flex(
+                rx.flex(
+                    rx.image(src="/info.png", style={"width": "2.5em", "height": "2.5em"}),
+                    rx.text("Zero Logs Found", size="2", weight="medium"),
+                    direction="row",
+                    align="center",
+                    spacing="2"
+                ),
+                rx.button("Close", on_click=[TransactionController.change_logs_info_style("hidden")],
+                          bg="lightgray",
+                          style={"color": "black", "border": f"0.13em solid gray",
+                                 "border-radius": "0.5em"}),
+                style={"z-index": "25", "position": "absolute", "padding": "0.6em", "margin-top": "0em",
+                       "visibility": TransactionController.logs_info_style,
+                       "border": f"0.13em solid gray",
+                       "border-radius": "0.5em", "margin-top": "9.5em", "margin-left": "18em"},
+                bg=rx.color("gray", 5),
+                direction="column",
+                spacing="2",
+
+            ),
+            align="center",
+            justify="center",
+            spacing="7",
+            direction="row",
+            bg=rx.color(ThemeState.accent_color, 3),
+            style={"max-width": "40em", "border": f"0.1em solid {rx.color(ThemeState.accent_color)}",
+                   "border-radius": "0.5em", "margin-bottom": "0.5em", "padding": "0.5em"}
+
+        ),
         rx.flex(
             rx.card(
-                rx.text("Run Logs", align="right", weight="medium", size="5"),
+                rx.cond(
+                    TransactionController.processing,
+                    rx.chakra.circular_progress(is_indeterminate=True, color="gray"),
+                ),
                 rx.flex(
                     rx.data_table(
                         data=TransactionController.run_logs_data,
@@ -55,30 +167,11 @@ def transtactions() -> rx.Component:
                         sort=True,
                         align='center',
                         resizable=True,
-                        key="coll_id",
-
+                        key="coll_id"
                     ),
-                    style={"max-width": "33.5em", "overflow-x": "auto"},
+                    style={"max-width": "67em", "overflow-x": "auto"},
                     direction="column",
 
-                ),
-                bg=rx.color(ThemeState.accent_color, 3)
-
-            ),
-            rx.card(
-                rx.text("Runs", align="right", weight="medium", size="5"),
-                rx.flex(
-                    rx.data_table(
-                        data=TransactionController.run_data,
-                        columns=TransactionController.run_data_columns,
-                        pagination=True,
-                        search=True,
-                        sort=True,
-                        align='center',
-                        resizable=True,
-                        key="run_id",
-                    ),
-                    style={"max-width": "33.5em", "overflow-x": "auto"},
                 ),
                 bg=rx.color(ThemeState.accent_color, 3)
 
@@ -88,6 +181,8 @@ def transtactions() -> rx.Component:
             align="start",
             align_items="start",
             justify="start",
+            style={"border": f"0.1em solid {rx.color(ThemeState.accent_color)}",
+                   "border-radius": "0.5em"}
         ),
         direction="column",
     )
