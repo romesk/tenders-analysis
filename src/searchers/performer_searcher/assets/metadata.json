@@ -1,0 +1,95 @@
+{
+  "cubes": [
+    {
+      "name": "tender_opened",
+      "fact_table_name": "TableOpened",
+      "measurements": [
+        {
+          "name": "amount",
+          "definition": "The price of Tender.",
+          "unit_of_measurement": "UAH",
+          "column": "amount",
+          "aggregation_function": "SUM",
+          "data_type": "float",
+          "calculation_formula": ""
+        },
+        {
+          "name": "time_to_end",
+          "definition": "The time after which bidding for the tender ends",
+          "unit_of_measurement": "Min",
+          "column": "time_to_end",
+          "aggregation_function": "",
+          "data_type": "int",
+          "calculation_formula": "math.ceil((end_date - datetime.now(end_date.tzinfo)).total_seconds() // 60)"
+        }
+      ],
+      "dimensions": [
+        {
+          "name": "DateDim",
+          "table_name": "DateDim",
+          "definition": "This dimension Date hierarchy.",
+          "p_key": "day",
+          "f_key": [
+            "start_time_id",
+            "end_time_id"
+          ],
+          "attributes": [
+            {
+              "name": "day_of_week",
+              "definition": "Number that describes day of week",
+              "column": "day_of_week",
+              "data_type": "int"
+            },
+            {
+              "name": "day_of_month",
+              "definition": "Number that describes day of month",
+              "column": "day_of_month",
+              "data_type": "int"
+            },
+            {
+              "name": "month",
+              "definition": "Describes specific year and month",
+              "column": "month",
+              "data_type": "string"
+            },
+            {
+              "name": "quarter",
+              "definition": "Number that describes quarter in year",
+              "column": "quarter",
+              "data_type": "int"
+            },
+            {
+              "name": "year",
+              "definition": "Number that describes Year",
+              "column": "year",
+              "data_type": "int"
+            }
+          ],
+          "hierarchies": [
+            [
+              "day"
+            ],
+            [
+              "day",
+              "month"
+            ],
+            [
+              "day",
+              "month",
+              "year"
+            ],
+            [
+              "day",
+              "day_of_month"
+            ],
+            [
+              "day",
+              "day_of_week"
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}
+
