@@ -75,6 +75,7 @@ class MainController(rx.State):
         print(dk)
 
     def search_performers(self):
+        self.performers = []
         self.processing = True
         yield
         try:
