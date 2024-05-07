@@ -395,7 +395,7 @@ def index() -> Flex:
                     align="start",
                     align_items="start",
                     justify="start",
-                    style={"max-width": "65em", "overflow-x": "auto"},
+                    style={"max-width": "67em", "overflow-x": "auto"},
                 ),
                 style={"width": "100%", "border": f"0.1em solid {rx.color(ThemeState.accent_color)}",
                    "border-radius": "0.5em"},
