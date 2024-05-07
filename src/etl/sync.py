@@ -1,6 +1,6 @@
 from services import MongoService, ClickhouseService
 from etl.utils.functions import get_run_logs_per_run, group_results_by_collection_name, group_rows_by_operation_type
-from etl.syncers import sync_tenders, sync_espo_activity
+from etl.syncers import sync_tenders, espo
 from utlis.logger import get_logger
 from etl.utils import functions
 
@@ -8,7 +8,14 @@ from etl.utils import functions
 logger = get_logger("etl-sync")
 
 
-collection_syncers = {"tenders": sync_tenders, "espo_opportunities": sync_espo_activity}
+collection_syncers = {
+    "tenders": sync_tenders,
+    "espo_accounts": espo.sync_espo_accounts,
+    "espo_managers": espo.sync_espo_managers,
+    "espo_campaigns": espo.sync_espo_campaigns,
+    "espo_leads": espo.sync_espo_activity,
+    # "espo_opportunities": espo.sync_espo_opportunities,
+}
 
 
 def start_sync(run_ids_to_process: list[str], mongo: MongoService, clickhouse: ClickhouseService) -> None:
@@ -36,4 +43,4 @@ def start_sync(run_ids_to_process: list[str], mongo: MongoService, clickhouse: C
 
             collection_syncer(run_id, mongo, clickhouse, operation_grouped)
 
-        # functions.mark_run_as_synced(mongo, run_id)
+        functions.mark_run_as_synced(mongo, run_id)

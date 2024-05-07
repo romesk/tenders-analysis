@@ -18,8 +18,8 @@ def run() -> None:
     mongo = MongoService(CONFIG.MONGO.URI, CONFIG.MONGO.DB_NAME)
 
     try:
-        load_data(mongo, run_id)
-        #load_espo_data(mongo, run_id)
+        load_data(mongo, run_id, 15, limit=10)
+        load_espo_data(mongo, run_id)
     finally:
         add_new_run_to_table(mongo, run_id, "historical_load", start_date=start_time)
         mongo.close()

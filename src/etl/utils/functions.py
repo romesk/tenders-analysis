@@ -85,7 +85,6 @@ def get_kved_code_name(name: str, code: str) -> str:
 
     try:
         result = mongo.find_one(CONFIG.MONGO.KVEDS_COLLECTION, query)
-        print(list(result))
     finally:
         mongo.close()
 

@@ -27,6 +27,8 @@ def add_results_to_run_table(
         operation = LogOperation.INSERT
     elif isinstance(results, UpdateResult):
         operation = LogOperation.UPDATE
+    elif isinstance(results, dict):
+        operation = LogOperation.UPDATE
     else:
         raise NotImplementedError(f"Unsupported result type: {type(results)}")
 
@@ -34,7 +36,7 @@ def add_results_to_run_table(
         inserted_ids = results.inserted_ids if isinstance(results, InsertManyResult) else [results.inserted_id]
         operation = "insert"
     elif operation == LogOperation.UPDATE:
-        inserted_ids = [results.upserted_id]
+        inserted_ids = [results.upserted_id] if not isinstance(results, dict) else [results["upserted_id"]]
         operation = "update"
     else:
         raise NotImplementedError(f"Unsupported operation: {operation}")

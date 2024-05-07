@@ -8,6 +8,18 @@ from utlis.logger import get_logger
 logger = get_logger("clickhouse-utils")
 
 
+def get_by_id(clickhouse: ClickhouseService, table: str, id: str) -> dict:
+    """Get a record by id from ClickHouse"""
+    try:
+        id_column = 'id'
+        if table == 'Stage':
+            id_column = 'stage_id'
+        return clickhouse.query(f"SELECT * FROM {table} WHERE {id_column} = '{id}'").iloc[0].to_dict()
+    except AttributeError:
+        logger.error(f"Not found: {table} - {id}")
+        return {}
+
+
 def insert_clickhouse_model(clickhouse: ClickhouseService, model: any) -> None:
     """Insert a ClickHouse model into ClickHouse"""
 
@@ -33,7 +45,7 @@ def insert_tender_closed(clickhouse: ClickhouseService, model: dict) -> None:
     items = asdict(model)
     clickhouse.insert("TenderClosed", [list(items.values())], list(items.keys()))
     try:
-        clickhouse.remove('TenderOpened', 'tender_id', model.tendeid)
+        clickhouse.remove("TenderOpened", "tender_id", model.tendeid)
     except:
         pass
 
@@ -76,7 +88,6 @@ def insert_streetaddress(clickhouse: ClickhouseService, model: tenders.StreetAdd
 
     logger.info(f"Inserting StreetAddress: {model.id}")
     items = asdict(model)
-    print(list(items.values()))
     clickhouse.insert("StreetAddress", [list(items.values())], list(items.keys()))
 
 

@@ -137,9 +137,13 @@ class MongoService:
         if espo_in_coll is None:
             res = self.insert(collection_name, received_espo, False)
             logger.info(f"ESPO {collection_name}: {received_espo['id']} inserted")
-        elif datetime.fromisoformat(espo_in_coll["modifiedAt"]) < datetime.fromisoformat(received_espo["modifiedAt"]):
+        elif not espo_in_coll.get("modifiedAt") or datetime.fromisoformat(
+            espo_in_coll.get("modifiedAt")
+        ) < datetime.fromisoformat(received_espo["modifiedAt"]):
             res = self.update(collection_name, {"id": received_espo["id"]}, received_espo)
             logger.info(f"ESPO {collection_name}: ({received_espo['id']}) updated")
+            if not res.upserted_id:
+                res = {"upserted_id": received_espo["id"]}
         else:
             logger.info(f"No need for update: ESPO {collection_name} ({received_espo['id']})")
         return res
@@ -174,16 +178,19 @@ class MongoService:
                     logger.error(f"Failed to upload espo info: {e}")
         return list(filter(None, res))
 
-    def upsert_dk_to_kved(self, collection_name, dk_division, dk_group, dk_class, kved) -> InsertOneResult | UpdateResult:
+    def upsert_dk_to_kved(
+        self, collection_name, dk_division, dk_group, dk_class, kved
+    ) -> InsertOneResult | UpdateResult:
         res = None
         if dk_division != "n/a" and dk_group != "n/a" and dk_class != "n/a":
-            dk_record = self.find_one(collection_name,
-                                      {"division": dk_division, "group": dk_group, "class_name": dk_class})
+            dk_record = self.find_one(
+                collection_name, {"division": dk_division, "group": dk_group, "class_name": dk_class}
+            )
             if dk_record is None:
-                dk_record = {"division": dk_division,"group": dk_group, "class_name": dk_class, "kveds": [kved]}
+                dk_record = {"division": dk_division, "group": dk_group, "class_name": dk_class, "kveds": [kved]}
                 res = self.insert(collection_name, dk_record, False)
             else:
                 if kved not in dk_record["kveds"]:
                     dk_record["kveds"].append(kved)
-                res = self.update(collection_name, {"dk": dk}, dk_record)
+                # res = self.update(collection_name, {"dk": dk}, dk_record)
         return res

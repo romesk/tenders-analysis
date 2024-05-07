@@ -252,7 +252,6 @@ class TenderClosedMapperV1(TenderMapperV1):
         award = self._tender["awards"][0]["suppliers"][0]
         edrpou_type, edrpou_name, edrpou_phone, edrpou_email, edrpou_kved = functions.get_performer_info(
             award["identifier"]["id"])
-        print("EDRPOU INFO: ", edrpou_type, edrpou_name, edrpou_phone, edrpou_email, edrpou_kved)
         if not edrpou_type:
             return None
         kved_hierarchy = functions.get_KVED_record(edrpou_kved)
