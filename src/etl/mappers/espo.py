@@ -190,16 +190,19 @@ class LeadActivityMapperV1:
 
 class SaleActivityMapperV1:
 
-    def __init__(self):
-        pass
+    def __init__(self, data: dict):
+        self._data = data
 
-    def map(self, data):
-        return {
-            "name": data["name"],
-            "email": data["email"],
-            "phone": data["phone"],
-            "address": data["address"],
-            "product": data["product"],
-            "quantity": data["quantity"],
-            "price": data["price"],
-        }
+    def map(self):
+        return [
+            espo.SaleActivity(
+                price=self._data["amount"],
+                estimated_profit=self._data["amount"] * 0.05,
+                result_id=self._data["stage"],
+                tender_id=self._data["cTenderID"],
+                manager_id=self._data["createdById"],
+                performer_id=self._data["cEdrpou"],
+                time_spent=-1,
+                end_all_time_id='n/a',
+            )
+        ]

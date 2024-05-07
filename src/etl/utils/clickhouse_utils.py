@@ -11,9 +11,9 @@ logger = get_logger("clickhouse-utils")
 def get_by_id(clickhouse: ClickhouseService, table: str, id: str) -> dict:
     """Get a record by id from ClickHouse"""
     try:
-        id_column = 'id'
-        if table == 'Stage':
-            id_column = 'stage_id'
+        id_column = "id"
+        if table == "Stage":
+            id_column = "stage_id"
         return clickhouse.query(f"SELECT * FROM {table} WHERE {id_column} = '{id}'").iloc[0].to_dict()
     except AttributeError:
         logger.error(f"Not found: {table} - {id}")
@@ -142,9 +142,17 @@ def insert_stage(clickhouse: ClickhouseService, model: espo.Stage) -> None:
 def insert_lead_activity(clickhouse: ClickhouseService, model: espo.LeadActivity) -> None:
     """Insert a performer into ClickHouse"""
 
-    logger.info(f"Inserting lead activity: {model.time_id}")
+    logger.info(f"Inserting lead activity: {model.id}")
     items = asdict(model)
     clickhouse.insert("LeadActivity", [list(items.values())], list(items.keys()))
+
+
+def insert_sale_activity(clickhouse: ClickhouseService, model: espo.SaleActivity) -> None:
+    """Insert a performer into ClickHouse"""
+
+    logger.info(f"Inserting sale activity: {model.tender_id}")
+    items = asdict(model)
+    clickhouse.insert("SaleActivity", [list(items.values())], list(items.keys()))
 
 
 INSERTERS = {
@@ -162,4 +170,5 @@ INSERTERS = {
     espo.Channel.__name__: insert_channel,
     espo.Stage.__name__: insert_stage,
     espo.LeadActivity.__name__: insert_lead_activity,
+    espo.SaleActivity.__name__: insert_sale_activity,
 }

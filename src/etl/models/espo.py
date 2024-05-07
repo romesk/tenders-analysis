@@ -6,13 +6,20 @@ class SaleActivity:
     price: float
     time_spent: int
     estimated_profit: float
-    manager_seniority: str
     result_id: str
     tender_id: str
     manager_id: str
     performer_id: str
-    start_all_time_id: str
     end_all_time_id: str
+
+    def __post_init__(self):
+        for field in self.__dataclass_fields__:
+            if getattr(self, field) is None:
+                # check expected type and assign default value
+                if self.__dataclass_fields__[field].type == str:
+                    setattr(self, field, "n/a")
+                elif self.__dataclass_fields__[field].type == int:
+                    setattr(self, field, -1)
 
 
 @dataclass

@@ -14,7 +14,7 @@ collection_syncers = {
     "espo_managers": espo.sync_espo_managers,
     "espo_campaigns": espo.sync_espo_campaigns,
     "espo_leads": espo.sync_espo_activity,
-    # "espo_opportunities": espo.sync_espo_opportunities,
+    "espo_opportunities": espo.sync_espo_opportunities,
 }
 
 

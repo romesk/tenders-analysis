@@ -99,6 +99,14 @@ class StreetAddress:
     region_katottg: str
     region_name: str
 
+    def __post_init__(self):
+        for field in self.__dataclass_fields__:
+            if getattr(self, field) is None:
+                # check expected type and assign default value
+                if self.__dataclass_fields__[field].type == str:
+                    setattr(self, field, "n/a")
+                elif self.__dataclass_fields__[field].type == int:
+                    setattr(self, field, -1)
 
 
 @dataclass
@@ -108,7 +116,26 @@ class City:
     region_katottg: str
     region_name: str
 
+    def __post_init__(self):
+        for field in self.__dataclass_fields__:
+            if getattr(self, field) is None:
+                # check expected type and assign default value
+                if self.__dataclass_fields__[field].type == str:
+                    setattr(self, field, "n/a")
+                elif self.__dataclass_fields__[field].type == int:
+                    setattr(self, field, -1)
+
+
 @dataclass
 class Region:
     region_katottg: str
     region_name: str
+
+    def __post_init__(self):
+        for field in self.__dataclass_fields__:
+            if getattr(self, field) is None:
+                # check expected type and assign default value
+                if self.__dataclass_fields__[field].type == str:
+                    setattr(self, field, "n/a")
+                elif self.__dataclass_fields__[field].type == int:
+                    setattr(self, field, -1)

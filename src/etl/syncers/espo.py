@@ -59,9 +59,27 @@ def sync_espo_managers(run_id: str, mongo: MongoService, clickhouse: ClickhouseS
         sync_inserted(run_id, clickhouse, inserted_managers, espo.ManagerMapperV1)
 
 
-def sync_espo_activity(
+def sync_espo_opportunities(
     run_id: str, mongo: MongoService, clickhouse: ClickhouseService, operations: dict[str, list]
 ):
+
+    logger.info(f"Syncing espo opportunities for run: {run_id}")
+
+    inserted = operations.get(LogOperation.INSERT.value, [])
+    updated = operations.get(LogOperation.UPDATE.value, [])
+    deleted = operations.get(LogOperation.DELETE.value, [])
+
+    logger.info(f"\n\tInsert: {len(inserted)}\n\tUpdate: {len(updated)}\n\tDelete: {len(deleted)}")
+
+    if inserted:
+        inserted_opportunities = [
+            opportunity
+            for opportunity in mongo.find(CONFIG.MONGO.OPPORTUNITIES_COLLECTION, {"_id": {"$in": inserted}})
+        ]
+        sync_inserted(run_id, clickhouse, inserted_opportunities, espo.SaleActivityMapperV1)
+
+
+def sync_espo_activity(run_id: str, mongo: MongoService, clickhouse: ClickhouseService, operations: dict[str, list]):
 
     logger.info(f"Syncing espo activity for run: {run_id}")
 
