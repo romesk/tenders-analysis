@@ -1,97 +1,89 @@
 """The dashboard page."""
-from datetime import datetime
+from datetime import datetime, timedelta
 from typing import List
 
 from performer_searcher.templates import template, ThemeState
 
 import reflex as rx
+from rich import region
 
 from config import CONFIG
-from services import MongoService
+from services import MongoService, ClickhouseService
 
 mongo = MongoService(CONFIG.MONGO.URI, CONFIG.MONGO.DB_NAME)
+clickhouse = ClickhouseService(CONFIG.CLICKHOUSE.HOST, CONFIG.CLICKHOUSE.USER, CONFIG.CLICKHOUSE.PASSWORD)
+
+
+def get_all_regions():
+    query = "SELECT distinct (SA.region_name) FROM TenderClosed TC JOIN TenderInfo TI ON TC.tender_id = TI.tender_id INNER JOIN StreetAddress SA ON TI.location = SA.id"
+    return [item[0] for item in clickhouse.query(query).values.tolist()]
+
+
+def generate_month():
+    current_date = datetime.now()
+    current_year = current_date.year
+    current_month = current_date.month
+
+    # Generate months for the current year
+    current_year_months = [f"{current_year}-{str(month).zfill(2)}" for month in range(1, current_month + 1)]
+
+    return sorted(current_year_months, reverse=True)
 
 
 class TransactionController(rx.State):
-    run_logs_data: List[str] = []
-    run_logs_data_columns: List[str] = ["description", "period_start", "period_end"]
-    logs_info_style = "hidden"
-    transaction_type = "All"
-    entity_type = "All"
+    region = "All"
+    month = "All"
     processing = False
+    total_amount = -1
+    participant_count = -1
+    avg_duration = -1
+    table_data = []
 
-    def get_run_logs_data(self):
-        query = {}
-        if self.transaction_type == "Added":
-            query["operation"] = "insert"
-        elif self.transaction_type == "Modified":
-            query["operation"] = "update"
+    def get_tender_closed_regions_month(self):
+        self.processing = True
+        yield
+        filter = "WHERE "
+        region_filter = None
+        month_filter = None
 
-        if self.entity_type == "Tender":
-            query["collection"] = "tenders"
-        elif self.entity_type == "Performer":
-            query["collection"] = "entities"
+        if self.region != "All":
+            region_filter = f"region_name = '{self.region}'"
 
+        if self.month != "All":
+            month_filter = f"month = '{self.month}'"
+
+        # Construct the WHERE clause
+        if region_filter and month_filter:
+            filter += f"{region_filter} AND {month_filter}"
+        elif region_filter:
+            filter += region_filter
+        elif month_filter:
+            filter += month_filter
+
+        # Construct the query
+        query = "SELECT SUM(amount), SUM(participant_count), AVG(duration) FROM TenderClosed TC JOIN TenderInfo TI ON TC.tender_id = TI.tender_id INNER JOIN StreetAddress SA ON TI.location = SA.id INNER JOIN DateDim DD ON DD.day = TC.close_time_id"
+
+        if filter != "WHERE ":
+            query += " " + filter
+
+        query_response = clickhouse.query(query).values.tolist()[0]
+        print(query_response)
         try:
-            self.processing = True
-            yield
-            self.run_logs_data = []
-            pipeline = [
-                {
-                    "$match": query  # Match documents based on the query filters
-                },
-                {
-                    "$lookup": {
-                        "from": "runs",  # Specify the collection to join with
-                        "localField": "run_id",  # Field from the current collection
-                        "foreignField": "run_id",  # Field from the other collection
-                        "as": "joined_data"  # Name for the output array
-                    }
-                }
-            ]
-            run_logs = sorted(list(mongo.db.get_collection(CONFIG.MONGO.RUNS_LOGS_COLLECTION).aggregate(pipeline)),
-                              key=lambda x: x.get("joined_data", [])[0].get("start", 0), reverse=True)
-            if len(run_logs) == 0: self.logs_info_style = "visible"
-            for log in run_logs[:100]:
-                print(log)
-                key_id = ""
-                if log["collection"] == "tenders":
-                    try:
-                        key_id = mongo.find_one(CONFIG.MONGO.TENDERS_COLLECTION, {"_id": log["object_id"]})["tenderID"]
-                        if log["operation"] == "insert":
-                            self.run_logs_data.append(
-                                [str(f"Tender with ID: {key_id} added"),
-                                 str(log["joined_data"][0]["start"]).split(".")[0],
-                                 str(log["joined_data"][0]["end"]).split(".")[0]])
-                        elif log["operation"] == "update":
-                            self.run_logs_data.append(
-                                [str(f"Tender with ID: {key_id} updated"),
-                                 str(log["joined_data"][0]["start"]).split(".")[0],
-                                 str(log["joined_data"][0]["end"]).split(".")[0]])
-                    except:
-                        pass
-
-                elif log["collection"] == "entities":
-                    try:
-                        key_id = mongo.find_one(CONFIG.MONGO.ENTITIES_COLLECTION, {"_id": log["object_id"]})["edrpou"]
-                        if log["operation"] == "insert":
-                            self.run_logs_data.append(
-                                [str(f"Entity with EDRPOU: {key_id} added"),
-                                 str(log["joined_data"][0]["start"]).split(".")[0],
-                                 str(log["joined_data"][0]["end"]).split(".")[0]])
-                        elif log["operation"] == "update":
-                            self.run_logs_data.append(
-                                [str(f"Entity with EDRPOU: {key_id} updated"),
-                                 str(log["joined_data"][0]["start"]).split(".")[0],
-                                 str(log["joined_data"][0]["end"]).split(".")[0]])
-                    except:
-                        pass
+            self.total_amount = int(query_response[0])
+            self.participant_count = query_response[1]
+            self.avg_duration = int(query_response[2])
+            query = "SELECT title, amount, open_time_id, duration, participant_count, performer_id FROM TenderClosed TC JOIN TenderInfo TI ON TC.tender_id = TI.tender_id INNER JOIN StreetAddress SA ON TI.location = SA.id INNER JOIN DateDim DD ON DD.day = TC.close_time_id"
+            if filter != "WHERE ":
+                query += " " + filter
+            self.table_data = clickhouse.query(query).values.tolist()
+            print(self.table_data)
         except:
-            pass
+            self.total_amount = -1
+            self.participant_count = -1
+            self.avg_duration = -1
+            self.table_data = []
         self.processing = False
 
-    def change_logs_info_style(self, value):
-        self.logs_info_style = value
 
 
 @template(route="/transactions", title="Transaction Logs")
@@ -104,85 +96,113 @@ def transtactions() -> rx.Component:
     return rx.flex(
         rx.flex(
             rx.flex(
-                rx.text("Transaction type"),
-                rx.select(["All", "Added", "Modified"], placeholder="Select transaction type",
-                          on_change=TransactionController.set_transaction_type,
+                rx.text("Region", weight="medium"),
+                rx.select(["All"] + get_all_regions(), placeholder="Select region",
+                          on_change=TransactionController.set_region,
                           default_value="All", width="8em"),
                 direction="row",
                 spacing="3",
                 align="center"
             ),
             rx.flex(
-                rx.text("Entity type"),
-                rx.select(["All", "Tender", "Performer"], placeholder="Select entity type",
-                          on_change=TransactionController.set_entity_type,
+                rx.text("Month", weight="medium"),
+                rx.select(["All"] + generate_month(), placeholder="Select month",
+                          on_change=TransactionController.set_month,
                           default_value="All", width="8em"),
                 direction="row",
                 spacing="3",
                 align="center"
             ),
-            rx.button("Get Logs", on_click=TransactionController.get_run_logs_data, style={"max-width": "8em"}, ),
-            rx.flex(
-                rx.flex(
-                    rx.image(src="/info.png", style={"width": "2.5em", "height": "2.5em"}),
-                    rx.text("Zero Logs Found", size="2", weight="medium"),
-                    direction="row",
-                    align="center",
-                    spacing="2"
-                ),
-                rx.button("Close", on_click=[TransactionController.change_logs_info_style("hidden")],
-                          bg="lightgray",
-                          style={"color": "black", "border": f"0.13em solid gray",
-                                 "border-radius": "0.5em"}),
-                style={"z-index": "25", "position": "absolute", "padding": "0.6em", "margin-top": "0em",
-                       "visibility": TransactionController.logs_info_style,
-                       "border": f"0.13em solid gray",
-                       "border-radius": "0.5em", "margin-top": "9.5em", "margin-left": "18em"},
-                bg=rx.color("gray", 5),
-                direction="column",
-                spacing="2",
-
-            ),
+            rx.button("Filter", on_click=TransactionController.get_tender_closed_regions_month,
+                      style={"width": "8em"}, ),
             align="center",
             justify="center",
-            spacing="7",
+            spacing="5",
             direction="row",
             bg=rx.color(ThemeState.accent_color, 3),
-            style={"max-width": "40em", "border": f"0.1em solid {rx.color(ThemeState.accent_color)}",
+            style={"max-width": "67em", "border": f"0.1em solid {rx.color(ThemeState.accent_color)}",
                    "border-radius": "0.5em", "margin-bottom": "0.5em", "padding": "0.5em"}
-
         ),
         rx.flex(
-            rx.card(
+            rx.flex(
+                rx.flex(
+                    rx.text("Amount of money", style={"width": "10em", "margin-left": "0.5em"}, weight="medium"),
+                    rx.cond(TransactionController.total_amount != -1,
+                            rx.flex(
+                                rx.text(f"{TransactionController.total_amount}"), rx.text("UAH", weight="medium"),
+                                spacing="2"
+                            ),
+                            rx.text("")
+                            ),
+                    direction="row",
+                    spacing="5",
+                    align="center",
+                    style={"width": "20em", "padding": "1em",
+                           "border": f"0.1em solid {rx.color(ThemeState.accent_color)}",
+                           "border-radius": "0.5em", "margin-bottom": "0.5em", "padding": "0.5em"}
+                ),
+                rx.flex(
+                    rx.text("Participant count", style={"width": "10em", "margin-left": "0.5em"}, weight="medium"),
+                    rx.cond(TransactionController.participant_count != -1,
+                            rx.flex(
+                                rx.text(f"{TransactionController.participant_count}"),
+                                rx.text("People", weight="medium"),
+                                spacing="2"
+                            ),
+                            rx.text("")),
+                    direction="row",
+                    spacing="5",
+                    align="center",
+                    style={"width": "20em", "padding": "1em",
+                           "border": f"0.1em solid {rx.color(ThemeState.accent_color)}",
+                           "border-radius": "0.5em", "margin-bottom": "0.5em", "padding": "0.5em"}
+                ),
+                rx.flex(
+                    rx.text("Average duration", style={"width": "10em", "margin-left": "0.5em"}, weight="medium"),
+                    rx.cond(TransactionController.avg_duration != -1,
+                            rx.flex(
+                                rx.text(f"{TransactionController.avg_duration}"), rx.text("Days", weight="medium"),
+                                spacing="2"
+                            ),
+                            rx.text("")),
+                    direction="row",
+                    spacing="5",
+                    align="center",
+                    style={"width": "20em", "padding": "1em",
+                           "border": f"0.1em solid {rx.color(ThemeState.accent_color)}",
+                           "border-radius": "0.5em", "margin-bottom": "0.5em", "padding": "0.5em"}
+                ),
+                direction="row",
+                spacing="6",
+                style={"margin-top": "0.5em"}
+            ),
+            rx.flex(
                 rx.cond(
                     TransactionController.processing,
                     rx.chakra.circular_progress(is_indeterminate=True, color="gray"),
                 ),
-                rx.flex(
-                    rx.data_table(
-                        data=TransactionController.run_logs_data,
-                        columns=TransactionController.run_logs_data_columns,
-                        pagination=True,
-                        search=True,
-                        sort=True,
-                        align='center',
-                        resizable=True,
-                        key="coll_id"
-                    ),
-                    style={"max-width": "67em", "overflow-x": "auto"},
-                    direction="column",
-
+                rx.data_table(
+                    data=TransactionController.table_data,
+                    columns=["Tender Desc", "Amount", "Open Time", "Duration", "Participants", "Performer"],
+                    pagination=True,
+                    search=True,
+                    sort=True,
+                    align='center',
+                    resizable=True,
+                    key="Region"
                 ),
-                bg=rx.color(ThemeState.accent_color, 3)
-
+                direction="column",
+                style={"max-width": "67em", "overflow-x": "auto"},
             ),
-            spacing="1",
-            direction="row",
-            align="start",
-            align_items="start",
-            justify="start",
-            style={"border": f"0.1em solid {rx.color(ThemeState.accent_color)}",
-                   "border-radius": "0.5em"}
+            style={"max-width": "67em", "overflow-x": "auto", "width": "67em",
+                   "border": f"0.1em solid {rx.color(ThemeState.accent_color)}",
+                   "border-radius": "0.5em", "margin-bottom": "0.5em", "padding": "1em"},
+            direction="column",
+            align="center",
+            justify="center",
+            spacing="2",
+
         ),
+        style={"max-width": "67em"},
         direction="column",
     )
